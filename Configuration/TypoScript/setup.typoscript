@@ -1,0 +1,93 @@
+plugin.tx_bibsonomycsl_publicationlist {
+    view {
+        templateRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_bibsonomycsl_publicationlist.view.templateRootPath}
+        partialRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_bibsonomycsl_publicationlist.view.partialRootPath}
+        layoutRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_bibsonomycsl_publicationlist.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_bibsonomycsl_publicationlist.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+plugin.tx_bibsonomycsl_tagcloud {
+    view {
+        templateRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_bibsonomycsl_tagcloud.view.templateRootPath}
+        partialRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_bibsonomycsl_tagcloud.view.partialRootPath}
+        layoutRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_bibsonomycsl_tagcloud.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_bibsonomycsl_tagcloud.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+# these classes are only used in auto-generated templates
+plugin.tx_bibsonomycsl._CSS_DEFAULT_STYLE (
+    textarea.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    input.f3-form-error {
+        background-color:#FF9F9F;
+        border: 1px #FF0000 solid;
+    }
+
+    .tx-bibsonomy-csl table {
+        border-collapse:separate;
+        border-spacing:10px;
+    }
+
+    .tx-bibsonomy-csl table th {
+        font-weight:bold;
+    }
+
+    .tx-bibsonomy-csl table td {
+        vertical-align:top;
+    }
+
+    .typo3-messages .message-error {
+        color:red;
+    }
+
+    .typo3-messages .message-ok {
+        color:green;
+    }
+)
+
+# Module configuration
+module.tx_bibsonomycsl_web_bibsonomycslbackend {
+    persistence {
+        storagePid = {$module.tx_bibsonomycsl_backend.persistence.storagePid}
+    }
+    view {
+        templateRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Backend/Templates/
+        templateRootPaths.1 = {$module.tx_bibsonomycsl_backend.view.templateRootPath}
+        partialRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Backend/Partials/
+        partialRootPaths.1 = {$module.tx_bibsonomycsl_backend.view.partialRootPath}
+        layoutRootPaths.0 = EXT:bibsonomy_csl/Resources/Private/Backend/Layouts/
+        layoutRootPaths.1 = {$module.tx_bibsonomycsl_backend.view.layoutRootPath}
+    }
+}

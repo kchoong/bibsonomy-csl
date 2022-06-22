@@ -1,0 +1,51 @@
+{
+    "name": "academicpuma/bibsonomy-csl",
+    "type": "typo3-cms-extension",
+    "description": "",
+    "authors": [
+        {
+            "name": "Kevin Choong",
+            "role": "Developer"
+        },
+        {
+            "name": "Sebastian B\u00f6ttger",
+            "role": "Developer"
+        }
+    ],
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "typo3/cms-core": "^11.5"
+    },
+    "require-dev": {
+        "typo3/testing-framework": "^6.9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AcademicPuma\\BibsonomyCsl\\": "Classes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AcademicPuma\\BibsonomyCsl\\Tests\\": "Tests"
+        }
+    },
+    "replace": {
+        "typo3-ter/bibsonomy-csl": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor",
+        "bin-dir": ".Build/bin"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
+        ]
+    },
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public",
+            "extension-key": "bibsonomy_csl"
+        }
+    }
+}

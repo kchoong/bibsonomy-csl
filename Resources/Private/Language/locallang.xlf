@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf" date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
+		<header/>
+		<body>
+			<trans-unit id="tx_bibsonomycsl_domain_model_publication" resname="tx_bibsonomycsl_domain_model_publication">
+				<source>Publication</source>
+			</trans-unit>
+			<trans-unit id="tx_bibsonomycsl_domain_model_document" resname="tx_bibsonomycsl_domain_model_document">
+				<source>Document</source>
+			</trans-unit>
+			<trans-unit id="tx_bibsonomycsl_domain_model_tag" resname="tx_bibsonomycsl_domain_model_tag">
+				<source>Tag</source>
+			</trans-unit>
+			<trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet" resname="tx_bibsonomycsl_domain_model_citationstylesheet">
+				<source>Citation Stylesheet</source>
+			</trans-unit>
+			<trans-unit id="tx_bibsonomycsl_domain_model_authentication" resname="tx_bibsonomycsl_domain_model_authentication">
+				<source>Authentication</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

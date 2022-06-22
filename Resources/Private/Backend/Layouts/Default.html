@@ -1,0 +1,27 @@
+<html
+    xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers"
+    data-namespace-typo3-fluid="true">
+
+<be:moduleLayout>
+    <f:be.pageRenderer />
+
+    <be:moduleLayout.menu identifier="ModuleMenu">
+        <be:moduleLayout.menuItem label="Overview" uri="{f:uri.action(controller: 'Publication', action: 'list')}" />
+        <be:moduleLayout.menuItem label="Create new Publication" uri="{f:uri.action(controller: 'Publication', action: 'new')}" />
+        <be:moduleLayout.menuItem label="Overview" uri="{f:uri.action(controller: 'Document', action: 'list')}" />
+        <be:moduleLayout.menuItem label="Create new Document" uri="{f:uri.action(controller: 'Document', action: 'new')}" />
+        <be:moduleLayout.menuItem label="Overview" uri="{f:uri.action(controller: 'Tag', action: 'list')}" />
+        <be:moduleLayout.menuItem label="Create new Tag" uri="{f:uri.action(controller: 'Tag', action: 'new')}" />
+        <be:moduleLayout.menuItem label="Overview" uri="{f:uri.action(controller: 'CitationStylesheet', action: 'list')}" />
+        <be:moduleLayout.menuItem label="Create new CitationStylesheet" uri="{f:uri.action(controller: 'CitationStylesheet', action: 'new')}" />
+        <be:moduleLayout.menuItem label="Overview" uri="{f:uri.action(controller: 'Authentication', action: 'list')}" />
+        <be:moduleLayout.menuItem label="Create new Authentication" uri="{f:uri.action(controller: 'Authentication', action: 'new')}" />
+    </be:moduleLayout.menu>
+
+    <f:render section="Buttons" />
+    <be:moduleLayout.button.shortcutButton displayName="Shortcut" />
+
+    <f:render section="Content" />
+</be:moduleLayout>
+</html>
