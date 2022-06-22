@@ -4,7 +4,7 @@ defined('TYPO3') || die();
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'BibsonomyCsl',
-        'Publicationlist',
+        'PublicationList',
         [
             \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'list, show, download'
         ],
@@ -16,7 +16,7 @@ defined('TYPO3') || die();
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'BibsonomyCsl',
-        'Tagcloud',
+        'TagCloud',
         [
             \AcademicPuma\BibsonomyCsl\Controller\PublicationController::class => 'list, show',
             \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'list, show, download',

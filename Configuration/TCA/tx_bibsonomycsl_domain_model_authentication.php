@@ -20,79 +20,57 @@ return [
         'iconfile' => 'EXT:bibsonomy_csl/Resources/Public/Icons/tx_bibsonomycsl_domain_model_authentication.gif'
     ],
     'types' => [
-        '1' => ['showitem' => ', --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language, sys_language_uid, l10n_parent, l10n_diffsource, --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:access, hidden, starttime, endtime'],
+        '1' => ['showitem' => 'hostAddress, userName, apiKey, accessToken, enabledOAuth, createdDate'],
     ],
     'columns' => [
-        'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
+        'hostAddress' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.hostAddress',
             'config' => [
-                'type' => 'language',
+                'type' => 'input',
+                'size' => 60,
+                'eval' => 'trim'
             ],
         ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+        'userName' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.userName',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'default' => 0,
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_bibsonomycsl_domain_model_authentication',
-                'foreign_table_where' => 'AND {#tx_bibsonomycsl_domain_model_authentication}.{#pid}=###CURRENT_PID### AND {#tx_bibsonomycsl_domain_model_authentication}.{#sys_language_uid} IN (-1,0)',
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
-        'l10n_diffsource' => [
+        'apiKey' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.apiKey',
             'config' => [
-                'type' => 'passthrough',
+                'type' => 'input',
+                'size' => 30,
+                'eval' => 'trim'
             ],
         ],
-        'hidden' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.visible',
+        'accessToken' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.accessToken',
+            'config' => [
+                'type' => 'input',
+                'size' => 60,
+                'eval' => 'trim'
+            ],
+        ],
+        'enabledOAuth' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.enabledOAuth',
             'config' => [
                 'type' => 'check',
-                'renderType' => 'checkboxToggle',
-                'items' => [
-                    [
-                        0 => '',
-                        1 => '',
-                        'invertStateDisplay' => true
-                    ]
-                ],
-            ],
+                'default' => 0
+            ]
         ],
-        'starttime' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.starttime',
+        'createdDate' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.createdDate',
             'config' => [
                 'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0,
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
+                'size' => 10,
+                'eval' => 'datetime',
+                'checkbox' => 1,
+                'default' => time()
             ],
         ],
-        'endtime' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.endtime',
-            'config' => [
-                'type' => 'input',
-                'renderType' => 'inputDateTime',
-                'eval' => 'datetime,int',
-                'default' => 0,
-                'range' => [
-                    'upper' => mktime(0, 0, 0, 1, 1, 2038)
-                ],
-                'behaviour' => [
-                    'allowLanguageSynchronization' => true
-                ]
-            ],
-        ],
-
     ],
 ];

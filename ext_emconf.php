@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'BibSonomy CSL',
-    'description' => '',
+    'description' => 'TYPO3 extension for PUMA and BibSonomy using CSL',
     'category' => 'plugin',
     'author' => 'Kevin Choong, Sebastian Böttger',
     'author_email' => 'choong.kvn@gmail.com, boettger@cs.uni-kassel.de',
