@@ -3,9 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf" date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
 		<header/>
 		<body>
-			<trans-unit id="tx_bibsonomycsl_domain_model_publication">
-				<source>Publication</source>
-			</trans-unit>
 			<trans-unit id="tx_bibsonomycsl_domain_model_document">
 				<source>Document</source>
 			</trans-unit>

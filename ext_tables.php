@@ -15,7 +15,7 @@ defined('TYPO3') || die();
         [
             'access' => 'user,group',
             'icon'   => 'EXT:bibsonomy_csl/Resources/Public/Icons/user_mod_backend.svg',
-            'labels' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_backend.xlf',
+            'labels' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf',
         ]
     );
 

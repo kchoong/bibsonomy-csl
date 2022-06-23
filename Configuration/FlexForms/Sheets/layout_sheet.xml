@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.tab
+            </sheetTitle>
+            <sheetDescription>
+                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.description
+            </sheetDescription>
+        </TCEforms>
+        <type>array</type>
+        <el>
+            <settings.bib_stylesheet>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.select.style
+                    </label>
+                    <!--  Select citation style... -->
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getLayouts</itemsProcFunc>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.bib_stylesheet>
+            <settings.bib_language>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.select.lang
+                    </label>
+                    <!-- Select language... -->
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getLocales</itemsProcFunc>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.bib_language>
+            <settings.bib_ownstylesheet>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.select.custom.style
+                    </label>
+                    <config>
+                        <type>text</type>
+                        <cols>45</cols>
+                        <rows>15</rows>
+                    </config>
+                </TCEforms>
+            </settings.bib_ownstylesheet>
+            <settings.bib_link_abstract>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.abstract
+                    </label>
+                    <!-- Show link for abstract, when abstract available -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_abstract>
+
+            <settings.bib_link_bibtex>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.bibtex
+                    </label>
+                    <!-- Show link for BibTeX export -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_bibtex>
+
+            <settings.bib_link_endnote>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.endnote
+                    </label>
+                    <!-- Show link for Endnote export -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_endnote>
+
+            <settings.bib_link_url>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.url
+                    </label>
+                    <!-- Show links to URL of the publications, when URL available -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_url>
+
+            <settings.bib_link_doi>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doi
+                    </label>
+                    <!-- Show links to DOI of the publications, when URL available -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_doi>
+
+            <settings.bib_link_host>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.host
+                    </label>
+                    <!-- Show link to publication host -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_host>
+
+            <settings.bib_citation_number>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.citation.number
+                    </label>
+                    <!-- Show citation number, when enabled -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_citation_number>
+
+            <settings.bib_link_personal_mode>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.mode
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.none
+                                </numIndex>
+                                <numIndex index="1">none</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.modal
+                                </numIndex>
+                                <numIndex index="1">modal</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.publication
+                                </numIndex>
+                                <numIndex index="1">publication</numIndex>
+                            </numIndex>
+                            <numIndex index="3" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.both
+                                </numIndex>
+                                <numIndex index="1">both</numIndex>
+                            </numIndex>
+                        </items>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_personal_mode>
+
+            <settings.bib_link_personal>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal
+                    </label>
+                    <!-- Define personal websites and e-mail of authors -->
+                    <config>
+                        <type>text</type>
+                        <cols>45</cols>
+                        <rows>10</rows>
+                        <default>Lastname, Firstname; http://www.example.com; example(at)example.com</default>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_personal>
+
+            <settings.bib_show_notes>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.show.notes
+                    </label>
+                    <!-- Show notes of the publications, when available -->
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.bib_show_notes>
+
+            <settings.bib_link_misc>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.misc
+                    </label>
+                    <!-- Show links to DOI of the publications, when URL available -->
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_misc>
+
+            <settings.bib_link_doc>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc
+                    </label>
+                    <!-- Show thumbnails and links of private documents of your publications, when documents available -->
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.nothing
+                                </numIndex>
+                                <!-- No thumbnails/no document links -->
+                                <numIndex index="1">nothing</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.thumbs
+                                </numIndex>
+                                <!-- Show thumbnails but do not link documents -->
+                                <numIndex index="1">thumbs</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.thumbs.links
+                                </numIndex>
+                                <!-- Show thumbnails and link documents -->
+                                <numIndex index="1">thumbs-links</numIndex>
+                            </numIndex>
+                            <numIndex index="3" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.links
+                                </numIndex>
+                                <!-- Only show links to documents -->
+                                <numIndex index="1">links</numIndex>
+                            </numIndex>
+                        </items>
+                    </config>
+                </TCEforms>
+            </settings.bib_link_doc>
+
+            <settings.curly_braces>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.label
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.remove
+                                </numIndex>
+                                <numIndex index="1">0</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.keep
+                                </numIndex>
+                                <numIndex index="1">2</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.keepmath
+                                </numIndex>
+                                <numIndex index="1">1</numIndex>
+                            </numIndex>
+                        </items>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.curly_braces>
+
+            <settings.treat_backslashes>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.label
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keepmath
+                                </numIndex>
+                                <numIndex index="1">0</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keep
+                                </numIndex>
+                                <numIndex index="1">1</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.remove
+                                </numIndex>
+                                <numIndex index="1">2</numIndex>
+                            </numIndex>
+                        </items>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.treat_backslashes>
+
+            <settings.bibtex_cleaning>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.bibtexcleaning.label
+                    </label>
+                    <config>
+                        <!-- TODO: change to checkbox probably -->
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.true
+                                </numIndex>
+                                <numIndex index="1">true</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.false
+                                </numIndex>
+                                <numIndex index="1">false</numIndex>
+                            </numIndex>
+                        </items>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.bibtex_cleaning>
+
+            <settings.bibtex_escape_special>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.bibtex.escape.special
+                    </label>
+                    <!-- Escape special characters in the BibTeX -->
+                    <config>
+                        <type>check</type>
+                        <default>1</default>
+                    </config>
+                </TCEforms>
+            </settings.bibtex_escape_special>
+
+            <settings.bibtex_htmlencode_special>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.bibtex.htmlencode.special
+                    </label>
+                    <!-- HTML-Encode special characters in the BibTeX -->
+                    <config>
+                        <type>check</type>
+                        <default>1</default>
+                    </config>
+                </TCEforms>
+            </settings.bibtex_htmlencode_special>
+
+            <settings.bib_css_attribute_for_list_item>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.css
+                    </label>
+                    <!-- Define layout modifications with CSS -->
+                    <config>
+                        <type>text</type>
+                        <cols>45</cols>
+                        <rows>15</rows>
+                        <default>
+                            .tx-extbibsonomycsl-notes {
+                            font-style: italic;
+                            }
+
+                            .bibsonomy_publications {
+                            font-size: 1.0em;
+                            }
+
+                            .bibsonomy_publications span.citeproc-title {
+                            text-decoration: none;
+                            font-weight: bold;
+                            font-size: 1.1em;
+                            }
+
+                            .bibsonomy_publications span.biblink {
+                            display: block;
+                            font-size: 1.0em;
+                            line-height: 2em;
+                            margin-right: 1.5em;
+                            float: left;
+                            }
+                        </default>
+                    </config>
+                </TCEforms>
+            </settings.bib_css_attribute_for_list_item>
+
+        </el>
+    </ROOT>
+</T3DataStructure>

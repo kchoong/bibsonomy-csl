@@ -37,8 +37,8 @@ defined('TYPO3') || die();
                 elements {
                     publicationlist {
                         iconIdentifier = bibsonomy_csl-plugin-publicationlist
-                        title = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomy_csl_publicationlist.name
-                        description = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomy_csl_publicationlist.description
+                        title = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:tx_bibsonomy_csl_publicationlist.name
+                        description = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:tx_bibsonomy_csl_publicationlist.description
                         tt_content_defValues {
                             CType = list
                             list_type = bibsonomycsl_publicationlist
@@ -46,8 +46,8 @@ defined('TYPO3') || die();
                     }
                     tagcloud {
                         iconIdentifier = bibsonomy_csl-plugin-tagcloud
-                        title = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomy_csl_tagcloud.name
-                        description = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomy_csl_tagcloud.description
+                        title = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:tx_bibsonomy_csl_tagcloud.name
+                        description = LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:tx_bibsonomy_csl_tagcloud.description
                         tt_content_defValues {
                             CType = list
                             list_type = bibsonomycsl_tagcloud

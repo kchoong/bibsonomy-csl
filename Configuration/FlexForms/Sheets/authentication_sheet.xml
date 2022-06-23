@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.tab
+            </sheetTitle>
+            <sheetDescription>
+                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.tab.description
+            </sheetDescription>
+        </TCEforms>
+        <type>array</type>
+        <el>
+
+            <settings.authconfig>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.label
+                    </label>
+                    <onChange>reload</onChange>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.select.custom
+                                </numIndex>
+                                <numIndex index="1">custom</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.select.beauth
+                                </numIndex>
+                                <numIndex index="1">beauth</numIndex>
+                            </numIndex>
+                        </items>
+                        <default>custom</default>
+                    </config>
+                </TCEforms>
+            </settings.authconfig>
+            <settings.authentication>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.beauth.label
+                    </label>
+                    <displayCond>FIELD:settings.authconfig:=:beauth</displayCond>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getAuth</itemsProcFunc>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.authentication>
+
+            <settings.bib_server>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.host
+                    </label>
+                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getHosts</itemsProcFunc>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.bib_server>
+
+            <settings.bib_login_name>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.username
+                    </label>
+                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <config>
+                        <type>input</type>
+                        <size>20</size>
+                        <max>50</max>
+                    </config>
+                </TCEforms>
+            </settings.bib_login_name>
+
+            <settings.bib_api_key>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.apikey
+                    </label>
+                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <config>
+                        <type>input</type>
+                        <size>32</size>
+                        <max>32</max>
+                    </config>
+                </TCEforms>
+            </settings.bib_api_key>
+
+            <settings.ssl_verify>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.verify
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.true
+                                </numIndex>
+                                <numIndex index="1">true</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.false
+                                </numIndex>
+                                <numIndex index="1">false</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.path
+                                </numIndex>
+                                <numIndex index="1">path</numIndex>
+                            </numIndex>
+                        </items>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                        <default>true</default>
+                    </config>
+                </TCEforms>
+            </settings.ssl_verify>
+
+            <settings.ssl_ca_path>
+                <TCEforms>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.path
+                    </label>
+                    <displayCond>FIELD:settings.ssl_verify:=:path</displayCond>
+                    <config>
+                        <type>input</type>
+                        <size>32</size>
+                        <max>256</max>
+                    </config>
+                </TCEforms>
+            </settings.ssl_ca_path>
+
+        </el>
+    </ROOT>
+</T3DataStructure>

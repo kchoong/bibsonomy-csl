@@ -14,8 +14,21 @@
             "role": "Developer"
         }
     ],
+    "support": {
+        "source": "https://bitbucket.org/bibsonomy/bibsonomy-typo3-csl/src/",
+        "issues": "https://bitbucket.org/bibsonomy/bibsonomy-typo3-csl/issues/"
+    },
     "require": {
-        "typo3/cms-core": "^11.5"
+        "php": "^7.2 || ^8.0",
+        "typo3/cms-core": "^11.5",
+        "academicpuma/restclient-php": "dev-develop",
+        "academicpuma/citation-styles": "^1.0",
+        "academicpuma/citation-locales": "^1.0",
+        "seboettg/citeproc-php": "^2.4",
+        "ext-dom": "*",
+        "ext-json": "*",
+        "ext-iconv": "*",
+        "ext-curl": "*"
     },
     "require-dev": {
         "typo3/testing-framework": "^6.9.0"
