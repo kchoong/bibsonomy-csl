@@ -20,4 +20,49 @@ namespace AcademicPuma\BibsonomyCsl\Domain\Model;
  */
 class CitationStylesheet extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
 {
+    protected $name = '';
+    protected $xmlSource = '';
+
+    /**
+     * @param string $name
+     * @param string $xmlSource
+     */
+    public function __construct(string $name, string $xmlSource)
+    {
+        $this->name = $name;
+        $this->xmlSource = $xmlSource;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param string $name
+     */
+    public function setName(string $name): void
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return string
+     */
+    public function getXmlSource(): string
+    {
+        return $this->xmlSource;
+    }
+
+    /**
+     * @param string $xmlSource
+     */
+    public function setXmlSource(string $xmlSource): void
+    {
+        $this->xmlSource = $xmlSource;
+    }
+
 }

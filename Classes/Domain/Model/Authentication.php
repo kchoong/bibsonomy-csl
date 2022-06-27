@@ -27,7 +27,6 @@ class Authentication extends AbstractEntity
     protected $apiKey = '';
     protected $accessToken = '';
     protected $enabledOAuth = false;
-    protected $createdDate = 0;
 
     /**
      * @param string $hostAddress
@@ -35,16 +34,14 @@ class Authentication extends AbstractEntity
      * @param string $apiKey
      * @param string $accessToken
      * @param bool $enabledOAuth
-     * @param int $createdDate
      */
-    public function __construct(string $hostAddress = '', string $userName = '', string $apiKey = '', string $accessToken = '', bool $enabledOAuth = false, int $createdDate = 0)
+    public function __construct(string $hostAddress = '', string $userName = '', string $apiKey = '', string $accessToken = '', bool $enabledOAuth = false)
     {
         $this->hostAddress = $hostAddress;
         $this->userName = $userName;
         $this->apiKey = $apiKey;
         $this->accessToken = $accessToken;
         $this->enabledOAuth = $enabledOAuth;
-        $this->createdDate = $createdDate;
     }
 
     /**
@@ -127,19 +124,4 @@ class Authentication extends AbstractEntity
         $this->enabledOAuth = $enabledOAuth;
     }
 
-    /**
-     * @return int
-     */
-    public function getCreatedDate(): int
-    {
-        return $this->createdDate;
-    }
-
-    /**
-     * @param int $createdDate
-     */
-    public function setCreatedDate(int $createdDate): void
-    {
-        $this->createdDate = $createdDate;
-    }
 }
