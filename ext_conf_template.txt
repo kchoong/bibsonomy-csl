@@ -1,0 +1,15 @@
+
+# cat=General; type=string; label=URL for list of PUMA instances
+instanceListUrl = https://www.bibsonomy.org/resources_puma/addons/list.json
+
+# cat=General; type=string; label=Default Host System
+defaultHostSystemUrl = https://www.bibsonomy.org
+
+# cat=OAuth; type=string; label=OAuth Consumer Token
+oauthConsumerToken =
+
+# cat=OAuth; type=string; label=OAuth Consumer Secret
+oauthConsumerSecret =
+
+# cat=Debug; type=boolean; label=Enable Debug Log
+enableDebugLog = 0

@@ -8,106 +8,49 @@
         </TCEforms>
         <type>array</type>
         <el>
-            <settings.bib_content_key>
+            <settings.content.sourceType>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key
                     </label>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">user</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.user</numIndex>
                                 <numIndex index="1">user</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">group</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.group</numIndex>
                                 <numIndex index="1">group</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
-                                <numIndex index="0">viewable</numIndex>
-                                <numIndex index="1">viewable</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.person</numIndex>
+                                <numIndex index="1">person</numIndex>
                             </numIndex>
                             <numIndex index="3" type="array">
-                                <numIndex index="0">person</numIndex>
-                                <numIndex index="1">person</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.viewable</numIndex>
+                                <numIndex index="1">viewable</numIndex>
                             </numIndex>
                         </items>
                     </config>
                 </TCEforms>
-            </settings.bib_content_key>
-            <settings.bib_content_value>
+            </settings.content.sourceType>
+            <settings.content.sourceId>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.value
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.id
                     </label>
                     <config>
                         <type>input</type>
                         <size>30</size>
                         <max>255</max>
-                        <default></default>
                     </config>
                 </TCEforms>
-            </settings.bib_content_value>
+            </settings.content.sourceId>
 
-            <settings.bib_tags>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.tags
-                    </label>
-                    <config>
-                        <type>input</type>
-                        <size>30</size>
-                        <max>255</max>
-                        <default></default>
-                    </config>
-                </TCEforms>
-            </settings.bib_tags>
-
-            <settings.bib_concepts>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.concepts
-                    </label>
-                    <config>
-                        <type>input</type>
-                        <size>30</size>
-                        <max>255</max>
-                        <default></default>
-                    </config>
-                </TCEforms>
-            </settings.bib_concepts>
-
-            <settings.bib_unselect_tags>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.tags.unselect
-                    </label>
-                    <config>
-                        <type>input</type>
-                        <size>30</size>
-                        <max>255</max>
-                        <default></default>
-                    </config>
-                </TCEforms>
-            </settings.bib_unselect_tags>
-
-            <settings.bib_unselect_concepts>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.concepts.unselect
-                    </label>
-                    <config>
-                        <type>input</type>
-                        <size>30</size>
-                        <max>255</max>
-                        <default></default>
-                    </config>
-                </TCEforms>
-            </settings.bib_unselect_concepts>
-
-            <settings.bib_search>
+            <settings.content.search>
                 <TCEforms>
                     <label>
                         LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.search
@@ -116,11 +59,64 @@
                         <type>input</type>
                         <size>30</size>
                         <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.content.search>
+
+            <settings.content.tagsSelect>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.tags.select
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
                         <default></default>
                     </config>
                 </TCEforms>
-            </settings.bib_search>
-            <settings.bib_maxcount>
+            </settings.content.tagsSelect>
+
+            <settings.content.tagsUnselect>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.tags.unselect
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.content.tagsUnselect>
+
+            <settings.content.conceptsSelect>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.concepts.select
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.content.conceptsSelect>
+
+            <settings.content.conceptsUnselect>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.concepts.unselect
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.content.conceptsUnselect>
+
+            <settings.content.maxCount>
                 <TCEforms>
                     <label>
                         LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.maxcount
@@ -132,7 +128,7 @@
                         <default>100</default>
                     </config>
                 </TCEforms>
-            </settings.bib_maxcount>
+            </settings.content.maxCount>
         </el>
     </ROOT>
 </T3DataStructure>

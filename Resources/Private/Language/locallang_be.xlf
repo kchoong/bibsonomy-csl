@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="EXT:bibsonomy_csl/Resources/Private/Language/locallang_be" date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
-		<header/>
-		<body>
-			<trans-unit id="mlang_labels_tabdescr">
-				<source>BibSonomy TYPO3 - Backend</source>
-			</trans-unit>
-			<trans-unit id="mlang_tabs_tab">
-				<source></source>
-			</trans-unit>
-			<trans-unit id="extension.version">
-                <source>Version 3.2.0</source>
+    <file source-language="en" datatype="plaintext" original="EXT:bibsonomy_csl/Resources/Private/Language/locallang_be"
+          date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
+        <header/>
+        <body>
+            <trans-unit id="mlang_labels_tabdescr">
+                <source>BibSonomy TYPO3 - Backend</source>
             </trans-unit>
-			<trans-unit id="tx_bibsonomy_csl_publicationlist.name">
+            <trans-unit id="mlang_tabs_tab">
+                <source></source>
+            </trans-unit>
+            <trans-unit id="tx_bibsonomy_csl_publicationlist.name">
                 <source>Publication List</source>
             </trans-unit>
             <trans-unit id="tx_bibsonomy_csl_publicationlist.description">
@@ -24,300 +22,415 @@
             <trans-unit id="tx_bibsonomy_csl_tagcloud.description">
                 <source>Display a tag cloud, that is generated from a publication list.</source>
             </trans-unit>
+
             <!-- FlexForm -->
-             <!-- Content Selection -->
-             <trans-unit id="flexform.content.tab">
-                 <source>Content Selection</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.source">
-                 <source>Select content source</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.source.value">
-                 <source>Insert the id of user, group, viewable or person source</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.tags">
-                 <source>Select content via tags (whitespace separated)</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.concepts">
-                 <source>Select content via concepts (whitespace separated)</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.tags.unselect">
-                 <source>Unselect content via tags (whitespace separated), excludes all publications which have at least one of these tags
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.content.concepts.unselect">
-                 <source>Unselect content via concepts (whitespace separated), excludes all publications which have at least one of the subtags of a concept.
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.content.search">
-                 <source>Select content fulltext search</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.maxcount">
-                 <source>Maximum number of publications</source>
-             </trans-unit>
-             <trans-unit id="flexform.content.custom.apiquery">
-                 <source>Alternatively, define your own BibSonomy/PUMA API query to fetch a set of publications.\n(Ignores previous settings!)
-                 </source>
-             </trans-unit>
-             <!-- PLUGIN Publication List -->
-             <!-- Sorting/Ordering Tab -->
-             <trans-unit id="flexform.ordering.tab">
-                 <source>Grouping and Sorting</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by">
-                 <source>Grouping by</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by.none">
-                 <source>none</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by.year.asc">
-                 <source>year ascending</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by.year.desc">
-                 <source>year descending</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by.type">
-                 <source>type (define a filter and a order at the bottom)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.grouping.by.dblp">
-                 <source>DBLP</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.anchors">
-                 <source>Display jump labels on top of the list (if grouping is selected)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by">
-                 <source>Sorting by (within groups)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by.year">
-                 <source>year</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by.title">
-                 <source>title (alphabetical order)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by.author">
-                 <source>author (alphabetical order)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by.type">
-                 <source>type</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.by.month">
-                 <source>month (requires month misc. field)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.order">
-                 <source>Sorting order</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.order.desc">
-                 <source>descending</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.sorting.order.asc">
-                 <source>ascending</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.type.order">
-                 <source>Choose and order document types here if you have selected sorting by document type. Keep it empty to select all types and use the default order
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.year">
-                 <source>Show only Publications of following year</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.numericyear">
-                 <source>Allow non-numeric year specifications</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.inline">
-                 <source>Enable inline filtering</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.duplicates">
-                 <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information.)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.duplicates.0">
-                 <source>Soft Filter (by intrahash)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.duplicates.1">
-                 <source>Hard Filter (by interhash)</source>
-             </trans-unit>
-             <trans-unit id="flexform.ordering.filter.duplicates.2">
-                 <source>No Filter</source>
-             </trans-unit>
-             <!-- Layout Tab -->
-             <trans-unit id="flexform.layout.tab">
-                 <source>Layout</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.description">
-                 <source>Define the layout of the publication list</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.select.style">
-                 <source>Choose your preferred Bibliography Style for this Publication List</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.select.lang">
-                 <source>Choose your preferred language for this Publication List</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.select.custom.style">
-                 <source>Alternatively, insert a custom CSL Stylesheet</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.abstract">
-                 <source>Check this to enable toggle link for the publication abstract</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.bibtex">
-                 <source>Check this to enable toggle link for BibTeX</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.endnote">
-                 <source>Check this to enable toggle link for EndNote</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.url">
-                 <source>Check this to show a link of the publication URL field</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doi">
-                 <source>Check this to show a DOI link of the publication</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.host">
-                 <source>Check this to show a link to the post in the publication host</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.citation.number">
-                 <source>Check this to show citation numbers for the publication list</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal">
-                 <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g. Lastname, Firstname; http://www.example.com; example(at)example.com (separated by lines, use 'none' for not available). \n It is also possible to enter a URL to a text-file with a list in the described format.
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal.mode">
-                 <source>Mode for personal author website (Warning: Experimental for publication)</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal.none">
-                 <source>None</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal.modal">
-                 <source>Modal</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal.publication">
-                 <source>Publication</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.personal.both">
-                 <source>Both</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.show.notes">
-                 <source>Check this to show notes of the publication</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.misc">
-                 <source>The following keys from misc fields contain URLs. These URLs should be rendered as links (insert a comma-separated list of keys)
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doc">
-                 <source>Show thumbnails/links of private documents of your publications</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doc.nothing">
-                 <source>No thumbnails/no links to documents</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doc.thumbs">
-                 <source>Show thumbnails but do not set links to documents</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doc.thumbs.links">
-                 <source>Show thumbnails and set links to documents</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.doc.links">
-                 <source>Just show links to documents</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.link.css">
-                 <source>Define layout modification using CSS</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.curlybraces.label">
-                 <source>Handle curly braces</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.curlybraces.remove">
-                 <source>Remove all curly braces</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.curlybraces.keep">
-                 <source>Keep all curly braces</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.curlybraces.keepmath">
-                 <source>Keep curly braces in TeXs math mode</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.backslashes.label">
-                 <source>Handle backslashes</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.backslashes.remove">
-                 <source>Remove all backslashes</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.backslashes.keep">
-                 <source>Keep all backslashes</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.backslashes.keepmath">
-                 <source>Keep backslashes in TeXs math mode</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.bibtexcleaning.label">
-                 <source>BibTex cleaning (e.g. conversion from {\"a} to ä, Texs math mode will stay untouched either way)</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.bibtex.escape.special">
-                 <source>Escape special characters in the BibTeX code of the publications (e.g. %, &amp;, ~, #, _)</source>
-             </trans-unit>
-             <trans-unit id="flexform.layout.bibtex.htmlencode.special">
-                 <source>HTML-Encode special characters in the BibTeX code of the publications (e.g. ~, --, ---)</source>
-             </trans-unit>
-             <!-- Details Tab -->
-             <trans-unit id="flexform.details.tab">
-                 <source>Details</source>
-             </trans-unit>
-             <trans-unit id="flexform.details.tab.description">
-                 <source>Here you can configure a link to a details page on which the publication details should be displayed. Don't forget to to insert the Details View Plugin on the selected target page.
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.details.enable">
-                 <source>Create a link to a Details Page View for each publication.</source>
-             </trans-unit>
-             <trans-unit id="flexform.details.page.select">
-                 <source>Choose a target page on which to display the details view</source>
-             </trans-unit>
-             <trans-unit id="flexform.details.urls">
-                 <source>Enable clean URLs for downloads of publications and details page. (This option requires certain options on your apache server and TYPO3 installation and will not work, unless the requirements are all met.)</source>
-             </trans-unit>
-             <!-- PLUGINS ALL Login -->
-             <trans-unit id="flexform.login.tab">
-                 <source>Login</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.tab.description">
-                 <source>Setup the PUMA/BibSonomy API credentials for this Plugin. You can select your pre-configured settings from the PUMA/BibSonomy Backend Module. Alternatively configure a custom API access below (Choose Host System and insert user name and API key).
-                 </source>
-             </trans-unit>
-             <trans-unit id="flexform.login.enable.beauth.label">
-                 <source>Use API credentials from PUMA/BibSonomy Backend Module</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.beauth.label">
-                 <source>Choose your account</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.enable.beauth.select.beauth">
-                 <source>pre-configured API configuration</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.enable.beauth.select.custom">
-                 <source>custom API configuration</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.host">
-                 <source>Choose your preferred Host System</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.username">
-                 <source>Your user name on the Host System</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.apikey">
-                 <source>Your API Key on the Host System</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.ssl.verify">
-                 <source>Verify SSL CA</source>
-             </trans-unit>
-             <trans-unit id="flexform.true">
-                 <source>true</source>
-             </trans-unit>
-             <trans-unit id="flexform.false">
-                 <source>false</source>
-             </trans-unit>
-             <trans-unit id="flexform.login.ssl.path">
-                 <source>Custom path for SSL certificates</source>
-             </trans-unit>
-             <trans-unit id="flexform.tags.related">
-                 <source>Show related tags of (separate more than one tag by a space character)</source>
-             </trans-unit>
-             <trans-unit id="flexform.tags.ignore">
-                 <source>Ignore the following tags</source>
-             </trans-unit>
-             <trans-unit id="flexform.tags.max">
-                 <source>Maximum number of tags</source>
-             </trans-unit>
-		</body>
-	</file>
+
+            <trans-unit id="flexform.true">
+                <source>true</source>
+            </trans-unit>
+            <trans-unit id="flexform.false">
+                <source>false</source>
+            </trans-unit>
+
+            <!-- About Tab -->
+            <trans-unit id="flexform.about.tab">
+                <source>About</source>
+            </trans-unit>
+            <trans-unit id="flexform.about.tab.description">
+                <source>BibSonomy TYPO3 Extension - Version 3.2.0</source>
+            </trans-unit>
+
+            <!-- Content Selection Tab -->
+
+            <trans-unit id="flexform.content.tab">
+                <source>Content Selection</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.id">
+                <source>Insert the id of user, group, person or viewable source</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.key">
+                <source>Select content source</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.key.user">
+                <source>User</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.key.group">
+                <source>Group</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.key.person">
+                <source>Person</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.source.key.viewable">
+                <source>Viewable</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.concepts.select">
+                <source>Select content via concepts (whitespace separated)</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.concepts.unselect">
+                <source>Unselect content via concepts (whitespace separated), excludes all publications which have at least one of the subtags of a concep.</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.tags.select">
+                <source>Select content via tags (whitespace separated)</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.tags.unselect">
+                <source>Unselect content via tags (whitespace separated), excludes all publications which have at least one of these tags</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.search">
+                <source>Select content fulltext search</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.maxcount">
+                <source>Maximum number of publications</source>
+            </trans-unit>
+            <trans-unit id="flexform.content.custom.apiquery">
+                <source>Alternatively, define your own BibSonomy/PUMA API query to fetch a set of publications.\n(Ignores previous settings!)</source>
+            </trans-unit>
+
+            <!-- Grouping/Sorting/Filtering Tab -->
+
+            <trans-unit id="flexform.sorting.tab">
+                <source>Grouping, Sorting and Filtering</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping">
+                <source>Group by</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.anchors">
+                <source>Display jump labels on top of the list (if grouping is selected)</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.none">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.yearAsc">
+                <source>Year ascending</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.yearDesc">
+                <source>Year descending</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.entrytype">
+                <source>Entrytype</source>
+            </trans-unit>
+            <trans-unit id="flexform.grouping.dblp">
+                <source>DBLP</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey">
+                <source>Sort by (within groups)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey.year">
+                <source>Year</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey.title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey.author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey.entrytype">
+                <source>Entrytype</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortKey.month">
+                <source>Month</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortOrder">
+                <source>Sorting order</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortOrder.asc">
+                <source>Ascending</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.sortOrder.desc">
+                <source>Descending</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.order">
+                <source>Choose and order document types here if you have selected sorting by document type. Keep it empty to select all types and use the default order</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.article">
+                <source>Article in journal, newspaper, or magazine</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.article.short">
+                <source>Article</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.book">
+                <source>Book or Conference Proceedings</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.book.short">
+                <source>Book</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.inproceedings">
+                <source>Article in Conference Proceedings</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.inproceedings.short">
+                <source>Inproceedings</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.phdthesis">
+                <source>PhD or Master Thesis</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.phdthesis.short">
+                <source>Thesis</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.incollection">
+                <source>Chapter (part of a book)</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.incollection.short">
+                <source>Chapter</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.techreport">
+                <source>Report</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.techreport.short">
+                <source>Report</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.patent">
+                <source>Patent</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.patent.short">
+                <source>Patent</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.standard">
+                <source>Legislation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.standard.short">
+                <source>Legislation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.booklet">
+                <source>Pamphlet</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.booklet.short">
+                <source>Pamphlet</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.presentation">
+                <source>Presentation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.presentation.short">
+                <source>Presentation</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.electronic">
+                <source>Web Page or Electronic Resource</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.electronic.short">
+                <source>Web Page</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.unpublished">
+                <source>Unpublished Document</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.unpublished.short">
+                <source>Unpublished</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.misc">
+                <source>Miscellaneous</source>
+            </trans-unit>
+            <trans-unit id="flexform.sorting.entrytype.misc.short">
+                <source>Misc</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.year">
+                <source>Show only Publications of following year</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.numericyear">
+                <source>Allow non-numeric year specifications</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.inline">
+                <source>Enable inline filtering</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.duplicates">
+                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information.)</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.duplicates.none">
+                <source>No Filter</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.duplicates.soft">
+                <source>Soft Filter (by intrahash)</source>
+            </trans-unit>
+            <trans-unit id="flexform.filtering.duplicates.hard">
+                <source>Hard Filter (by interhash)</source>
+            </trans-unit>
+
+            <!-- Layout Tab -->
+
+            <trans-unit id="flexform.layout.tab">
+                <source>Layout</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.style">
+                <source>Choose your preferred Bibliography Style for this Publication List</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.lang">
+                <source>Choose your preferred language for this Publication List</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.custom">
+                <source>Alternatively, insert a custom CSL Stylesheet</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.abstract">
+                <source>Check this to enable toggle link for the publication abstract</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.bibtex">
+                <source>Check this to enable toggle link for BibTeX</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.endnote">
+                <source>Check this to enable toggle link for EndNote</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.url">
+                <source>Check this to show a link of the publication URL field</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doi">
+                <source>Check this to show a DOI link of the publication</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.host">
+                <source>Check this to show a link to the post in the publication host</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.citationNumber">
+                <source>Check this to show citation numbers for the publication list</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal">
+                <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g.
+                    Lastname, Firstname; http://www.example.com; example(at)example.com (separated by lines, use 'none'
+                    for not available). \n It is also possible to enter a URL to a text-file with a list in the
+                    described format.
+                </source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal.mode">
+                <source>Mode for personal author website (Warning: Experimental for publication)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal.none">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal.modal">
+                <source>Modal</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal.publication">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.personal.both">
+                <source>Both</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.misc">
+                <source>The following keys from misc fields contain URLs. These URLs should be rendered as links (insert
+                    a comma-separated list of keys)
+                </source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doc">
+                <source>Show thumbnails/links of private documents of your publications</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doc.none">
+                <source>No thumbnails/no links to documents</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doc.links">
+                <source>Just show links to documents</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doc.thumbs">
+                <source>Show thumbnails but do not set links to documents</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.link.doc.both">
+                <source>Show thumbnails and set links to documents</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.customCSS">
+                <source>Define layout modification using CSS</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.notes">
+                <source>Check this to show notes of the publication</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.curlybraces">
+                <source>Handle curly braces</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.curlybraces.remove">
+                <source>Remove all curly braces</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.curlybraces.keep">
+                <source>Keep all curly braces</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.curlybraces.keepmath">
+                <source>Keep curly braces in TeXs math mode</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.backslashes">
+                <source>Handle backslashes</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.backslashes.remove">
+                <source>Remove all backslashes</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.backslashes.keep">
+                <source>Keep all backslashes</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.backslashes.keepmath">
+                <source>Keep backslashes in TeXs math mode</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.bibtex.cleaning">
+                <source>BibTex cleaning (e.g. conversion from {\"a} to ä, Texs math mode will stay untouched either way)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.bibtex.escape">
+                <source>Escape special characters in the BibTeX code of the publications (e.g. %, &amp;, ~, #, _)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.bibtex.htmlencode">
+                <source>HTML-Encode special characters in the BibTeX code of the publications (e.g. ~, --, ---)</source>
+            </trans-unit>
+
+            <!-- Details Tab -->
+
+            <trans-unit id="flexform.details.tab">
+                <source>Details</source>
+            </trans-unit>
+            <trans-unit id="flexform.details.tab.description">
+                <source>Here you can configure a link to a details page on which the publication details should be
+                    displayed. Don't forget to to insert the Details View Plugin on the selected target page.
+                </source>
+            </trans-unit>
+            <trans-unit id="flexform.details.enable">
+                <source>Create a link to a Details Page View for each publication.</source>
+            </trans-unit>
+            <trans-unit id="flexform.details.page.select">
+                <source>Choose a target page on which to display the details view</source>
+            </trans-unit>
+            <trans-unit id="flexform.details.urls">
+                <source>Enable clean URLs for downloads of publications and details page. (This option requires certain
+                    options on your apache server and TYPO3 installation and will not work, unless the requirements are
+                    all met.)
+                </source>
+            </trans-unit>
+
+            <!-- Authentication -->
+
+            <trans-unit id="flexform.authentication.tab">
+                <source>Authentication</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.tab.description">
+                <source>Setup the PUMA/BibSonomy API credentials for this Plugin. You can select your pre-configured
+                    settings from the PUMA/BibSonomy Backend Module. Alternatively configure a custom API access below
+                    (Choose Host System and insert user name and API key).
+                </source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.enable.beauth.label">
+                <source>Use API credentials from PUMA/BibSonomy Backend Module</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.beauth.label">
+                <source>Choose your account</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.enable.beauth.select.beauth">
+                <source>pre-configured API configuration</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.enable.beauth.select.custom">
+                <source>custom API configuration</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.host">
+                <source>Choose your preferred Host System</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.username">
+                <source>Your user name on the Host System</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.apikey">
+                <source>Your API Key on the Host System</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.ssl.verify">
+                <source>Verify SSL CA</source>
+            </trans-unit>
+            <trans-unit id="flexform.authentication.ssl.path">
+                <source>Custom path for SSL certificates</source>
+            </trans-unit>
+
+            <!-- Tags -->
+
+            <trans-unit id="flexform.tags.related">
+                <source>Show related tags of (separate more than one tag by a space character)</source>
+            </trans-unit>
+            <trans-unit id="flexform.tags.ignore">
+                <source>Ignore the following tags</source>
+            </trans-unit>
+            <trans-unit id="flexform.tags.max">
+                <source>Maximum number of tags</source>
+            </trans-unit>
+        </body>
+    </file>
 </xliff>

@@ -6,13 +6,13 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
 use AcademicPuma\BibsonomyCsl\Domain\Repository\PublicationRepository;
-use AcademicPuma\RestClient\Authentication\BasicAuthAccessor;
+use AcademicPuma\BibsonomyCsl\Utils\ApiUtils;
 use AcademicPuma\RestClient\Config\Grouping;
 use AcademicPuma\RestClient\Config\Resourcetype;
+use AcademicPuma\RestClient\Config\RESTConfig;
 use AcademicPuma\RestClient\Model\Post;
-use AcademicPuma\RestClient\RESTClient;
+use AcademicPuma\RestClient\Model\Posts;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
@@ -27,23 +27,8 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 /**
  * PublicationController
  */
-class PublicationController extends ActionController
+class PublicationController extends ApiActionController
 {
-
-    /**
-     * publicationRepository
-     *
-     * @var PublicationRepository
-     */
-    protected $publicationRepository = null;
-
-    /**
-     * @param PublicationRepository $publicationRepository
-     */
-    public function injectPublicationRepository(PublicationRepository $publicationRepository)
-    {
-        $this->publicationRepository = $publicationRepository;
-    }
 
     /**
      * action list
@@ -52,7 +37,9 @@ class PublicationController extends ActionController
      */
     public function listAction(): ResponseInterface
     {
+        $this->makeAccessor();
 
+        $this->view->assign('posts', $this->getPosts($this->settings));
         return $this->htmlResponse();
     }
 
@@ -66,5 +53,12 @@ class PublicationController extends ActionController
     {
         $this->view->assign('publication', $publication);
         return $this->htmlResponse();
+    }
+
+    public function getPosts($settings): Posts
+    {
+        $client = ApiUtils::getRestClient($this->accessor, $settings);
+        $posts = $client->getPosts(Resourcetype::BIBTEX, Grouping::GROUP, 'kde', ['myown'], "", "", [], [], 'searchindex', 0, 20, 'xml')->model();
+        return $posts;
     }
 }

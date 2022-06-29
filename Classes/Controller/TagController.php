@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\RestClient\Model\Tag;
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -18,43 +21,26 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 /**
  * TagController
  */
-class TagController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class TagController extends ApiActionController
 {
-
-    /**
-     * tagRepository
-     *
-     * @var \AcademicPuma\BibsonomyCsl\Domain\Repository\TagRepository
-     */
-    protected $tagRepository = null;
-
-    /**
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Repository\TagRepository $tagRepository
-     */
-    public function injectTagRepository(\AcademicPuma\BibsonomyCsl\Domain\Repository\TagRepository $tagRepository)
-    {
-        $this->tagRepository = $tagRepository;
-    }
 
     /**
      * action list
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
-        $tags = $this->tagRepository->findAll();
-        $this->view->assign('tags', $tags);
         return $this->htmlResponse();
     }
 
     /**
      * action show
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Tag $tag
-     * @return \Psr\Http\Message\ResponseInterface
+     * @param Tag $tag
+     * @return ResponseInterface
      */
-    public function showAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Tag $tag): \Psr\Http\Message\ResponseInterface
+    public function showAction(Tag $tag): ResponseInterface
     {
         $this->view->assign('tag', $tag);
         return $this->htmlResponse();

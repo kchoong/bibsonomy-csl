@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\RestClient\Model\Document;
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -18,43 +21,26 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 /**
  * DocumentController
  */
-class DocumentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class DocumentController extends ApiActionController
 {
-
-    /**
-     * documentRepository
-     *
-     * @var \AcademicPuma\BibsonomyCsl\Domain\Repository\DocumentRepository
-     */
-    protected $documentRepository = null;
-
-    /**
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Repository\DocumentRepository $documentRepository
-     */
-    public function injectDocumentRepository(\AcademicPuma\BibsonomyCsl\Domain\Repository\DocumentRepository $documentRepository)
-    {
-        $this->documentRepository = $documentRepository;
-    }
 
     /**
      * action list
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
-        //$documents = $this->documentRepository->findAll();
-        //$this->view->assign('documents', $documents);
         return $this->htmlResponse();
     }
 
     /**
      * action show
      *
-     * @param \AcademicPuma\RestClient\Model\Document $document
-     * @return \Psr\Http\Message\ResponseInterface
+     * @param Document $document
+     * @return ResponseInterface
      */
-    public function showAction(\AcademicPuma\RestClient\Model\Document $document): \Psr\Http\Message\ResponseInterface
+    public function showAction(Document $document): ResponseInterface
     {
         $this->view->assign('document', $document);
         return $this->htmlResponse();
@@ -63,9 +49,9 @@ class DocumentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
     /**
      * action download
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function downloadAction(): \Psr\Http\Message\ResponseInterface
+    public function downloadAction(): ResponseInterface
     {
         return $this->htmlResponse();
     }

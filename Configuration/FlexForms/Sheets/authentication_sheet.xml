@@ -2,19 +2,18 @@
 <T3DataStructure>
     <ROOT>
         <TCEforms>
-            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.tab
+            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.tab
             </sheetTitle>
             <sheetDescription>
-                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.tab.description
+                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.tab.description
             </sheetDescription>
         </TCEforms>
         <type>array</type>
         <el>
-
-            <settings.authconfig>
+            <settings.auth.beauth>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.label
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.enable.beauth.label
                     </label>
                     <onChange>reload</onChange>
                     <config>
@@ -23,82 +22,83 @@
                         <items>
                             <numIndex index="0" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.select.custom
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.enable.beauth.select.custom
                                 </numIndex>
-                                <numIndex index="1">custom</numIndex>
+                                <numIndex index="1">false</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.enable.beauth.select.beauth
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.enable.beauth.select.beauth
                                 </numIndex>
-                                <numIndex index="1">beauth</numIndex>
+                                <numIndex index="1">true</numIndex>
                             </numIndex>
                         </items>
-                        <default>custom</default>
+                        <default>false</default>
                     </config>
                 </TCEforms>
-            </settings.authconfig>
-            <settings.authentication>
+            </settings.auth.beauth>
+
+            <settings.auth.beauthUser>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.beauth.label
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.beauth.label
                     </label>
-                    <displayCond>FIELD:settings.authconfig:=:beauth</displayCond>
+                    <displayCond>FIELD:settings.auth.beauth:=:true</displayCond>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
-                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getAuth</itemsProcFunc>
                         <maxitems>1</maxitems>
                         <size>1</size>
                     </config>
                 </TCEforms>
-            </settings.authentication>
+            </settings.auth.beauthUser>
 
-            <settings.bib_server>
+            <settings.auth.host>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.host
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.host
                     </label>
-                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <displayCond>FIELD:settings.auth.beauth:=:false</displayCond>
                     <config>
                         <type>select</type>
+                        <itemsProcFunc>AcademicPuma\BibsonomyCsl\Utils\BackendUtils->getHosts</itemsProcFunc>
                         <renderType>selectSingle</renderType>
-                        <itemsProcFunc>AcademicPuma\ExtBibsonomyCsl\Lib\Helper->user_getHosts</itemsProcFunc>
-                        <maxitems>1</maxitems>
-                        <size>1</size>
+                        <items>
+                            <!-- empty by default -->
+                        </items>
                     </config>
                 </TCEforms>
-            </settings.bib_server>
+            </settings.auth.host>
 
-            <settings.bib_login_name>
+            <settings.auth.userName>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.username
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.username
                     </label>
-                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <displayCond>FIELD:settings.auth.beauth:=:false</displayCond>
                     <config>
                         <type>input</type>
                         <size>20</size>
                         <max>50</max>
                     </config>
                 </TCEforms>
-            </settings.bib_login_name>
+            </settings.auth.userName>
 
-            <settings.bib_api_key>
+            <settings.auth.apiKey>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.apikey
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.apikey
                     </label>
-                    <displayCond>FIELD:settings.authconfig:=:custom</displayCond>
+                    <displayCond>FIELD:settings.auth.beauth:=:false</displayCond>
                     <config>
                         <type>input</type>
                         <size>32</size>
                         <max>32</max>
                     </config>
                 </TCEforms>
-            </settings.bib_api_key>
+            </settings.auth.apiKey>
 
-            <settings.ssl_verify>
+            <settings.auth.ssl>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.verify
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.ssl.verify
                     </label>
                     <config>
                         <type>select</type>
@@ -118,7 +118,7 @@
                             </numIndex>
                             <numIndex index="2" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.path
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.ssl.path
                                 </numIndex>
                                 <numIndex index="1">path</numIndex>
                             </numIndex>
@@ -128,21 +128,20 @@
                         <default>true</default>
                     </config>
                 </TCEforms>
-            </settings.ssl_verify>
+            </settings.auth.ssl>
 
-            <settings.ssl_ca_path>
+            <settings.sslPath>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.login.ssl.path
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.authentication.ssl.path
                     </label>
-                    <displayCond>FIELD:settings.ssl_verify:=:path</displayCond>
+                    <displayCond>FIELD:settings.auth.ssl:=:path</displayCond>
                     <config>
                         <type>input</type>
                         <size>32</size>
                         <max>256</max>
                     </config>
                 </TCEforms>
-            </settings.ssl_ca_path>
-
+            </settings.sslPath>
         </el>
     </ROOT>
 </T3DataStructure>

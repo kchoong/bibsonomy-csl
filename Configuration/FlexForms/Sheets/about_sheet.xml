@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <T3DataStructure>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.about.tab
+            </sheetTitle>
+            <sheetDescription>
+                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.about.tab.description
+            </sheetDescription>
+        </TCEforms>
+        <type>array</type>
+        <el>
 
+        </el>
+    </ROOT>
 </T3DataStructure>
