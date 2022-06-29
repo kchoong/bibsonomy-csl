@@ -6,28 +6,21 @@ defined('TYPO3') || die();
         'BibsonomyCsl',
         'PublicationList',
         [
+            \AcademicPuma\BibsonomyCsl\Controller\PublicationController::class => 'list, show',
             \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'list, show, download'
         ],
         // non-cacheable actions
-        [
-            \AcademicPuma\BibsonomyCsl\Controller\PublicationController::class => 'list, show'
-        ]
+        []
     );
 
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
         'BibsonomyCsl',
         'TagCloud',
         [
-            \AcademicPuma\BibsonomyCsl\Controller\PublicationController::class => 'list, show',
-            \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'list, show, download',
-            \AcademicPuma\BibsonomyCsl\Controller\TagController::class => 'list, show',
-            \AcademicPuma\BibsonomyCsl\Controller\CitationStylesheetController::class => 'list, new, create, edit, update, delete',
-            \AcademicPuma\BibsonomyCsl\Controller\AuthenticationController::class => 'list, new, create, edit, update, delete'
+            \AcademicPuma\BibsonomyCsl\Controller\TagController::class => 'list'
         ],
         // non-cacheable actions
-        [
-            \AcademicPuma\BibsonomyCsl\Controller\TagController::class => 'list'
-        ]
+        []
     );
 
     // wizards

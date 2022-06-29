@@ -19,17 +19,6 @@ defined('TYPO3') || die();
         ]
     );
 
-    /*
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bibsonomycsl_domain_model_publication', 'EXT:bibsonomy_csl/Resources/Private/Language/locallang_csh_tx_bibsonomycsl_domain_model_publication.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bibsonomycsl_domain_model_publication');
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bibsonomycsl_domain_model_document', 'EXT:bibsonomy_csl/Resources/Private/Language/locallang_csh_tx_bibsonomycsl_domain_model_document.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bibsonomycsl_domain_model_document');
-
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bibsonomycsl_domain_model_tag', 'EXT:bibsonomy_csl/Resources/Private/Language/locallang_csh_tx_bibsonomycsl_domain_model_tag.xlf');
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bibsonomycsl_domain_model_tag');
-    */
-
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addLLrefForTCAdescr('tx_bibsonomycsl_domain_model_citationstylesheet', 'EXT:bibsonomy_csl/Resources/Private/Language/locallang_csh_tx_bibsonomycsl_domain_model_citationstylesheet.xlf');
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages('tx_bibsonomycsl_domain_model_citationstylesheet');
 

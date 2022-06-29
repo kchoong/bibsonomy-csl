@@ -22,8 +22,8 @@
         "php": "^7.2 || ^8.0",
         "typo3/cms-core": "^11.5",
         "academicpuma/restclient-php": "dev-develop",
-        "academicpuma/citation-styles": "^1.0",
-        "academicpuma/citation-locales": "^1.0",
+        "citation-style-language/locales":"@dev",
+        "citation-style-language/styles":"@dev",
         "seboettg/citeproc-php": "^2.4",
         "ext-dom": "*",
         "ext-json": "*",
@@ -33,6 +33,32 @@
     "require-dev": {
         "typo3/testing-framework": "^6.9.0"
     },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "citation-style-language/locales",
+                "version": "1.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/citation-style-language/locales.git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "citation-style-language/styles",
+                "version": "1.0.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/citation-style-language/styles.git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
     "autoload": {
         "psr-4": {
             "AcademicPuma\\BibsonomyCsl\\": "Classes"
@@ -61,5 +87,7 @@
             "web-dir": ".Build/public",
             "extension-key": "bibsonomy_csl"
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

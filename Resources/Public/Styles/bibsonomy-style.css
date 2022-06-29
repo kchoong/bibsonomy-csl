@@ -1,0 +1,22 @@
+.bibsonomy-inline-list {
+    list-style-type: none;
+}
+
+.bibsonomy-inline-list > li {
+    display: inline-block;
+    font-size: 1.1em;
+    line-height: 2em;
+    margin-left: 1.5em;
+}
+
+.bibsonomy-snippet {
+    margin-bottom: 1em;
+    padding: 0.5em 0 1em 1em;
+    border-left: #ccc 1px solid;
+    display: none;
+}
+
+.bibsonomy-snippet > textarea {
+    width: 100%;
+    resize: none;
+}

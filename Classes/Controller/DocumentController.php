@@ -43,18 +43,18 @@ class DocumentController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionControl
      */
     public function listAction(): \Psr\Http\Message\ResponseInterface
     {
-        $documents = $this->documentRepository->findAll();
-        $this->view->assign('documents', $documents);
+        //$documents = $this->documentRepository->findAll();
+        //$this->view->assign('documents', $documents);
         return $this->htmlResponse();
     }
 
     /**
      * action show
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Document $document
+     * @param \AcademicPuma\RestClient\Model\Document $document
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function showAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Document $document): \Psr\Http\Message\ResponseInterface
+    public function showAction(\AcademicPuma\RestClient\Model\Document $document): \Psr\Http\Message\ResponseInterface
     {
         $this->view->assign('document', $document);
         return $this->htmlResponse();

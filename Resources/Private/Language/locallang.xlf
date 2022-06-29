@@ -3,20 +3,35 @@
 	<file source-language="en" datatype="plaintext" original="EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf" date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
 		<header/>
 		<body>
-			<trans-unit id="tx_bibsonomycsl_domain_model_publication" resname="tx_bibsonomycsl_domain_model_publication">
-				<source>Publication</source>
-			</trans-unit>
-			<trans-unit id="tx_bibsonomycsl_domain_model_document" resname="tx_bibsonomycsl_domain_model_document">
-				<source>Document</source>
-			</trans-unit>
-			<trans-unit id="tx_bibsonomycsl_domain_model_tag" resname="tx_bibsonomycsl_domain_model_tag">
-				<source>Tag</source>
-			</trans-unit>
-			<trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet" resname="tx_bibsonomycsl_domain_model_citationstylesheet">
+			<trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet">
 				<source>Citation Stylesheet</source>
 			</trans-unit>
-			<trans-unit id="tx_bibsonomycsl_domain_model_authentication" resname="tx_bibsonomycsl_domain_model_authentication">
+			<trans-unit id="tx_bibsonomycsl_domain_model_authentication">
 				<source>Authentication</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.links.doi">
+                <source>DOI</source>
+            </trans-unit>
+			<trans-unit id="bibsonomy.post.links.host.bibsonomy">
+				<source>BibSonomy-Post</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.links.host.puma">
+				<source>PUMA-Post</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.links.urn">
+				<source>URN</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.snippet.abstract">
+				<source>Abstract</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.snippet.bibtex">
+				<source>BibTeX</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.snippet.csl">
+				<source>CSL</source>
+			</trans-unit>
+			<trans-unit id="bibsonomy.post.snippet.endnote">
+				<source>EndNote</source>
 			</trans-unit>
 		</body>
 	</file>

@@ -13,24 +13,36 @@ in /Configuration/ExtensionBuilder/settings.yaml:
 
 Otherwise your changes will be overwritten the next time you save the extension in the extension builder
 
+{namespace bibsonomy = AcademicPuma\BibsonomyCsl\ViewHelpers}
+
 <f:section name="content">
-    <h1>Listing for Publication</h1>
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bibsonomy-style.css')}" />
 
     <f:flashMessages />
 
-    <table class="tx_bibsonomycsl">
-        <tr>
-            <th></th>
-            <th></th>
-        </tr>
-        <f:for each="{publications}" as="publication">
-            <tr>
-                <td><f:link.action action="edit" arguments="{publication : publication}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{publication : publication}">Delete</f:link.action></td>
-            </tr>
-        </f:for>
-    </table>
+    <div class="bibsonomy-info">
 
-    <f:link.action action="new">New Publication</f:link.action>
+    </div>
+
+    <f:for each="{posts}" as="post">
+        <div class="bibsonomy-post">
+            <div class="bibsonomy-citation">
+                <bibsonomy:Citation post="{post}" stylesheet="apa" lang="de-DE"/>
+            </div>
+            <div class="bibsonomy-extra">
+
+            </div>
+            <div class="bibsonomy-links">
+                <ul class="bibsonomy-inline-list">
+
+                    <bibsonomy:Snippet post="{post}" type="bibtex" />
+                    <bibsonomy:Link post="{post}" type="host" />
+                    <bibsonomy:Link post="{post}" type="doi" />
+                    <bibsonomy:Link post="{post}" type="urn" />
+                </ul>
+            </div>
+        </div>
+    </f:for>
+
 </f:section>
 </html>

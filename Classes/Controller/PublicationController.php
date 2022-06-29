@@ -5,6 +5,15 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\BibsonomyCsl\Domain\Repository\PublicationRepository;
+use AcademicPuma\RestClient\Authentication\BasicAuthAccessor;
+use AcademicPuma\RestClient\Config\Grouping;
+use AcademicPuma\RestClient\Config\Resourcetype;
+use AcademicPuma\RestClient\Model\Post;
+use AcademicPuma\RestClient\RESTClient;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -18,20 +27,20 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 /**
  * PublicationController
  */
-class PublicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class PublicationController extends ActionController
 {
 
     /**
      * publicationRepository
      *
-     * @var \AcademicPuma\BibsonomyCsl\Domain\Repository\PublicationRepository
+     * @var PublicationRepository
      */
     protected $publicationRepository = null;
 
     /**
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Repository\PublicationRepository $publicationRepository
+     * @param PublicationRepository $publicationRepository
      */
-    public function injectPublicationRepository(\AcademicPuma\BibsonomyCsl\Domain\Repository\PublicationRepository $publicationRepository)
+    public function injectPublicationRepository(PublicationRepository $publicationRepository)
     {
         $this->publicationRepository = $publicationRepository;
     }
@@ -39,22 +48,21 @@ class PublicationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionCont
     /**
      * action list
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
-        $publications = $this->publicationRepository->findAll();
-        $this->view->assign('publications', $publications);
+
         return $this->htmlResponse();
     }
 
     /**
      * action show
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Publication $publication
-     * @return \Psr\Http\Message\ResponseInterface
+     * @param Post $publication
+     * @return ResponseInterface
      */
-    public function showAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Publication $publication): \Psr\Http\Message\ResponseInterface
+    public function showAction(Post $publication): ResponseInterface
     {
         $this->view->assign('publication', $publication);
         return $this->htmlResponse();
