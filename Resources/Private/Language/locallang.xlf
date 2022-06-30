@@ -18,6 +18,9 @@
 			<trans-unit id="bibsonomy.post.links.host.puma">
 				<source>PUMA-Post</source>
 			</trans-unit>
+			<trans-unit id="bibsonomy.post.links.url">
+				<source>URL</source>
+			</trans-unit>
 			<trans-unit id="bibsonomy.post.links.urn">
 				<source>URN</source>
 			</trans-unit>

@@ -58,12 +58,20 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             <bibsonomy:Snippet post="{post}" type="endnote" mode="link"/>
                         </f:if>
 
+                        <f:if condition="{layout.linkUrl} == '1'">
+                            <bibsonomy:Link post="{post}" type="url"/>
+                        </f:if>
+
                         <f:if condition="{layout.linkDoi} == '1'">
                             <bibsonomy:Link post="{post}" type="doi"/>
                         </f:if>
 
                         <f:if condition="{layout.linkHost} == '1'">
                             <bibsonomy:Link post="{post}" type="host"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkMisc}">
+                            <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
                         </f:if>
                     </ul>
                 </div>

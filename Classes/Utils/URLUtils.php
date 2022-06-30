@@ -2,10 +2,18 @@
 
 namespace AcademicPuma\BibsonomyCsl\Utils;
 
-use AcademicPuma\RestClient\Model\Post;
+use TYPO3\CMS\Core\Exception;
 
 class URLUtils
 {
+    const URL_PATTERN = '#((https?|ftp):\/\/(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i';
+
+    public static function isUrl($string): bool
+    {
+        $match = preg_match(self::URL_PATTERN, $string);
+
+        return $match > 0;
+    }
 
     public static function getDOIUrl(string $doi): string
     {
