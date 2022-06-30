@@ -5,6 +5,11 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\BibsonomyCsl\Domain\Model\Authentication;
+use AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository;
+use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -18,20 +23,20 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 /**
  * AuthenticationController
  */
-class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class AuthenticationController extends ActionController
 {
 
     /**
      * authenticationRepository
      *
-     * @var \AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository
+     * @var AuthenticationRepository
      */
     protected $authenticationRepository = null;
 
     /**
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository $authenticationRepository
+     * @param AuthenticationRepository $authenticationRepository
      */
-    public function injectAuthenticationRepository(\AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository $authenticationRepository)
+    public function injectAuthenticationRepository(AuthenticationRepository $authenticationRepository)
     {
         $this->authenticationRepository = $authenticationRepository;
     }
@@ -39,9 +44,9 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action list
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
         $authentications = $this->authenticationRepository->findAll();
         $this->view->assign('authentications', $authentications);
@@ -51,9 +56,9 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action new
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function newAction(): \Psr\Http\Message\ResponseInterface
+    public function newAction(): ResponseInterface
     {
         return $this->htmlResponse();
     }
@@ -61,9 +66,9 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action create
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $newAuthentication
+     * @param Authentication $newAuthentication
      */
-    public function createAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $newAuthentication)
+    public function createAction(Authentication $newAuthentication)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->authenticationRepository->add($newAuthentication);
@@ -73,11 +78,11 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action edit
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication
+     * @param Authentication $authentication
      * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation("authentication")
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function editAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication): \Psr\Http\Message\ResponseInterface
+    public function editAction(Authentication $authentication): ResponseInterface
     {
         $this->view->assign('authentication', $authentication);
         return $this->htmlResponse();
@@ -86,9 +91,9 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action update
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication
+     * @param Authentication $authentication
      */
-    public function updateAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication)
+    public function updateAction(Authentication $authentication)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->authenticationRepository->update($authentication);
@@ -98,9 +103,9 @@ class AuthenticationController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionC
     /**
      * action delete
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication
+     * @param Authentication $authentication
      */
-    public function deleteAction(\AcademicPuma\BibsonomyCsl\Domain\Model\Authentication $authentication)
+    public function deleteAction(Authentication $authentication)
     {
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->authenticationRepository->remove($authentication);

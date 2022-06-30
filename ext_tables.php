@@ -4,18 +4,18 @@ defined('TYPO3') || die();
 (static function() {
     \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
         'BibsonomyCsl',
-        'web',
+        'system',
         'backend',
         '',
         [
-            \AcademicPuma\BibsonomyCsl\Controller\AuthenticationController::class => 'list, new, create, edit, update, delete',
+            \AcademicPuma\BibsonomyCsl\Controller\BackendController::class => 'index',
             \AcademicPuma\BibsonomyCsl\Controller\CitationStylesheetController::class => 'list, new, create, edit, update, delete',
-            
+            \AcademicPuma\BibsonomyCsl\Controller\AuthenticationController::class => 'list, new, create, edit, update, delete',
         ],
         [
             'access' => 'user,group',
             'icon'   => 'EXT:bibsonomy_csl/Resources/Public/Icons/user_mod_backend.svg',
-            'labels' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf',
+            'labels' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf',
         ]
     );
 

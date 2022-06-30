@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet;
+use AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository;
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -24,14 +28,14 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * citationStylesheetRepository
      *
-     * @var \AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository
+     * @var CitationStylesheetRepository
      */
     protected $citationStylesheetRepository = null;
 
     /**
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository $citationStylesheetRepository
+     * @param CitationStylesheetRepository $citationStylesheetRepository
      */
-    public function injectCitationStylesheetRepository(\AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository $citationStylesheetRepository)
+    public function injectCitationStylesheetRepository(CitationStylesheetRepository $citationStylesheetRepository)
     {
         $this->citationStylesheetRepository = $citationStylesheetRepository;
     }
@@ -39,9 +43,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action list
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function listAction(): \Psr\Http\Message\ResponseInterface
+    public function listAction(): ResponseInterface
     {
         $citationStylesheets = $this->citationStylesheetRepository->findAll();
         $this->view->assign('citationStylesheets', $citationStylesheets);
@@ -51,9 +55,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action new
      *
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function newAction(): \Psr\Http\Message\ResponseInterface
+    public function newAction(): ResponseInterface
     {
         return $this->htmlResponse();
     }
@@ -61,9 +65,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action create
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $newCitationStylesheet
+     * @param CitationStylesheet $newCitationStylesheet
      */
-    public function createAction(\AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $newCitationStylesheet)
+    public function createAction(CitationStylesheet $newCitationStylesheet)
     {
         $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->citationStylesheetRepository->add($newCitationStylesheet);
@@ -73,11 +77,11 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action edit
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet
+     * @param CitationStylesheet $citationStylesheet
      * @TYPO3\CMS\Extbase\Annotation\IgnoreValidation("citationStylesheet")
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function editAction(\AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet): \Psr\Http\Message\ResponseInterface
+    public function editAction(CitationStylesheet $citationStylesheet): ResponseInterface
     {
         $this->view->assign('citationStylesheet', $citationStylesheet);
         return $this->htmlResponse();
@@ -86,9 +90,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action update
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet
+     * @param CitationStylesheet $citationStylesheet
      */
-    public function updateAction(\AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet)
+    public function updateAction(CitationStylesheet $citationStylesheet)
     {
         $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->citationStylesheetRepository->update($citationStylesheet);
@@ -98,9 +102,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     /**
      * action delete
      *
-     * @param \AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet
+     * @param CitationStylesheet $citationStylesheet
      */
-    public function deleteAction(\AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet $citationStylesheet)
+    public function deleteAction(CitationStylesheet $citationStylesheet)
     {
         $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->citationStylesheetRepository->remove($citationStylesheet);

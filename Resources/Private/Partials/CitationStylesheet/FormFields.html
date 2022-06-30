@@ -1,3 +1,19 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="title">
+    <f:translate key="tx_bibsonomycsl_domain_model_citationstylesheet.name"/>
+    <i class="required">(required)</i>
+</label>
+<br/>
+<f:form.textfield property="name"/>
 
+<br/>
+
+<label for="xmlSource">
+    <f:translate key="tx_bibsonomycsl_domain_model_citationstylesheet.xmlSource"/>
+    <i class="required">(required)</i>
+</label>
+<br/>
+<f:form.textarea property="xmlSource"/>
+
+<br/>
 </html>

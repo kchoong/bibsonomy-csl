@@ -8,8 +8,9 @@ use AcademicPuma\RestClient\Authentication\OAuthAccessor;
 use Exception;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
-class ApiActionController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class ApiActionController extends ActionController
 {
     protected $host;
     protected $accessor;
