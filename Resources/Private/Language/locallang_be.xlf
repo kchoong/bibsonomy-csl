@@ -261,6 +261,9 @@
             <trans-unit id="flexform.layout.link.bibtex">
                 <source>Check this to enable toggle link for BibTeX</source>
             </trans-unit>
+            <trans-unit id="flexform.layout.link.csl">
+                <source>Check this to enable toggle link for CSL</source>
+            </trans-unit>
             <trans-unit id="flexform.layout.link.endnote">
                 <source>Check this to enable toggle link for EndNote</source>
             </trans-unit>
@@ -276,9 +279,9 @@
             <trans-unit id="flexform.layout.citationNumber">
                 <source>Check this to show citation numbers for the publication list</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.personal">
+            <trans-unit id="flexform.layout.link.personal.list">
                 <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g.
-                    Lastname, Firstname; http://www.example.com; example(at)example.com (separated by lines, use 'none'
+                    Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
                     for not available). \n It is also possible to enter a URL to a text-file with a list in the
                     described format.
                 </source>

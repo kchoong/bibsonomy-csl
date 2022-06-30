@@ -37,9 +37,20 @@ class PublicationController extends ApiActionController
      */
     public function listAction(): ResponseInterface
     {
+        // create API accessor
         $this->makeAccessor();
 
-        $this->view->assign('posts', $this->getPosts($this->settings));
+        // assign settings to view
+        $this->view->assign('settings', $this->settings);
+        $this->view->assign('grouping', $this->settings['grouping']);
+        $this->view->assign('sorting', $this->settings['sorting']);
+        $this->view->assign('filtering', $this->settings['filtering']);
+        $this->view->assign('layout', $this->settings['layout']);
+
+        // assign posts
+        $posts = $this->getPosts($this->settings);
+        $this->view->assign('posts', $posts);
+
         return $this->htmlResponse();
     }
 
@@ -55,10 +66,25 @@ class PublicationController extends ApiActionController
         return $this->htmlResponse();
     }
 
-    public function getPosts($settings): Posts
+    public function getPosts(array $settings): array
     {
+        $contentSettings = $settings['content'];
+        $grouping = $contentSettings['sourceType'];
+        $groupingName = $contentSettings['sourceId'];
+
+        $resourceType = Resourcetype::BIBTEX;
+        if ($grouping === Grouping::PERSON) {
+            $resourceType = Resourcetype::GOLD_STANDARD_PUBLICATION;
+        }
+
         $client = ApiUtils::getRestClient($this->accessor, $settings);
-        $posts = $client->getPosts(Resourcetype::BIBTEX, Grouping::GROUP, 'kde', ['myown'], "", "", [], [], 'searchindex', 0, 20, 'xml')->model();
+        $client->getPosts($resourceType, $grouping, $groupingName, [], "", $contentSettings['search'], [], [], 'searchindex', 0, 20, 'xml')->model();
+        $posts = $client->model()->toArray();
         return $posts;
+    }
+
+    public function preparePosts(array $settings, Posts $posts): void
+    {
+
     }
 }

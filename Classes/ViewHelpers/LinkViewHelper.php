@@ -44,12 +44,6 @@ class LinkViewHelper extends AbstractViewHelper
                     return self::renderHost($host, $type);
                 }
                 break;
-            case 'urn':
-                $urn = $resource->getMiscField('urn');
-                if ($urn) {
-                    return self::renderURN($urn, $type);
-                }
-                break;
             default:
                 break;
         }
@@ -72,13 +66,6 @@ class LinkViewHelper extends AbstractViewHelper
         }
 
         return self::createLink($host, $type, $label);
-    }
-
-    static private function renderURN(string $urn, string $type): string
-    {
-        $url = URLUtils::getURNUrl($urn);
-        $label = LocalizationUtility::translate('bibsonomy.post.links.urn', 'BibsonomyCsl');
-        return self::createLink($url, $type, $label);
     }
 
     static private function createLink(string $url, string $type, string $label): string

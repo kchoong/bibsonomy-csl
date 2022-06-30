@@ -52,13 +52,7 @@ class CitationViewHelper extends AbstractViewHelper
             $cslRenderer = new CSLModelRenderer();
             $citeProc = new CiteProc(StyleSheet::loadStyleSheet($arguments['stylesheet']), $arguments['lang'], $additionalMarkup);
             $csl = $cslRenderer->render($arguments['post']);
-            /*
-            if (($csl)) {
-                $output .= $citeProc->render(array($csl));
-            } else {
-                throw new Exception("CSL object missing");
-            }
-            */
+            $output .= $citeProc->render(array((object) $csl));
         } catch (Exception | CiteProcException $e) {
             return $e->getMessage();
         }

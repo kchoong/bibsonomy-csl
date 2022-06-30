@@ -131,7 +131,18 @@
                 </TCEforms>
             </settings.layout.linkBibtex>
 
-            <settings.layout.linkBibtex>
+            <settings.layout.linkCsl>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.csl
+                    </label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.layout.linkCsl>
+
+            <settings.layout.linkEndnote>
                 <TCEforms>
                     <label>
                         LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.endnote
@@ -140,7 +151,7 @@
                         <type>check</type>
                     </config>
                 </TCEforms>
-            </settings.layout.linkBibtex>
+            </settings.layout.linkEndnote>
 
             <settings.layout.linkUrl>
                 <TCEforms>
