@@ -43,7 +43,7 @@ class CitationViewHelper extends AbstractViewHelper
                     'function' => function($cslItem, $renderedText) {
                         return '<span class="csl-number">' . $cslItem->citationNumber . '</span>';
                     },
-                    'affixes' => false
+                    'affixes' => true
                 ],
                 "title" => [
                     'function' => function($cslItem, $renderedText) {
