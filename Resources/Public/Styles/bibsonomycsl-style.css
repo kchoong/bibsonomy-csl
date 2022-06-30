@@ -2,8 +2,18 @@
     list-style-type: none;
 }
 
+.bibsonomy-post {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.bibsonomy-links {
+    width: 100%;
+}
+
 .bibsonomy-inline-list {
     list-style-type: none;
+    float: right;
 }
 
 .bibsonomy-inline-list > li {
@@ -11,6 +21,10 @@
     font-size: 1.1em;
     line-height: 2em;
     margin-left: 1.5em;
+}
+
+.bibsonomy-snippets {
+    margin-top: 10px;
 }
 
 .bibsonomy-snippet {
@@ -23,4 +37,22 @@
 .bibsonomy-snippet > textarea {
     width: 100%;
     resize: none;
+}
+
+.bibsonomy-thumbnail {
+    background-color: #efefef;
+    border: #ccc 1px solid;
+    border-radius: 2px;
+    padding: 3px;
+    margin-right: 10px;
+    display: block;
+    overflow: hidden;
+    width: 65px;
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
 }

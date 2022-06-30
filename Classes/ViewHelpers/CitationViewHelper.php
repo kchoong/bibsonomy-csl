@@ -32,17 +32,25 @@ class CitationViewHelper extends AbstractViewHelper
     ): string
     {
         $additionalMarkup = [
-            "title" => [
-                'function' => function ($cslItem, $renderedText) {
-                    return '<span class="citeproc-title">' . $renderedText . '</span>';
-                },
-                'affixes' => false
-            ],
-            "citation-number" => [
-                'function' => function ($cslItem, $renderedText) {
-                    return '<span class="citation-number">' . $cslItem->citationNumber . '</span>';
-                },
-                'affixes' => true
+            "bibliography" => [
+                "author" => [
+                    'function' => function($cslItem, $renderedText) {
+                        return '<span class="csl-author">' . $renderedText . '</span>';
+                    },
+                    'affixes' => true
+                ],
+                "citation-number" => [
+                    'function' => function($cslItem, $renderedText) {
+                        return '<span class="csl-number">' . $cslItem->citationNumber . '</span>';
+                    },
+                    'affixes' => false
+                ],
+                "title" => [
+                    'function' => function($cslItem, $renderedText) {
+                        return '<span class="csl-title">' . $renderedText . '</span>';
+                    },
+                    'affixes' => true
+                ]
             ]
         ];
 

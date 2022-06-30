@@ -96,7 +96,7 @@ class SnippetViewHelper extends AbstractViewHelper
         if ($mode == 'snippet') {
             $renderer = new CSLModelRenderer();
             $csl = $renderer->render($post);
-            return self::createSnippet($id, $type, json_encode($csl));
+            return self::createSnippet($id, $type, json_encode($csl, JSON_PRETTY_PRINT));
         } else {
             return self::createLink($intrahash, $id, $type, $label);
         }

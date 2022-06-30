@@ -28,8 +28,12 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <ul class="bibsonomy-posts">
         <f:for each="{posts}" as="post">
             <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
+                <div class="bibsonomy-thumbnail">
+                    <bibsonomy:Thumbnail post="{post}"/>
+                </div>
+
                 <div class="bibsonomy-citation">
-                    <bibsonomy:Citation post="{post}" stylesheet="apa" lang="de-DE"/>
+                    <bibsonomy:Citation post="{post}" stylesheet="springer-lecture-notes-in-computer-science" lang="de-DE"/>
                 </div>
 
                 <div class="bibsonomy-extra">
@@ -63,6 +67,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         </f:if>
                     </ul>
                 </div>
+
+                <div class="clearfix"><!-- keep me --></div>
 
                 <div class="bibsonomy-snippets">
                     <f:if condition="{layout.linkAbstract} == '1'">
