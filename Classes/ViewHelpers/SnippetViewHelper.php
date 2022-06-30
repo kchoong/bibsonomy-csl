@@ -61,69 +61,73 @@ class SnippetViewHelper extends AbstractViewHelper
     private static function renderAbstract(Post $post, string $type, string $mode): string
     {
         $intrahash = $post->getResource()->getIntraHash();
-        $id = self::generateSnippetId($intrahash, $type);
+        $postId = "bibsonomy-post-$intrahash";
+        $snippetId = "bibsonomy-$type-$intrahash";
         $label = LocalizationUtility::translate('bibsonomy.post.snippet.abstract', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $abstract = $post->getResource()->getBibtexAbstract();
-            return self::createSnippet($id, $type, $abstract);
+            return self::createSnippet($snippetId, $type, $abstract);
         } else {
-            return self::createLink($intrahash, $id, $type, $label);
+            return self::createLink($postId, $snippetId, $type, $label);
         }
     }
 
     private static function renderBibtex(Post $post, string $type, string $mode): string
     {
         $intrahash = $post->getResource()->getIntraHash();
-        $id = self::generateSnippetId($intrahash, $type);
+        $postId = "bibsonomy-post-$intrahash";
+        $snippetId = "bibsonomy-$type-$intrahash";
         $label = LocalizationUtility::translate('bibsonomy.post.snippet.bibtex', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new BibtexModelRenderer();
             $bibtex = $renderer->render($post);
-            return self::createSnippet($id, $type, $bibtex);
+            return self::createSnippet($snippetId, $type, $bibtex);
         } else {
-            return self::createLink($intrahash, $id, $type, $label);
+            return self::createLink($postId, $snippetId, $type, $label);
         }
     }
 
     private static function renderCSL(Post $post, string $type, string $mode): string
     {
         $intrahash = $post->getResource()->getIntraHash();
-        $id = self::generateSnippetId($intrahash, $type);
+        $postId = "bibsonomy-post-$intrahash";
+        $snippetId = "bibsonomy-$type-$intrahash";
         $label = LocalizationUtility::translate('bibsonomy.post.snippet.csl', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new CSLModelRenderer();
             $csl = $renderer->render($post);
-            return self::createSnippet($id, $type, json_encode($csl, JSON_PRETTY_PRINT));
+            return self::createSnippet($snippetId, $type, json_encode($csl, JSON_PRETTY_PRINT));
         } else {
-            return self::createLink($intrahash, $id, $type, $label);
+            return self::createLink($postId, $snippetId, $type, $label);
         }
     }
 
     private static function renderEndnote(Post $post, string $type, string $mode): string
     {
         $intrahash = $post->getResource()->getIntraHash();
-        $id = self::generateSnippetId($intrahash, $type);
+        $postId = "bibsonomy-post-$intrahash";
+        $snippetId = "bibsonomy-$type-$intrahash";
         $label = LocalizationUtility::translate('bibsonomy.post.snippet.endnote', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new EndnoteModelRenderer();
             $endnote = $renderer->render($post);
-            return self::createSnippet($id, $type, $endnote);
+            return self::createSnippet($snippetId, $type, $endnote);
         } else {
-            return self::createLink($intrahash, $id, $type, $label);
+            return self::createLink($postId, $snippetId, $type, $label);
         }
     }
 
-    static private function createLink(string $intrahash, string $id, string $type, string $label): string
+    static private function createLink(string $postId, string $snippetId, string $type, string $label): string
     {
         $link = new TagBuilder('a');
-        $link->addAttribute('href', '#');
+        $link->addAttribute('href', "#$postId");
         $link->addAttribute('onclick', "toggleSnippet(this)");
-        $link->addAttribute('data-intrahash', $intrahash);
-        $link->addAttribute('data-snippet', $id);
+        $link->addAttribute('data-post', $postId);
+        $link->addAttribute('data-snippet', $snippetId);
         $link->setContent($label);
 
         $button = new TagBuilder('li');
@@ -133,7 +137,7 @@ class SnippetViewHelper extends AbstractViewHelper
         return $button->render();
     }
 
-    static private function createSnippet(string $id, string $type, string $content): string
+    static private function createSnippet(string $snippetId, string $type, string $content): string
     {
         $textarea = new TagBuilder('textarea');
         $textarea->addAttribute('readonly', 'readonly');
@@ -142,13 +146,10 @@ class SnippetViewHelper extends AbstractViewHelper
         $textarea->setContent($content);
 
         $container = new TagBuilder('div');
-        $container->addAttribute('id', $id);
+        $container->addAttribute('id', $snippetId);
         $container->addAttribute('class', "bibsonomy-snippet bibsonomy-snippet-$type");
         $container->setContent($textarea->render());
         return $container->render();
     }
 
-    static private function generateSnippetId(string $intrahash, string $type) {
-        return "bibsonomy-$type-$intrahash";
-    }
 }

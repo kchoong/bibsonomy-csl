@@ -210,15 +210,15 @@
                         <default>0</default>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.filter.duplicates.none</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.none</numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.filter.duplicates.soft</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.soft</numIndex>
                                 <numIndex index="1">1</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.filter.duplicates.hard</numIndex>
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.hard</numIndex>
                                 <numIndex index="1">2</numIndex>
                             </numIndex>
                         </items>
