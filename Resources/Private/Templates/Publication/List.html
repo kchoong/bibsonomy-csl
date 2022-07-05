@@ -1,0 +1,102 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default"/>
+
+This template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+Resources:
+Private:
+Templates:
+Publication:
+List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+{namespace bibsonomy = AcademicPuma\BibsonomyCsl\ViewHelpers}
+
+<f:section name="content">
+    <script src="{f:uri.resource(path: 'Scripts/bibsonomycsl-script.js')}"></script>
+    <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bibsonomycsl-style.css')}"/>
+
+    <f:flashMessages/>
+
+    <div class="bibsonomy-info">
+
+    </div>
+
+    <ul class="bibsonomy-posts">
+        <f:for each="{posts}" as="post">
+            <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
+                <div class="bibsonomy-thumbnail">
+                    <bibsonomy:Thumbnail post="{post}"/>
+                </div>
+
+                <div class="bibsonomy-citation">
+                    <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
+                </div>
+
+                <div class="bibsonomy-extra">
+
+                </div>
+
+                <div class="bibsonomy-links">
+                    <ul class="bibsonomy-inline-list">
+                        <f:if condition="{layout.linkAbstract} == '1'">
+                            <bibsonomy:Snippet post="{post}" type="abstract" mode="link"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkBibtex} == '1'">
+                            <bibsonomy:Snippet post="{post}" type="bibtex" mode="link"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkCsl} == '1'">
+                            <bibsonomy:Snippet post="{post}" type="csl" mode="link"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkEndnote} == '1'">
+                            <bibsonomy:Snippet post="{post}" type="endnote" mode="link"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkUrl} == '1'">
+                            <bibsonomy:Link post="{post}" type="url"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkDoi} == '1'">
+                            <bibsonomy:Link post="{post}" type="doi"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkHost} == '1'">
+                            <bibsonomy:Link post="{post}" type="host"/>
+                        </f:if>
+
+                        <f:if condition="{layout.linkMisc}">
+                            <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
+                        </f:if>
+                    </ul>
+                </div>
+
+                <div class="clearfix"><!-- keep me --></div>
+
+                <div class="bibsonomy-snippets">
+                    <f:if condition="{layout.linkAbstract} == '1'">
+                        <bibsonomy:Snippet post="{post}" type="abstract" mode="snippet"/>
+                    </f:if>
+
+                    <f:if condition="{layout.linkBibtex} == '1'">
+                        <bibsonomy:Snippet post="{post}" type="bibtex" mode="snippet"/>
+                    </f:if>
+
+                    <f:if condition="{layout.linkCsl} == '1'">
+                        <bibsonomy:Snippet post="{post}" type="csl" mode="snippet"/>
+                    </f:if>
+
+                    <f:if condition="{layout.linkEndnote} == '1'">
+                        <bibsonomy:Snippet post="{post}" type="endnote" mode="snippet"/>
+                    </f:if>
+                </div>
+            </li>
+        </f:for>
+    </ul>
+</f:section>
+</html>
