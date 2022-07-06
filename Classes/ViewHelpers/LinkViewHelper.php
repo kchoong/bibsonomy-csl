@@ -70,7 +70,7 @@ class LinkViewHelper extends AbstractViewHelper
     static private function renderDOI(string $doi, string $type): string
     {
         $url = URLUtils::getDOIUrl($doi);
-        $label = LocalizationUtility::translate('bibsonomy.post.links.doi', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.links.doi', 'BibsonomyCsl');
         return self::createLink($url, $type, $label);
     }
 
@@ -84,7 +84,7 @@ class LinkViewHelper extends AbstractViewHelper
         $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
         $uriBuilder->reset();
         $url = $uriBuilder->uriFor('download', $arguments, 'Document', 'bibsonomycsl', 'publicationlist');
-        $label = LocalizationUtility::translate('bibsonomy.post.links.download', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.links.download', 'BibsonomyCsl');
 
         return self::createLink($url, $type, $label);
     }
@@ -93,7 +93,7 @@ class LinkViewHelper extends AbstractViewHelper
     {
         $label = LocalizationUtility::translate('bibsonomy.post.links.host.puma', 'BibsonomyCsl');
         if (strpos($host, 'bibsonomy.org') >= 0) {
-            $label = LocalizationUtility::translate('bibsonomy.post.links.host.bibsonomy', 'BibsonomyCsl');
+            $label = LocalizationUtility::translate('post.links.host.bibsonomy', 'BibsonomyCsl');
         }
 
         return self::createLink($host, $type, $label);
@@ -101,7 +101,7 @@ class LinkViewHelper extends AbstractViewHelper
 
     static private function renderUrl(string $url, string $type): string
     {
-        $label = LocalizationUtility::translate('bibsonomy.post.links.url', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.links.url', 'BibsonomyCsl');
         return self::createLink($url, $type, $label);
     }
 

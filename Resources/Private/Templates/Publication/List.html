@@ -25,88 +25,106 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
     </div>
 
-    <ul class="bibsonomy-posts">
-        <f:for each="{posts}" as="post">
-            <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
-                <f:if condition="{layout.thumbnail} != '0'">
-                    <div class="bibsonomy-thumbnail">
-                        <bibsonomy:Thumbnail post="{post}" type="{layout.thumbnail}"/>
-                    </div>
-                </f:if>
+    <div class="bibsonomy-container" id="bibsonomy-container-{listHash}">
+        <f:if condition="{grouping.key} != 'none'">
+            <f:if condition="{grouping.anchors}">
+                <ul class="bibsonomy-anchors bibsonomy-inline-list">
+                    <f:for each="{posts}" as="groups" key="group">
+                        <bibsonomy:Anchor group="{group}" groupingKey="{grouping.key}" />
+                    </f:for>
+                </ul>
+            </f:if>
+        </f:if>
 
-                <div class="bibsonomy-citation {f:if(condition: '{layout.thumbnail} != 0', then: 'bibsonomy-citation-thumbnail')}">
-                    <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
+        <f:for each="{posts}" as="groups" key="group">
+            <f:if condition="{grouping.key} != 'none'">
+                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" />
+            </f:if>
 
-                    <div class="bibsonomy-extra">
-                        <f:if condition="{layout.notes}">
-                            <bibsonomy:Notes post="{post}"/>
-                        </f:if>
-                    </div>
-                </div>
-
-                <div class="clearfix"><!-- keep me --></div>
-
-                <div class="bibsonomy-links">
-                    <ul class="bibsonomy-inline-list">
-                        <f:if condition="{layout.linkAbstract} == '1'">
-                            <bibsonomy:Snippet post="{post}" type="abstract" mode="link"/>
+            <ul class="bibsonomy-posts">
+                <f:for each="{groups}" as="post">
+                    <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
+                        <f:if condition="{layout.thumbnail} != '0'">
+                            <div class="bibsonomy-thumbnail">
+                                <bibsonomy:Thumbnail post="{post}" type="{layout.thumbnail}"/>
+                            </div>
                         </f:if>
 
-                        <f:if condition="{layout.linkBibtex} == '1'">
-                            <bibsonomy:Snippet post="{post}" type="bibtex" mode="link"/>
-                        </f:if>
+                        <div class="bibsonomy-citation {f:if(condition: '{layout.thumbnail} != 0', then: 'bibsonomy-citation-thumbnail')}">
+                            <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
 
-                        <f:if condition="{layout.linkCsl} == '1'">
-                            <bibsonomy:Snippet post="{post}" type="csl" mode="link"/>
-                        </f:if>
+                            <div class="bibsonomy-extra">
+                                <f:if condition="{layout.notes}">
+                                    <bibsonomy:Notes post="{post}"/>
+                                </f:if>
+                            </div>
+                        </div>
 
-                        <f:if condition="{layout.linkEndnote} == '1'">
-                            <bibsonomy:Snippet post="{post}" type="endnote" mode="link"/>
-                        </f:if>
+                        <div class="clearfix"><!-- keep me --></div>
 
-                        <f:if condition="{layout.linkUrl} == '1'">
-                            <bibsonomy:Link post="{post}" type="url"/>
-                        </f:if>
+                        <div class="bibsonomy-links">
+                            <ul class="bibsonomy-links-list bibsonomy-inline-list">
+                                <f:if condition="{layout.linkAbstract} == '1'">
+                                    <bibsonomy:Snippet post="{post}" type="abstract" mode="link"/>
+                                </f:if>
 
-                        <f:if condition="{layout.linkDoi} == '1'">
-                            <bibsonomy:Link post="{post}" type="doi"/>
-                        </f:if>
+                                <f:if condition="{layout.linkBibtex} == '1'">
+                                    <bibsonomy:Snippet post="{post}" type="bibtex" mode="link"/>
+                                </f:if>
 
-                        <f:if condition="{layout.linkHost} == '1'">
-                            <bibsonomy:Link post="{post}" type="host"/>
-                        </f:if>
+                                <f:if condition="{layout.linkCsl} == '1'">
+                                    <bibsonomy:Snippet post="{post}" type="csl" mode="link"/>
+                                </f:if>
 
-                        <f:if condition="{intval(layout.thumbnail)} > 1">
-                            <bibsonomy:Link post="{post}" type="download"/>
-                        </f:if>
+                                <f:if condition="{layout.linkEndnote} == '1'">
+                                    <bibsonomy:Snippet post="{post}" type="endnote" mode="link"/>
+                                </f:if>
 
-                        <f:if condition="{layout.linkMisc}">
-                            <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
-                        </f:if>
-                    </ul>
-                </div>
+                                <f:if condition="{layout.linkUrl} == '1'">
+                                    <bibsonomy:Link post="{post}" type="url"/>
+                                </f:if>
 
-                <div class="clearfix"><!-- keep me --></div>
+                                <f:if condition="{layout.linkDoi} == '1'">
+                                    <bibsonomy:Link post="{post}" type="doi"/>
+                                </f:if>
 
-                <div class="bibsonomy-snippets">
-                    <f:if condition="{layout.linkAbstract} == '1'">
-                        <bibsonomy:Snippet post="{post}" type="abstract" mode="snippet"/>
-                    </f:if>
+                                <f:if condition="{layout.linkHost} == '1'">
+                                    <bibsonomy:Link post="{post}" type="host"/>
+                                </f:if>
 
-                    <f:if condition="{layout.linkBibtex} == '1'">
-                        <bibsonomy:Snippet post="{post}" type="bibtex" mode="snippet"/>
-                    </f:if>
+                                <f:if condition="{intval(layout.thumbnail)} > 1">
+                                    <bibsonomy:Link post="{post}" type="download"/>
+                                </f:if>
 
-                    <f:if condition="{layout.linkCsl} == '1'">
-                        <bibsonomy:Snippet post="{post}" type="csl" mode="snippet"/>
-                    </f:if>
+                                <f:if condition="{layout.linkMisc}">
+                                    <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
+                                </f:if>
+                            </ul>
+                        </div>
 
-                    <f:if condition="{layout.linkEndnote} == '1'">
-                        <bibsonomy:Snippet post="{post}" type="endnote" mode="snippet"/>
-                    </f:if>
-                </div>
-            </li>
+                        <div class="clearfix"><!-- keep me --></div>
+
+                        <div class="bibsonomy-snippets">
+                            <f:if condition="{layout.linkAbstract} == '1'">
+                                <bibsonomy:Snippet post="{post}" type="abstract" mode="snippet"/>
+                            </f:if>
+
+                            <f:if condition="{layout.linkBibtex} == '1'">
+                                <bibsonomy:Snippet post="{post}" type="bibtex" mode="snippet"/>
+                            </f:if>
+
+                            <f:if condition="{layout.linkCsl} == '1'">
+                                <bibsonomy:Snippet post="{post}" type="csl" mode="snippet"/>
+                            </f:if>
+
+                            <f:if condition="{layout.linkEndnote} == '1'">
+                                <bibsonomy:Snippet post="{post}" type="endnote" mode="snippet"/>
+                            </f:if>
+                        </div>
+                    </li>
+                </f:for>
+            </ul>
         </f:for>
-    </ul>
+    </div>
 </f:section>
 </html>

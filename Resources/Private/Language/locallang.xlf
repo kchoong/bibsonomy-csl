@@ -9,34 +9,116 @@
 			<trans-unit id="tx_bibsonomycsl_domain_model_authentication">
 				<source>Authentication</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.links.doi">
+
+			<trans-unit id="entrytype.article">
+				<source>Article in journal, newspaper, or magazine</source>
+			</trans-unit>
+			<trans-unit id="entrytype.article.short">
+				<source>Article</source>
+			</trans-unit>
+			<trans-unit id="entrytype.book">
+				<source>Book or Conference Proceedings</source>
+			</trans-unit>
+			<trans-unit id="entrytype.book.short">
+				<source>Book</source>
+			</trans-unit>
+			<trans-unit id="entrytype.inproceedings">
+				<source>Article in Conference Proceedings</source>
+			</trans-unit>
+			<trans-unit id="entrytype.inproceedings.short">
+				<source>Inproceedings</source>
+			</trans-unit>
+			<trans-unit id="entrytype.phdthesis">
+				<source>PhD or Master Thesis</source>
+			</trans-unit>
+			<trans-unit id="entrytype.phdthesis.short">
+				<source>Thesis</source>
+			</trans-unit>
+			<trans-unit id="entrytype.incollection">
+				<source>Chapter (part of a book)</source>
+			</trans-unit>
+			<trans-unit id="entrytype.incollection.short">
+				<source>Chapter</source>
+			</trans-unit>
+			<trans-unit id="entrytype.techreport">
+				<source>Report</source>
+			</trans-unit>
+			<trans-unit id="entrytype.techreport.short">
+				<source>Report</source>
+			</trans-unit>
+			<trans-unit id="entrytype.patent">
+				<source>Patent</source>
+			</trans-unit>
+			<trans-unit id="entrytype.patent.short">
+				<source>Patent</source>
+			</trans-unit>
+			<trans-unit id="entrytype.standard">
+				<source>Legislation</source>
+			</trans-unit>
+			<trans-unit id="entrytype.standard.short">
+				<source>Legislation</source>
+			</trans-unit>
+			<trans-unit id="entrytype.booklet">
+				<source>Pamphlet</source>
+			</trans-unit>
+			<trans-unit id="entrytype.booklet.short">
+				<source>Pamphlet</source>
+			</trans-unit>
+			<trans-unit id="entrytype.presentation">
+				<source>Presentation</source>
+			</trans-unit>
+			<trans-unit id="entrytype.presentation.short">
+				<source>Presentation</source>
+			</trans-unit>
+			<trans-unit id="entrytype.electronic">
+				<source>Web Page or Electronic Resource</source>
+			</trans-unit>
+			<trans-unit id="entrytype.electronic.short">
+				<source>Web Page</source>
+			</trans-unit>
+			<trans-unit id="entrytype.unpublished">
+				<source>Unpublished Document</source>
+			</trans-unit>
+			<trans-unit id="entrytype.unpublished.short">
+				<source>Unpublished</source>
+			</trans-unit>
+			<trans-unit id="entrytype.misc">
+				<source>Miscellaneous</source>
+			</trans-unit>
+			<trans-unit id="entrytype.misc.short">
+				<source>Misc</source>
+			</trans-unit>
+			<trans-unit id="post.links.doi">
                 <source>DOI</source>
             </trans-unit>
-			<trans-unit id="bibsonomy.post.links.download">
+			<trans-unit id="post.links.download">
 				<source>Download</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.links.host.bibsonomy">
+			<trans-unit id="post.links.host.bibsonomy">
 				<source>BibSonomy-Post</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.links.host.puma">
+			<trans-unit id="post.links.host.puma">
 				<source>PUMA-Post</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.links.url">
+			<trans-unit id="post.links.toTop">
+				<source>to top</source>
+			</trans-unit>
+			<trans-unit id="post.links.url">
 				<source>URL</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.links.urn">
+			<trans-unit id="post.links.urn">
 				<source>URN</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.snippet.abstract">
+			<trans-unit id="post.snippet.abstract">
 				<source>Abstract</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.snippet.bibtex">
+			<trans-unit id="post.snippet.bibtex">
 				<source>BibTeX</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.snippet.csl">
+			<trans-unit id="post.snippet.csl">
 				<source>CSL</source>
 			</trans-unit>
-			<trans-unit id="bibsonomy.post.snippet.endnote">
+			<trans-unit id="post.snippet.endnote">
 				<source>EndNote</source>
 			</trans-unit>
 		</body>

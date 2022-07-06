@@ -5,9 +5,12 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 use AcademicPuma\BibsonomyCsl\Utils\ApiUtils;
+use AcademicPuma\BibsonomyCsl\Utils\PostUtils;
 use AcademicPuma\RestClient\Config\Grouping;
 use AcademicPuma\RestClient\Config\Resourcetype;
+use AcademicPuma\RestClient\Config\Sorting;
 use AcademicPuma\RestClient\Model\Post;
+use AcademicPuma\RestClient\Model\Posts;
 use AcademicPuma\RestClient\RESTClient;
 use Exception;
 use GuzzleHttp\Exception\BadResponseException;
@@ -48,10 +51,21 @@ class PublicationController extends ApiActionController
         $this->view->assign('sorting', $this->settings['sorting']);
         $this->view->assign('filtering', $this->settings['filtering']);
         $this->view->assign('layout', $this->settings['layout']);
+        $this->view->assign('custom', $this->settings['custom']);
+
+        // get posts
+        $posts = $this->getPosts($this->settings);
+        $titles = '';
+        foreach ($posts as $post) {
+            $titles .= $post->getResource()->getTitle();
+        }
+        $this->view->assign('listHash', md5($titles));
+
+        // filtering, grouping & sorting of posts
+        $this->filterPosts($posts, $this->settings['filtering']);
+        $this->groupAndSortPosts($posts, $this->settings);
 
         // assign posts
-        $posts = $this->getPosts($this->settings);
-        $this->filterPosts($posts);
         $this->view->assign('posts', $posts);
 
         return $this->htmlResponse();
@@ -69,9 +83,9 @@ class PublicationController extends ApiActionController
         return $this->htmlResponse();
     }
 
-    public function getPosts(array $settings): array
+    public function getPosts(array $settings): Posts
     {
-        // create RESTclient
+        // create REST client
         $client = ApiUtils::getRestClient($this->accessor, $settings);
 
         // get settings for request and model
@@ -114,17 +128,17 @@ class PublicationController extends ApiActionController
                 $result = $client->model($treatCurlyBraces, $treatBackslashes, $bibtexCleaning)->toArray();
             }
         } catch (BadResponseException|Exception $e) {
-            return array();
+            return new Posts();
         }
 
-        return $result;
+        return new Posts($result);
     }
 
-    private function filterPosts(array &$posts): void
+    private function filterPosts(Posts &$posts, array $settings): void
     {
-        $filterDuplicates = $this->settings['filtering']['duplicates'];
-        $filterYear = $this->settings['filtering']['year'];
-        $filterNumericYear = $this->settings['filtering']['numericYear'];
+        $filterDuplicates = $settings['duplicates'];
+        $filterYear = $settings['year'];
+        $filterNumericYear = $settings['numericYear'];
 
         $hashes = array();
 
@@ -156,6 +170,114 @@ class PublicationController extends ApiActionController
                     $hashes[] = $hash;
                 }
             }
+        }
+    }
+
+    private function groupAndSortPosts(Posts &$posts, array $settings)
+    {
+        $grouping = $settings['grouping'];
+        $groupingKey = $grouping['key'];
+
+        $sorting = $settings['sorting'];
+        $sortKey = $sorting['sortKey'];
+        $sortOrder = $sorting['sortOrder'];
+
+        // grouping & sorting
+        if ($groupingKey != 'none') {
+            $posts = $this->prepareGrouping($posts, $groupingKey);
+
+            // Set the sorting within the group for DBLP grouping
+            if ($grouping == 'dblp') {
+                $sortKey = 'dblp';
+                $sortOrder = 'desc';
+            }
+
+            // sort within sublists of groups
+            $groupKeys = array_keys($posts->toArray()); //get groups
+            foreach ($groupKeys as $groupKey) {
+                if ($posts[$groupKey] instanceof Posts) {
+                    $sublist = new Posts($posts[$groupKey]->toArray());
+                } else {
+                    $sublist = new Posts($posts[$groupKey]);
+                }
+                $sublist->sort($sortKey, $sortOrder === 'desc' ? Sorting::ORDER_DESC : Sorting::ORDER_ASC);
+                $posts[$groupKey] = $sublist;
+            }
+        } else {
+            $posts->sort($sortKey, $sortOrder == 'asc' ? Sorting::ORDER_ASC : Sorting::ORDER_DESC);
+            $posts[''] = $posts;
+        }
+    }
+
+    /**
+     * Prepares type order and filters publications (grouping by type) or does
+     * pre-sorting (grouping by year). This function also transforms <code>$posts</code>
+     * to an grouped Posts ArrayList.
+     * for instance:
+     * <pre>
+     * array(
+     *   [2010] => array(
+     *          [0] => pub1
+     *          [1] => pub2)
+     *   [2014] => array(
+     *          [0] => pub3
+     *          [1] => pub5)
+     * )
+     * </pre>
+     *
+     * @param Posts $posts un-grouped Posts ArrayList
+     * @param string $grouping
+     * @return Posts
+     */
+    private function prepareGrouping(Posts &$posts, string $grouping): Posts
+    {
+        switch ($grouping) {
+            case 'type':
+                $entrytypeSortOrder = $this->settings['sorting']['entrytypeOrder'] ?
+                    explode(',', $this->settings['sorting']['entrytypeOrder']) :
+                    PostUtils::$DEFAULT_TYPE_ORDER;
+                //pre-sorting
+                $posts->sort('entrytype', null, $entrytypeSortOrder);
+                $this->filterPublicationsByType($posts, $this->settings, $entrytypeSortOrder);
+                break;
+            case 'dblp':
+                $posts->sort('year', Sorting::ORDER_DESC);
+                PostUtils::transformToYearGroupedArray($posts);
+                break;
+            case 'yearAsc':
+                //pre-sorting (asc) for year grouping
+                $posts->sort('year', Sorting::ORDER_ASC);
+                PostUtils::transformToYearGroupedArray($posts);
+                break;
+            case 'yearDesc':
+                //pre-sorting (desc) for year grouping
+            default:
+                $posts->sort('year', Sorting::ORDER_DESC);
+                PostUtils::transformToYearGroupedArray($posts);
+        }
+
+        return $posts;
+    }
+
+    private function filterPublicationsByType(Posts &$posts, array $settings, $userDefinedTypeOrder)
+    {
+        $tvalidTypes = $userDefinedTypeOrder;
+        $filteredPublications = [];
+        for ($i = 0; $i < count($posts); ++$i) {
+            $entrytype = $posts[$i]->getResource()->getEntrytype();
+
+            $type = PostUtils::getTypeOfType($entrytype);
+
+            if (in_array($type, $tvalidTypes)) {
+                $filteredPublications[$type][] = $posts[$i];
+            }
+        }
+
+        $posts->replace([]);
+        foreach (array_keys($filteredPublications) as $group) {
+            $subList = new Posts($filteredPublications[$group]);
+            $subList->sort($settings['bib_sorting'], $settings['bib_sorting_order']);
+            $posts->add($group, $subList);
         }
     }
 

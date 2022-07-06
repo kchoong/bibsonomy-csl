@@ -63,7 +63,7 @@ class SnippetViewHelper extends AbstractViewHelper
         $intrahash = $post->getResource()->getIntraHash();
         $postId = "bibsonomy-post-$intrahash";
         $snippetId = "bibsonomy-$type-$intrahash";
-        $label = LocalizationUtility::translate('bibsonomy.post.snippet.abstract', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.snippet.abstract', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $abstract = $post->getResource()->getBibtexAbstract();
@@ -78,7 +78,7 @@ class SnippetViewHelper extends AbstractViewHelper
         $intrahash = $post->getResource()->getIntraHash();
         $postId = "bibsonomy-post-$intrahash";
         $snippetId = "bibsonomy-$type-$intrahash";
-        $label = LocalizationUtility::translate('bibsonomy.post.snippet.bibtex', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.snippet.bibtex', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new BibtexModelRenderer();
@@ -94,7 +94,7 @@ class SnippetViewHelper extends AbstractViewHelper
         $intrahash = $post->getResource()->getIntraHash();
         $postId = "bibsonomy-post-$intrahash";
         $snippetId = "bibsonomy-$type-$intrahash";
-        $label = LocalizationUtility::translate('bibsonomy.post.snippet.csl', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.snippet.csl', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new CSLModelRenderer();
@@ -110,7 +110,7 @@ class SnippetViewHelper extends AbstractViewHelper
         $intrahash = $post->getResource()->getIntraHash();
         $postId = "bibsonomy-post-$intrahash";
         $snippetId = "bibsonomy-$type-$intrahash";
-        $label = LocalizationUtility::translate('bibsonomy.post.snippet.endnote', 'BibsonomyCsl');
+        $label = LocalizationUtility::translate('post.snippet.endnote', 'BibsonomyCsl');
 
         if ($mode == 'snippet') {
             $renderer = new EndnoteModelRenderer();

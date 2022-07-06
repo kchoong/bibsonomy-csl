@@ -1,5 +1,6 @@
 .bibsonomy-posts {
     list-style-type: none;
+    padding: 0;
 }
 
 .bibsonomy-post {
@@ -27,9 +28,13 @@
     width: 100%;
 }
 
+.bibsonomy-links-list {
+    float: right;
+}
+
 .bibsonomy-inline-list {
     list-style-type: none;
-    float: right;
+    padding: 0;
 }
 
 .bibsonomy-inline-list > li {
@@ -65,6 +70,19 @@
     overflow: hidden;
     width: 65px;
     float: left;
+}
+
+.bibsonomy-group-header {
+    border-bottom: 1px solid #2d2c2c;
+}
+
+.bibsonomy-group-name {
+    font-size: 1.5em;
+}
+
+.bibsonomy-group-jumper {
+    font-size: 1.0em;
+    float:right;
 }
 
 .clearfix::after {
