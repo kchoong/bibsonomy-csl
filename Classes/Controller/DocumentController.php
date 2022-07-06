@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
+use AcademicPuma\BibsonomyCsl\Utils\ApiUtils;
+use AcademicPuma\RestClient\Config\DocumentType;
 use AcademicPuma\RestClient\Model\Document;
 use Psr\Http\Message\ResponseInterface;
 
@@ -25,24 +27,16 @@ class DocumentController extends ApiActionController
 {
 
     /**
-     * action list
-     *
-     * @return ResponseInterface
-     */
-    public function listAction(): ResponseInterface
-    {
-        return $this->htmlResponse();
-    }
-
-    /**
      * action show
      *
-     * @param Document $document
+     *
+     * @param $intraHash
+     * @param $fileName
+     * @param $userName
      * @return ResponseInterface
      */
-    public function showAction(Document $document): ResponseInterface
+    public function showAction($intraHash, $fileName, $userName): ResponseInterface
     {
-        $this->view->assign('document', $document);
         return $this->htmlResponse();
     }
 
@@ -53,6 +47,9 @@ class DocumentController extends ApiActionController
      */
     public function downloadAction(): ResponseInterface
     {
+        // create API accessor
+        $this->makeAccessor();
+
         return $this->htmlResponse();
     }
 }

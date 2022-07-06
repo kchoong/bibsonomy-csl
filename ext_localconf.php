@@ -7,7 +7,7 @@ defined('TYPO3') || die();
         'PublicationList',
         [
             \AcademicPuma\BibsonomyCsl\Controller\PublicationController::class => 'list, show',
-            \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'list, show, download'
+            \AcademicPuma\BibsonomyCsl\Controller\DocumentController::class => 'show, download'
         ],
         // non-cacheable actions
         []
