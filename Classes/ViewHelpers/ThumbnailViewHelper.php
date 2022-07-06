@@ -21,6 +21,7 @@ class ThumbnailViewHelper extends AbstractViewHelper
     public function initializeArguments()
     {
         $this->registerArgument('post', '\AcademicPuma\RestClient\Model\Post', 'The post to render as citation', true);
+        $this->registerArgument('type', 'string', 'The thumbnail type', true);
     }
 
     public static function renderStatic(

@@ -51,7 +51,7 @@
             <settings.layout.thumbnail>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail
                     </label>
                     <config>
                         <type>select</type>
@@ -59,25 +59,25 @@
                         <items>
                             <numIndex index="0" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.none
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.none
                                 </numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.thumbs
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.thumbnails
                                 </numIndex>
                                 <numIndex index="1">1</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.links
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.links
                                 </numIndex>
                                 <numIndex index="1">2</numIndex>
                             </numIndex>
                             <numIndex index="3" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.doc.both
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.both
                                 </numIndex>
                                 <numIndex index="1">3</numIndex>
                             </numIndex>

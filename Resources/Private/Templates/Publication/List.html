@@ -28,11 +28,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <ul class="bibsonomy-posts">
         <f:for each="{posts}" as="post">
             <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
-                <div class="bibsonomy-thumbnail">
-                    <bibsonomy:Thumbnail post="{post}"/>
-                </div>
+                <f:if condition="{layout.thumbnail} != '0'">
+                    <div class="bibsonomy-thumbnail">
+                        <bibsonomy:Thumbnail post="{post}" type="{layout.thumbnail}"/>
+                    </div>
+                </f:if>
 
-                <div class="bibsonomy-citation">
+                <div class="bibsonomy-citation {f:if(condition: '{layout.thumbnail} != 0', then: 'bibsonomy-citation-thumbnail')}">
                     <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
 
                     <div class="bibsonomy-extra">

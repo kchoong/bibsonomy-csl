@@ -287,19 +287,19 @@
                     a comma-separated list of keys)
                 </source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.doc">
+            <trans-unit id="flexform.layout.thumbnail">
                 <source>Show thumbnails/links of private documents of your publications</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.doc.none">
+            <trans-unit id="flexform.layout.thumbnail.none">
                 <source>No thumbnails/no links to documents</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.doc.links">
-                <source>Just show links to documents</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.doc.thumbs">
+            <trans-unit id="flexform.layout.thumbnail.thumbnails">
                 <source>Show thumbnails but do not set links to documents</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.doc.both">
+            <trans-unit id="flexform.layout.thumbnail.links">
+                <source>Just show links to documents</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.thumbnail.both">
                 <source>Show thumbnails and set links to documents</source>
             </trans-unit>
             <trans-unit id="flexform.layout.notes">
