@@ -8,6 +8,26 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class BackendUtils
 {
+    public static $MIME_TYPE_MAP = array(
+        'pdf' => 'application/pdf',
+        'png' => 'image/png',
+        'jpg' => 'image/jpg',
+        'ps' => 'application/postscript',
+        'eps' => 'application/postscript',
+        'svg' => 'image/svg+xml',
+        'doc' => 'application/msword',
+        'docx' => 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'ppt' => 'application/mspowerpoint',
+        'pptx' => 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+        'xls' => 'application/msexcel',
+        'xlsx' => 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        'djv' => 'image/x.djvu',
+        'djvu' => 'image/x.djvu',
+        'txt' => 'text/plain',
+        'ods' => 'application/vnd.oasis.opendocument.spreadsheet',
+        'odt' => 'application/vnd.oasis.opendocument.text ',
+        'odp' => 'application/vnd.oasis.opendocument.presentation'
+    );
 
     public static function getHosts(array &$config): array
     {
@@ -38,5 +58,15 @@ class BackendUtils
         }
 
         return $config;
+    }
+
+    public static function getMimeType($fileName): string
+    {
+        $match = array();
+        if (preg_match('/.+\.([a-zA-Z0-9]{2,4})$/i', $fileName, $match)) {
+            return self::$MIME_TYPE_MAP[$match[1]];
+        }
+
+        return 'text/plain';
     }
 }

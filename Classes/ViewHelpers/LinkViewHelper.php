@@ -3,6 +3,9 @@
 namespace AcademicPuma\BibsonomyCsl\ViewHelpers;
 
 use AcademicPuma\BibsonomyCsl\Utils\URLUtils;
+use AcademicPuma\RestClient\Model\Document;
+use AcademicPuma\RestClient\Model\Documents;
+use AcademicPuma\RestClient\Model\Post;
 use Closure;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
@@ -28,7 +31,8 @@ class LinkViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ): string
     {
-        $resource = $arguments['post']->getResource();
+        $post = $arguments['post'];
+        $resource = $post->getResource();
         $type = $arguments['type'];
 
         switch ($arguments['type']) {
@@ -36,6 +40,12 @@ class LinkViewHelper extends AbstractViewHelper
                 $doi = $resource->getMiscField('doi');
                 if ($doi) {
                     return self::renderDOI($doi, $type);
+                }
+                break;
+            case 'download':
+                $documents = $arguments['post']->getDocuments();
+                if ($documents !== null and $documents->count() > 0) {
+                    return self::renderDownload($post, $documents[0], $type, $renderingContext);
                 }
                 break;
             case 'host':
@@ -61,6 +71,21 @@ class LinkViewHelper extends AbstractViewHelper
     {
         $url = URLUtils::getDOIUrl($doi);
         $label = LocalizationUtility::translate('bibsonomy.post.links.doi', 'BibsonomyCsl');
+        return self::createLink($url, $type, $label);
+    }
+
+    static private function renderDownload(Post $post, Document $document, string $type, RenderingContextInterface $renderingContext): string
+    {
+        $userName = $post->getUser()->getName();
+        $intraHash = $post->getResource()->getIntraHash();
+        $fileName = $document->getFileName();
+        $arguments = ["intraHash" => $intraHash, "fileName" => $fileName, "userName" => $userName];
+
+        $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
+        $uriBuilder->reset();
+        $url = $uriBuilder->uriFor('download', $arguments, 'Document', 'bibsonomycsl', 'publicationlist');
+        $label = LocalizationUtility::translate('bibsonomy.post.links.download', 'BibsonomyCsl');
+
         return self::createLink($url, $type, $label);
     }
 

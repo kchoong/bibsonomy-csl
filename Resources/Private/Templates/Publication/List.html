@@ -76,6 +76,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
                             <bibsonomy:Link post="{post}" type="host"/>
                         </f:if>
 
+                        <f:if condition="{intval(layout.thumbnail)} > 1">
+                            <bibsonomy:Link post="{post}" type="download"/>
+                        </f:if>
+
                         <f:if condition="{layout.linkMisc}">
                             <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
                         </f:if>

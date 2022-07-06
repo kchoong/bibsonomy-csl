@@ -12,6 +12,9 @@
 			<trans-unit id="bibsonomy.post.links.doi">
                 <source>DOI</source>
             </trans-unit>
+			<trans-unit id="bibsonomy.post.links.download">
+				<source>Download</source>
+			</trans-unit>
 			<trans-unit id="bibsonomy.post.links.host.bibsonomy">
 				<source>BibSonomy-Post</source>
 			</trans-unit>

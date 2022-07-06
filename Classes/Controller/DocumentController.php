@@ -6,6 +6,7 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 
 
 use AcademicPuma\BibsonomyCsl\Utils\ApiUtils;
+use AcademicPuma\BibsonomyCsl\Utils\BackendUtils;
 use AcademicPuma\RestClient\Config\DocumentType;
 use AcademicPuma\RestClient\Model\Document;
 use Psr\Http\Message\ResponseInterface;
@@ -35,9 +36,18 @@ class DocumentController extends ApiActionController
      * @param $userName
      * @return ResponseInterface
      */
-    public function showAction($intraHash, $fileName, $userName): ResponseInterface
+    public function showAction(string $intraHash, string $fileName, string $userName): ResponseInterface
     {
-        return $this->htmlResponse();
+        // create API accessor
+        $this->makeAccessor();
+
+        // create REST client
+        $client = ApiUtils::getRestClient($this->accessor, $this->settings);
+
+        header('Content-Disposition: attachment; filename="' . basename($fileName) . '.jpg');
+        print $client->getDocumentFile($userName, $intraHash, $fileName, DocumentType::SMALL_PREVIEW)->file();
+
+        exit();
     }
 
     /**
@@ -45,11 +55,18 @@ class DocumentController extends ApiActionController
      *
      * @return ResponseInterface
      */
-    public function downloadAction(): ResponseInterface
+    public function downloadAction(string $intraHash, string $fileName, string $userName): ResponseInterface
     {
         // create API accessor
         $this->makeAccessor();
 
-        return $this->htmlResponse();
+        // create REST client
+        $client = ApiUtils::getRestClient($this->accessor, $this->settings);
+
+        header('Content-Type: ' . BackendUtils::getMimeType($fileName));
+        header('Content-Disposition: inline; filename="' . $fileName . '"');
+        print $client->getDocumentFile($userName, $intraHash, $fileName)->file();
+
+        exit();
     }
 }

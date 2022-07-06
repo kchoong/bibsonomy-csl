@@ -35,11 +35,7 @@ class ThumbnailViewHelper extends AbstractViewHelper
         $documents = $post->getDocuments();
 
         if ($documents !== null and $documents->count() > 0) {
-            $userName = $post->getUser()->getName();
-            $intraHash = $post->getResource()->getIntraHash();
-            $document = $documents[0];
-
-            return self::buildImage($post, $document, $intraHash, $userName, $renderingContext);
+            return self::buildImage($post, $documents[0], $renderingContext);
         } else {
             // no documents, showing dummy thumbnail for entrytype
             $entrytype = $post->getResource()->getEntrytype();
@@ -55,9 +51,11 @@ class ThumbnailViewHelper extends AbstractViewHelper
         return '';
     }
 
-    protected static function buildImage(Post $post, Document $document, string $intraHash, string $userName, RenderingContextInterface $renderingContext): string
+    protected static function buildImage(Post $post, Document $document, RenderingContextInterface $renderingContext): string
     {
         $fileName = $document->getFileName();
+        $userName = $post->getUser()->getName();
+        $intraHash = $post->getResource()->getIntraHash();
         $arguments = ["intraHash" => $intraHash, "fileName" => $fileName, "userName" => $userName];
         $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
         $uriBuilder->reset();
