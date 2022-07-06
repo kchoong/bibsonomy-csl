@@ -4,7 +4,8 @@
         <s_content>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/content_sheet.xml</s_content>
         <s_sorting>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/sorting_sheet.xml</s_sorting>
         <s_layout>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/layout_sheet.xml</s_layout>
+        <s_custom>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/custom_sheet.xml</s_custom>
         <s_authentication>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/authentication_sheet.xml</s_authentication>
-        <!--<s_about>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/about_sheet.xml</s_about>-->
+        <s_about>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/about_sheet.xml</s_about>
     </sheets>
 </T3DataStructure>

@@ -7,6 +7,22 @@
     margin-bottom: 5px;
 }
 
+.bibsonomy-citation {
+    font-size: 1.0em;
+}
+
+.bibsonomy-citation-thumbnail {
+    margin-left: 75px;
+}
+
+.bibsonomy-citation span.csl-title {
+    font-weight: bold;
+}
+
+.bibsonomy-notes {
+    font-style: italic;
+}
+
 .bibsonomy-links {
     width: 100%;
 }

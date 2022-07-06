@@ -199,58 +199,6 @@
                 </TCEforms>
             </settings.layout.linkMisc>
 
-            <settings.layout.personalMode>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.mode
-                    </label>
-                    <config>
-                        <type>select</type>
-                        <renderType>selectSingle</renderType>
-                        <items>
-                            <numIndex index="0" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.none
-                                </numIndex>
-                                <numIndex index="1">none</numIndex>
-                            </numIndex>
-                            <numIndex index="1" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.modal
-                                </numIndex>
-                                <numIndex index="1">modal</numIndex>
-                            </numIndex>
-                            <numIndex index="2" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.publication
-                                </numIndex>
-                                <numIndex index="1">publication</numIndex>
-                            </numIndex>
-                            <numIndex index="3" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.both
-                                </numIndex>
-                                <numIndex index="1">both</numIndex>
-                            </numIndex>
-                        </items>
-                    </config>
-                </TCEforms>
-            </settings.layout.personalMode>
-
-            <settings.layout.personalList>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.personal.list
-                    </label>
-                    <config>
-                        <type>text</type>
-                        <cols>45</cols>
-                        <rows>10</rows>
-                        <default>Lastname, Firstname; http://www.example.com; example(at)example.com</default>
-                    </config>
-                </TCEforms>
-            </settings.layout.personalList>
-
             <settings.layout.curlyBraces>
                 <TCEforms>
                     <label>
@@ -355,41 +303,6 @@
                 </TCEforms>
             </settings.layout.bibtexEncode>
 
-            <settings.layout.customCSS>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.customCSS
-                    </label>
-                    <config>
-                        <type>text</type>
-                        <cols>45</cols>
-                        <rows>15</rows>
-                        <default>
-                            .tx-extbibsonomycsl-notes {
-                            font-style: italic;
-                            }
-
-                            .bibsonomy_publications {
-                            font-size: 1.0em;
-                            }
-
-                            .bibsonomy_publications span.citeproc-title {
-                            text-decoration: none;
-                            font-weight: bold;
-                            font-size: 1.1em;
-                            }
-
-                            .bibsonomy_publications span.biblink {
-                            display: block;
-                            font-size: 1.0em;
-                            line-height: 2em;
-                            margin-right: 1.5em;
-                            float: left;
-                            }
-                        </default>
-                    </config>
-                </TCEforms>
-            </settings.layout.customCSS>
         </el>
     </ROOT>
 </T3DataStructure>

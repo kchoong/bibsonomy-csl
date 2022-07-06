@@ -61,13 +61,17 @@
                 <source>Select content via concepts (whitespace separated)</source>
             </trans-unit>
             <trans-unit id="flexform.content.concepts.unselect">
-                <source>Unselect content via concepts (whitespace separated), excludes all publications which have at least one of the subtags of a concep.</source>
+                <source>Unselect content via concepts (whitespace separated), excludes all publications which have at
+                    least one of the subtags of a concep.
+                </source>
             </trans-unit>
             <trans-unit id="flexform.content.tags.select">
                 <source>Select content via tags (whitespace separated)</source>
             </trans-unit>
             <trans-unit id="flexform.content.tags.unselect">
-                <source>Unselect content via tags (whitespace separated), excludes all publications which have at least one of these tags</source>
+                <source>Unselect content via tags (whitespace separated), excludes all publications which have at least
+                    one of these tags
+                </source>
             </trans-unit>
             <trans-unit id="flexform.content.search">
                 <source>Select content fulltext search</source>
@@ -76,7 +80,9 @@
                 <source>Maximum number of publications</source>
             </trans-unit>
             <trans-unit id="flexform.content.custom.apiquery">
-                <source>Alternatively, define your own BibSonomy/PUMA API query to fetch a set of publications.\n(Ignores previous settings!)</source>
+                <source>Alternatively, define your own BibSonomy/PUMA API query to fetch a set of
+                    publications.\n(Ignores previous settings!)
+                </source>
             </trans-unit>
 
             <!-- Grouping/Sorting/Filtering Tab -->
@@ -133,7 +139,9 @@
                 <source>Descending</source>
             </trans-unit>
             <trans-unit id="flexform.sorting.entrytype.order">
-                <source>Choose and order document types here if you have selected sorting by document type. Keep it empty to select all types and use the default order</source>
+                <source>Choose and order document types here if you have selected sorting by document type. Keep it
+                    empty to select all types and use the default order
+                </source>
             </trans-unit>
             <trans-unit id="flexform.sorting.entrytype.article">
                 <source>Article in journal, newspaper, or magazine</source>
@@ -223,7 +231,8 @@
                 <source>Enable inline filtering</source>
             </trans-unit>
             <trans-unit id="flexform.filtering.duplicates">
-                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information.)</source>
+                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information.)
+                </source>
             </trans-unit>
             <trans-unit id="flexform.filtering.duplicates.none">
                 <source>No Filter</source>
@@ -273,28 +282,6 @@
             <trans-unit id="flexform.layout.citationNumber">
                 <source>Check this to show citation numbers for the publication list</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.list">
-                <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g.
-                    Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
-                    for not available). \n It is also possible to enter a URL to a text-file with a list in the
-                    described format.
-                </source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.mode">
-                <source>Mode for personal author website (Warning: Experimental for publication)</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.none">
-                <source>None</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.modal">
-                <source>Modal</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.publication">
-                <source>Publication</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.link.personal.both">
-                <source>Both</source>
-            </trans-unit>
             <trans-unit id="flexform.layout.link.misc">
                 <source>The following keys from misc fields contain URLs. These URLs should be rendered as links (insert
                     a comma-separated list of keys)
@@ -314,9 +301,6 @@
             </trans-unit>
             <trans-unit id="flexform.layout.link.doc.both">
                 <source>Show thumbnails and set links to documents</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.customCSS">
-                <source>Define layout modification using CSS</source>
             </trans-unit>
             <trans-unit id="flexform.layout.notes">
                 <source>Check this to show notes of the publication</source>
@@ -346,13 +330,50 @@
                 <source>Keep backslashes in TeXs math mode</source>
             </trans-unit>
             <trans-unit id="flexform.layout.bibtex.cleaning">
-                <source>BibTex cleaning (e.g. conversion from {\"a} to ä, Texs math mode will stay untouched either way)</source>
+                <source>BibTex cleaning (e.g. conversion from {\"a} to ä, Texs math mode will stay untouched either
+                    way)
+                </source>
             </trans-unit>
             <trans-unit id="flexform.layout.bibtex.escape">
-                <source>Escape special characters in the BibTeX code of the publications (e.g. %, &amp;, ~, #, _)</source>
+                <source>Escape special characters in the BibTeX code of the publications (e.g. %, &amp;, ~, #, _)
+                </source>
             </trans-unit>
             <trans-unit id="flexform.layout.bibtex.htmlencode">
                 <source>HTML-Encode special characters in the BibTeX code of the publications (e.g. ~, --, ---)</source>
+            </trans-unit>
+
+            <!-- Custom Tab -->
+
+            <trans-unit id="flexform.custom.tab">
+                <source>Custom</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.css">
+                <source>Define layout modification using CSS</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.list">
+                <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g.
+                    Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
+                    for not available). \n It is also possible to enter a URL to a text-file with a list in the
+                    described format.
+                </source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.mode">
+                <source>Mode for personal author website (Warning: Experimental for publication)</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.mode.none">
+                <source>None</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.mode.modal">
+                <source>Modal</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.mode.publication">
+                <source>Publication</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.personLink.mode.both">
+                <source>Both</source>
+            </trans-unit>
+            <trans-unit id="flexform.custom.entrytype">
+                <source>Define custom entrytypes</source>
             </trans-unit>
 
             <!-- Details Tab -->

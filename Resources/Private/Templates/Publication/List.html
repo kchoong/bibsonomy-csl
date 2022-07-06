@@ -34,11 +34,15 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
                 <div class="bibsonomy-citation">
                     <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
+
+                    <div class="bibsonomy-extra">
+                        <f:if condition="{layout.notes}">
+                            <bibsonomy:Notes post="{post}"/>
+                        </f:if>
+                    </div>
                 </div>
 
-                <div class="bibsonomy-extra">
-
-                </div>
+                <div class="clearfix"><!-- keep me --></div>
 
                 <div class="bibsonomy-links">
                     <ul class="bibsonomy-inline-list">

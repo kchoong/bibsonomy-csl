@@ -3,10 +3,7 @@
 namespace AcademicPuma\BibsonomyCsl\ViewHelpers;
 
 use AcademicPuma\BibsonomyCsl\Utils\URLUtils;
-use AcademicPuma\ExtBibsonomyCsl\Lib\Helper;
-use AcademicPuma\RestClient\Model\Bibtex;
 use Closure;
-use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\TagBuilder;
