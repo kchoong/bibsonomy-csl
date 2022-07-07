@@ -50,6 +50,7 @@ class BackendUtils
         }
         $serverList = json_decode($content);
 
+        $config['items'][] = array('Local', 'http://bibsonomy.azg/');
         $config['items'][] = array('BibSonomy', 'https://www.bibsonomy.org/');
         if ($serverList) {
             foreach ($serverList->server as $server) {

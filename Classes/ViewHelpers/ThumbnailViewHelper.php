@@ -2,6 +2,7 @@
 
 namespace AcademicPuma\BibsonomyCsl\ViewHelpers;
 
+use AcademicPuma\BibsonomyCsl\Utils\PostUtils;
 use AcademicPuma\RestClient\Model\Document;
 use AcademicPuma\RestClient\Model\Post;
 use Closure;
@@ -39,6 +40,7 @@ class ThumbnailViewHelper extends AbstractViewHelper
         } else {
             // no documents, showing dummy thumbnail for entrytype
             $entrytype = $post->getResource()->getEntrytype();
+            $entrytype = PostUtils::isDefaultEntrytype($entrytype) ? $entrytype : 'misc';
             $extPath = PathUtility::getRelativePathTo(ExtensionManagementUtility::extPath('bibsonomy_csl'));
             $imgPath = $extPath . "Resources/Public/Images/entrytypes/$entrytype.jpg";
 
@@ -47,8 +49,6 @@ class ThumbnailViewHelper extends AbstractViewHelper
 
             return $img->render();
         }
-
-        return '';
     }
 
     protected static function buildImage(Post $post, Document $document, RenderingContextInterface $renderingContext): string

@@ -30,7 +30,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
             <f:if condition="{grouping.anchors}">
                 <ul class="bibsonomy-anchors bibsonomy-inline-list">
                     <f:for each="{posts}" as="groups" key="group">
-                        <bibsonomy:Anchor group="{group}" groupingKey="{grouping.key}" />
+                        <bibsonomy:Anchor group="{group}" groupingKey="{grouping.key}" entrytypes="{entrytypes}"/>
                     </f:for>
                 </ul>
             </f:if>
@@ -38,7 +38,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
         <f:for each="{posts}" as="groups" key="group">
             <f:if condition="{grouping.key} != 'none'">
-                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" />
+                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" entrytypes="{entrytypes}"/>
             </f:if>
 
             <ul class="bibsonomy-posts">

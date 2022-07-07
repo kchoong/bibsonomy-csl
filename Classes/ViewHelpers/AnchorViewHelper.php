@@ -19,6 +19,7 @@ class AnchorViewHelper extends AbstractViewHelper
     {
         $this->registerArgument('group', 'string', 'The group name', true);
         $this->registerArgument('groupingKey', 'string', 'The grouping key', true);
+        $this->registerArgument('entrytypes', 'array', 'The entrytypes in BibTeX format and their labels', true);
     }
 
     public static function renderStatic(
@@ -29,10 +30,9 @@ class AnchorViewHelper extends AbstractViewHelper
     {
         $group = $arguments['group'];
         $groupingKey = $arguments['groupingKey'];
+        $entrytypes = $arguments['entrytypes'];
 
-        $label= $groupingKey == 'entrytype' ?
-            LocalizationUtility::translate("entrytype.$group.short", 'BibsonomyCsl') :
-            $group;
+        $label= $groupingKey == 'entrytype' ? self::getEntrytypeLabel($group, $entrytypes): $group;
 
         $link = new TagBuilder('a');
         $link->addAttribute('href', "#posts_$group");
@@ -44,6 +44,15 @@ class AnchorViewHelper extends AbstractViewHelper
         $button->setContent('[ ' . $link->render() . ' ]');
 
         return $button->render();
+    }
+
+    private static function getEntrytypeLabel(string $entrytype, array $entrytypes): string
+    {
+        if (array_key_exists($entrytype, $entrytypes)) {
+            return $entrytypes[$entrytype]['short'];
+        }
+
+        return $entrytype;
     }
 
 }

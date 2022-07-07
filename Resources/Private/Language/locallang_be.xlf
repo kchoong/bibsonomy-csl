@@ -273,7 +273,7 @@
                 <source>Define layout modification using CSS</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.list">
-                <source>Define personal websites and e-mails of authors (AT-sign be entered in any chosen form). \n E.g.
+                <source>Define personal websites and e-mails of authors (AT-sign can be entered in any chosen form). \n E.g.
                     Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
                     for not available). \n It is also possible to enter a URL to a text-file with a list in the
                     described format.
@@ -295,7 +295,7 @@
                 <source>Both</source>
             </trans-unit>
             <trans-unit id="flexform.custom.entrytype">
-                <source>Define custom entrytypes</source>
+                <source>Define custom entrytypes, e.g bibtexEntrytype, label, labelShort (separated by lines).</source>
             </trans-unit>
 
             <!-- Details Tab -->

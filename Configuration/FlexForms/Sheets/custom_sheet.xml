@@ -71,27 +71,7 @@
                         <cols>45</cols>
                         <rows>15</rows>
                         <default>
-                            .tx-extbibsonomycsl-notes {
-                            font-style: italic;
-                            }
 
-                            .bibsonomy_publications {
-                            font-size: 1.0em;
-                            }
-
-                            .bibsonomy_publications span.citeproc-title {
-                            text-decoration: none;
-                            font-weight: bold;
-                            font-size: 1.1em;
-                            }
-
-                            .bibsonomy_publications span.biblink {
-                            display: block;
-                            font-size: 1.0em;
-                            line-height: 2em;
-                            margin-right: 1.5em;
-                            float: left;
-                            }
                         </default>
                     </config>
                 </TCEforms>
@@ -106,9 +86,7 @@
                         <type>text</type>
                         <cols>45</cols>
                         <rows>10</rows>
-                        <default>
-
-                        </default>
+                        <default>bibtexEntrytype; label; labelShort</default>
                     </config>
                 </TCEforms>
             </settings.custom.entrytype>

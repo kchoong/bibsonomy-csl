@@ -114,12 +114,21 @@ class PostUtils
 
     public static function getTypeOfType(string $type): string
     {
-        return self::$TYPE_MAP_CSL[$type];
+        if (array_key_exists($type, self::$TYPE_MAP_CSL)) {
+            return self::$TYPE_MAP_CSL[$type];
+        }
+
+        return $type;
     }
 
     public static function isBibTexType(string $type): bool
     {
         return array_key_exists($type, self::$TYPE_MAP_CSL);
+    }
+
+    public static function isDefaultEntrytype(string $type): bool
+    {
+        return in_array($type, self::$DEFAULT_TYPE_ORDER);
     }
 
     public static function getTypeTitle(string $type): string

@@ -21,6 +21,7 @@ class HeaderViewHelper extends AbstractViewHelper
         $this->registerArgument('group', 'string', 'The group name', true);
         $this->registerArgument('listHash', 'string', 'The list hash', true);
         $this->registerArgument('groupingKey', 'string', 'The grouping key', true);
+        $this->registerArgument('entrytypes', 'array', 'The entrytypes in BibTeX format and their labels', true);
     }
 
     public static function renderStatic(
@@ -32,10 +33,9 @@ class HeaderViewHelper extends AbstractViewHelper
         $group = $arguments['group'];
         $listHash = $arguments['listHash'];
         $groupingKey = $arguments['groupingKey'];
+        $entrytypes = $arguments['entrytypes'];
 
-        $labelContent = $groupingKey == 'entrytype' ?
-            LocalizationUtility::translate("entrytype.$group", 'BibsonomyCsl') :
-            $group;
+        $labelContent = $groupingKey == 'entrytype' ? self::getEntrytypeLabel($group, $entrytypes): $group;
         $label = new TagBuilder('span');
         $label->addAttribute('class', 'bibsonomy-group-name');
         $label->setContent($labelContent);
@@ -55,6 +55,15 @@ class HeaderViewHelper extends AbstractViewHelper
         $header->setContent($label->render() . $button->render());
 
         return $header->render();
+    }
+
+    private static function getEntrytypeLabel(string $entrytype, array $entrytypes): string
+    {
+        if (array_key_exists($entrytype, $entrytypes)) {
+            return $entrytypes[$entrytype]['long'];
+        }
+
+        return $entrytype;
     }
 
 }

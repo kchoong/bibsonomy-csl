@@ -15,6 +15,7 @@ use AcademicPuma\RestClient\RESTClient;
 use Exception;
 use GuzzleHttp\Exception\BadResponseException;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
@@ -61,9 +62,14 @@ class PublicationController extends ApiActionController
         }
         $this->view->assign('listHash', md5($titles));
 
+        // prepare entrytype list with labels
+        $entrytypeLabels = $this->getEntrytypeLabels($this->settings['sorting']['entrytypeOrder'], $this->settings['custom']['entrytype']);
+        $entrytypeOrder = array_keys($entrytypeLabels);
+        $this->view->assign('entrytypes', $entrytypeLabels);
+
         // filtering, grouping & sorting of posts
         $this->filterPosts($posts, $this->settings['filtering']);
-        $this->groupAndSortPosts($posts, $this->settings);
+        $this->groupAndSortPosts($posts, $this->settings, $entrytypeOrder);
 
         // assign posts
         $this->view->assign('posts', $posts);
@@ -173,7 +179,7 @@ class PublicationController extends ApiActionController
         }
     }
 
-    private function groupAndSortPosts(Posts &$posts, array $settings)
+    private function groupAndSortPosts(Posts &$posts, array $settings, array $entrytypeOrder)
     {
         $grouping = $settings['grouping'];
         $groupingKey = $grouping['key'];
@@ -184,7 +190,7 @@ class PublicationController extends ApiActionController
 
         // grouping & sorting
         if ($groupingKey != 'none') {
-            $posts = $this->prepareGrouping($posts, $groupingKey);
+            $posts = $this->prepareGrouping($posts, $groupingKey, $entrytypeOrder);
 
             // Set the sorting within the group for DBLP grouping
             if ($grouping == 'dblp') {
@@ -227,18 +233,15 @@ class PublicationController extends ApiActionController
      *
      * @param Posts $posts un-grouped Posts ArrayList
      * @param string $grouping
+     * @param array $entrytypeOrder
      * @return Posts
      */
-    private function prepareGrouping(Posts &$posts, string $grouping): Posts
+    private function prepareGrouping(Posts &$posts, string $grouping, array $entrytypeOrder): Posts
     {
         switch ($grouping) {
-            case 'type':
-                $entrytypeSortOrder = $this->settings['sorting']['entrytypeOrder'] ?
-                    explode(',', $this->settings['sorting']['entrytypeOrder']) :
-                    PostUtils::$DEFAULT_TYPE_ORDER;
-                //pre-sorting
-                $posts->sort('entrytype', null, $entrytypeSortOrder);
-                $this->filterPublicationsByType($posts, $this->settings, $entrytypeSortOrder);
+            case 'entrytype':
+                $posts->sort('entrytype', Sorting::ORDER_ASC, $entrytypeOrder);
+                $this->filterPublicationsByType($posts, $entrytypeOrder, $this->settings['sorting']);
                 break;
             case 'dblp':
                 $posts->sort('year', Sorting::ORDER_DESC);
@@ -259,16 +262,17 @@ class PublicationController extends ApiActionController
         return $posts;
     }
 
-    private function filterPublicationsByType(Posts &$posts, array $settings, $userDefinedTypeOrder)
+    private function filterPublicationsByType(Posts &$posts, array $entrytypeOrder, array $settings)
     {
-        $tvalidTypes = $userDefinedTypeOrder;
+        $sortKey = $settings['sortKey'];
+        $sortOrder = $settings['sortOrder'];
+
         $filteredPublications = [];
         for ($i = 0; $i < count($posts); ++$i) {
             $entrytype = $posts[$i]->getResource()->getEntrytype();
-
             $type = PostUtils::getTypeOfType($entrytype);
 
-            if (in_array($type, $tvalidTypes)) {
+            if (in_array($type, $entrytypeOrder)) {
                 $filteredPublications[$type][] = $posts[$i];
             }
         }
@@ -276,9 +280,38 @@ class PublicationController extends ApiActionController
         $posts->replace([]);
         foreach (array_keys($filteredPublications) as $group) {
             $subList = new Posts($filteredPublications[$group]);
-            $subList->sort($settings['bib_sorting'], $settings['bib_sorting_order']);
+            $subList->sort($sortKey, $sortOrder);
             $posts->add($group, $subList);
         }
+    }
+
+    private function getEntrytypeLabels(string $entrytypeOrder, string $customEntrytypeOrder): array
+    {
+        $result = [];
+        $entrytypes = $entrytypeOrder ? explode(',', $entrytypeOrder) : PostUtils::$DEFAULT_TYPE_ORDER;
+        foreach ($entrytypes as $entrytype) {
+            $longLabel = LocalizationUtility::translate("entrytype.$entrytype", 'BibsonomyCsl');
+            $longLabel = $longLabel ? $longLabel : $entrytype;
+            $shortLabel = LocalizationUtility::translate("entrytype.$entrytype.short", 'BibsonomyCsl');
+            $shortLabel = $shortLabel ? $shortLabel : $entrytype;
+            $result[$entrytype] = [
+                'long' => $longLabel,
+                'short' => $shortLabel,
+            ];
+        }
+
+        $customEntrtypes = $customEntrytypeOrder ? explode("\n", $customEntrytypeOrder) : [];
+        foreach ($customEntrtypes as $entrytype) {
+            $customArr = explode('; ', $entrytype);
+            if (!empty($customArr) && count($customArr) == 3) {
+                $result[$customArr[0]] = [
+                    'long' => $customArr[1],
+                    'short' => $customArr[2],
+                ];
+            }
+        }
+
+        return $result;
     }
 
     private function getFilterTags(RESTClient $client, array $settings): array
