@@ -146,17 +146,6 @@
                 </TCEforms>
             </settings.layout.notes>
 
-            <settings.layout.citationNumber>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.citationNumber
-                    </label>
-                    <config>
-                        <type>check</type>
-                    </config>
-                </TCEforms>
-            </settings.layout.citationNumber>
-
             <settings.layout.linkAbstract>
                 <TCEforms>
                     <label>
