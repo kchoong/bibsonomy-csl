@@ -11,82 +11,142 @@
 			</trans-unit>
 
 			<trans-unit id="entrytype.article">
-				<source>Article in journal, newspaper, or magazine</source>
-			</trans-unit>
-			<trans-unit id="entrytype.article.short">
 				<source>Article</source>
 			</trans-unit>
-			<trans-unit id="entrytype.book">
-				<source>Book or Conference Proceedings</source>
+			<trans-unit id="entrytype.article.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.book.short">
+			<trans-unit id="entrytype.book">
 				<source>Book</source>
 			</trans-unit>
-			<trans-unit id="entrytype.inproceedings">
-				<source>Article in Conference Proceedings</source>
+			<trans-unit id="entrytype.book.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.inproceedings.short">
-				<source>Inproceedings</source>
+			<trans-unit id="entrytype.booklet">
+				<source>Booklet</source>
 			</trans-unit>
-			<trans-unit id="entrytype.phdthesis">
-				<source>PhD or Master Thesis</source>
+			<trans-unit id="entrytype.booklet.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.phdthesis.short">
-				<source>Thesis</source>
+			<trans-unit id="entrytype.collection">
+				<source>Collection</source>
+			</trans-unit>
+			<trans-unit id="entrytype.collection.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.conference">
+				<source>Conference</source>
+			</trans-unit>
+			<trans-unit id="entrytype.conference.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.dataset">
+				<source>Dataset</source>
+			</trans-unit>
+			<trans-unit id="entrytype.dataset.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.electronic">
+				<source>Electronic</source>
+			</trans-unit>
+			<trans-unit id="entrytype.electronic.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.inbook">
+				<source>Inbook</source>
+			</trans-unit>
+			<trans-unit id="entrytype.inbook.desc">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="entrytype.incollection">
-				<source>Chapter (part of a book)</source>
+				<source>Incollection</source>
 			</trans-unit>
-			<trans-unit id="entrytype.incollection.short">
-				<source>Chapter</source>
+			<trans-unit id="entrytype.incollection.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.techreport">
-				<source>Report</source>
+			<trans-unit id="entrytype.inproceedings">
+				<source>Inproceedings</source>
 			</trans-unit>
-			<trans-unit id="entrytype.techreport.short">
-				<source>Report</source>
+			<trans-unit id="entrytype.inproceedings.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.manual">
+				<source>Manual</source>
+			</trans-unit>
+			<trans-unit id="entrytype.manual.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.mastersthesis">
+				<source>Mastersthesis</source>
+			</trans-unit>
+			<trans-unit id="entrytype.mastersthesis.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.misc">
+				<source>Misc</source>
+			</trans-unit>
+			<trans-unit id="entrytype.misc.desc">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="entrytype.patent">
 				<source>Patent</source>
 			</trans-unit>
-			<trans-unit id="entrytype.patent.short">
-				<source>Patent</source>
+			<trans-unit id="entrytype.patent.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.standard">
-				<source>Legislation</source>
+			<trans-unit id="entrytype.periodical">
+				<source>Periodical</source>
 			</trans-unit>
-			<trans-unit id="entrytype.standard.short">
-				<source>Legislation</source>
+			<trans-unit id="entrytype.periodical.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.booklet">
-				<source>Pamphlet</source>
+			<trans-unit id="entrytype.phdthesis">
+				<source>PhD thesis</source>
 			</trans-unit>
-			<trans-unit id="entrytype.booklet.short">
-				<source>Pamphlet</source>
+			<trans-unit id="entrytype.phdthesis.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.preamble">
+				<source>Preamble</source>
+			</trans-unit>
+			<trans-unit id="entrytype.preamble.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.preprint">
+				<source>Preprint</source>
+			</trans-unit>
+			<trans-unit id="entrytype.preprint.desc">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="entrytype.presentation">
 				<source>Presentation</source>
 			</trans-unit>
-			<trans-unit id="entrytype.presentation.short">
-				<source>Presentation</source>
+			<trans-unit id="entrytype.presentation.desc">
+				<source></source>
 			</trans-unit>
-			<trans-unit id="entrytype.electronic">
-				<source>Web Page or Electronic Resource</source>
+			<trans-unit id="entrytype.proceedings">
+				<source>Proceedings</source>
 			</trans-unit>
-			<trans-unit id="entrytype.electronic.short">
-				<source>Web Page</source>
+			<trans-unit id="entrytype.proceedings.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.standard">
+				<source>Standard</source>
+			</trans-unit>
+			<trans-unit id="entrytype.standard.desc">
+				<source></source>
+			</trans-unit>
+			<trans-unit id="entrytype.techreport">
+				<source>Techreport</source>
+			</trans-unit>
+			<trans-unit id="entrytype.techreport.desc">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="entrytype.unpublished">
-				<source>Unpublished Document</source>
-			</trans-unit>
-			<trans-unit id="entrytype.unpublished.short">
 				<source>Unpublished</source>
 			</trans-unit>
-			<trans-unit id="entrytype.misc">
-				<source>Miscellaneous</source>
-			</trans-unit>
-			<trans-unit id="entrytype.misc.short">
-				<source>Misc</source>
+			<trans-unit id="entrytype.unpublished.desc">
+				<source></source>
 			</trans-unit>
 			<trans-unit id="post.links.doi">
                 <source>DOI</source>

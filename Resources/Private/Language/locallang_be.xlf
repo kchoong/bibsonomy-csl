@@ -138,10 +138,8 @@
             <trans-unit id="flexform.sorting.sortOrder.desc">
                 <source>Descending</source>
             </trans-unit>
-            <trans-unit id="flexform.sorting.entrytype.order">
-                <source>Choose and order document types here if you have selected sorting by document type. Keep it
-                    empty to select all types and use the default order
-                </source>
+            <trans-unit id="flexform.filtering.entrytype">
+                <source>Show only Publications of the following entrytypes</source>
             </trans-unit>
             <trans-unit id="flexform.filtering.year">
                 <source>Show only Publications of following year</source>

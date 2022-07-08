@@ -77,20 +77,6 @@
                 </TCEforms>
             </settings.custom.css>
 
-            <settings.custom.entrytype>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.entrytype
-                    </label>
-                    <config>
-                        <type>text</type>
-                        <cols>45</cols>
-                        <rows>10</rows>
-                        <default>bibtexEntrytype; label; labelShort</default>
-                    </config>
-                </TCEforms>
-            </settings.custom.entrytype>
-
         </el>
     </ROOT>
 </T3DataStructure>

@@ -2,7 +2,8 @@
 <T3DataStructure>
     <ROOT>
         <TCEforms>
-            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.tab</sheetTitle>
+            <sheetTitle>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.tab
+            </sheetTitle>
         </TCEforms>
         <type>array</type>
         <el>
@@ -15,23 +16,33 @@
                         <renderType>selectSingle</renderType>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.none</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.none
+                                </numIndex>
                                 <numIndex index="1">none</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.yearAsc</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.yearAsc
+                                </numIndex>
                                 <numIndex index="1">yearAsc</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.yearDesc</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.yearDesc
+                                </numIndex>
                                 <numIndex index="1">yearDesc</numIndex>
                             </numIndex>
                             <numIndex index="3" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.entrytype</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.entrytype
+                                </numIndex>
                                 <numIndex index="1">entrytype</numIndex>
                             </numIndex>
                             <numIndex index="4" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.dblp</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.dblp
+                                </numIndex>
                                 <numIndex index="1">dblp</numIndex>
                             </numIndex>
                         </items>
@@ -41,7 +52,8 @@
 
             <settings.grouping.anchors>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.anchors</label>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.anchors
+                    </label>
                     <displayCond>FIELD:settings.grouping.key:!=:none</displayCond>
                     <config>
                         <type>check</type>
@@ -51,30 +63,41 @@
 
             <settings.sorting.sortKey>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey</label>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey
+                    </label>
                     <displayCond>FIELD:settings.grouping.key:!=:dblp</displayCond>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.year</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.year
+                                </numIndex>
                                 <numIndex index="1">year</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.title</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.title
+                                </numIndex>
                                 <numIndex index="1">title</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.author</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.author
+                                </numIndex>
                                 <numIndex index="1">author</numIndex>
                             </numIndex>
                             <numIndex index="3" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.entrytype</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.entrytype
+                                </numIndex>
                                 <numIndex index="1">entrytype</numIndex>
                             </numIndex>
                             <numIndex index="4" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.month</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey.month
+                                </numIndex>
                                 <numIndex index="1">month</numIndex>
                             </numIndex>
                         </items>
@@ -84,18 +107,24 @@
 
             <settings.sorting.sortOrder>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder</label>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder
+                    </label>
                     <displayCond>FIELD:settings.grouping.key:!=:dblp</displayCond>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder.desc</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder.desc
+                                </numIndex>
                                 <numIndex index="1">desc</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder.asc</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortOrder.asc
+                                </numIndex>
                                 <numIndex index="1">asc</numIndex>
                             </numIndex>
                         </items>
@@ -103,76 +132,34 @@
                 </TCEforms>
             </settings.sorting.sortOrder>
 
-            <settings.sorting.entrytypeOrder>
+            <settings.filtering.entrytypes>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.entrytype.order</label>
-                    <displayCond>FIELD:settings.grouping.key:=:entrytype</displayCond>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.entrytype
+                    </label>
                     <config>
-                        <type>select</type>
-                        <renderType>selectMultipleSideBySide</renderType>
-                        <size>7</size>
-                        <maxitems>20</maxitems>
-                        <items>
-                            <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.article</numIndex>
-                                <numIndex index="1">article</numIndex>
-                            </numIndex>
-                            <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.book</numIndex>
-                                <numIndex index="1">book</numIndex>
-                            </numIndex>
-                            <numIndex index="2" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.inproceedings</numIndex>
-                                <numIndex index="1">inproceedings</numIndex>
-                            </numIndex>
-                            <numIndex index="3" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.phdthesis</numIndex>
-                                <numIndex index="1">phdthesis</numIndex>
-                            </numIndex>
-                            <numIndex index="4" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.incollection</numIndex>
-                                <numIndex index="1">incollection</numIndex>
-                            </numIndex>
-                            <numIndex index="5" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.techreport</numIndex>
-                                <numIndex index="1">techreport</numIndex>
-                            </numIndex>
-                            <numIndex index="6" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.patent</numIndex>
-                                <numIndex index="1">patent</numIndex>
-                            </numIndex>
-                            <numIndex index="7" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.standard</numIndex>
-                                <numIndex index="1">standard</numIndex>
-                            </numIndex>
-                            <numIndex index="8" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.booklet</numIndex>
-                                <numIndex index="1">booklet</numIndex>
-                            </numIndex>
-                            <numIndex index="9" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.presentation</numIndex>
-                                <numIndex index="1">presentation</numIndex>
-                            </numIndex>
-                            <numIndex index="10" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.electronic</numIndex>
-                                <numIndex index="1">electronic</numIndex>
-                            </numIndex>
-                            <numIndex index="11" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.unpublished</numIndex>
-                                <numIndex index="1">unpublished</numIndex>
-                            </numIndex>
-                            <numIndex index="12" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang.xlf:entrytype.misc</numIndex>
-                                <numIndex index="1">misc</numIndex>
-                            </numIndex>
-                        </items>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
                     </config>
                 </TCEforms>
-            </settings.sorting.entrytypeOrder>
+            </settings.filtering.entrytypes>
+
+            <settings.filtering.numericYear>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.numericyear
+                    </label>
+                    <config>
+                        <type>check</type>
+                        <default>1</default>
+                    </config>
+                </TCEforms>
+            </settings.filtering.numericYear>
 
             <settings.filtering.year>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.year</label>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.year
+                    </label>
                     <config>
                         <type>input</type>
                         <size>4</size>
@@ -181,19 +168,10 @@
                 </TCEforms>
             </settings.filtering.year>
 
-            <settings.filtering.numericYear>
-                <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.numericyear</label>
-                    <config>
-                        <type>check</type>
-                        <default>1</default>
-                    </config>
-                </TCEforms>
-            </settings.filtering.numericYear>
-
             <settings.filtering.inline>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.inline</label>
+                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.inline
+                    </label>
                     <config>
                         <type>check</type>
                         <default>0</default>
@@ -203,22 +181,30 @@
 
             <settings.filtering.duplicates>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates</label>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates
+                    </label>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
                         <default>0</default>
                         <items>
                             <numIndex index="0" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.none</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.none
+                                </numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.soft</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.soft
+                                </numIndex>
                                 <numIndex index="1">1</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
-                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.hard</numIndex>
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.duplicates.hard
+                                </numIndex>
                                 <numIndex index="1">2</numIndex>
                             </numIndex>
                         </items>

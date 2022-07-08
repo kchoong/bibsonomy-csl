@@ -60,7 +60,7 @@ class HeaderViewHelper extends AbstractViewHelper
     private static function getEntrytypeLabel(string $entrytype, array $entrytypes): string
     {
         if (array_key_exists($entrytype, $entrytypes)) {
-            return $entrytypes[$entrytype]['long'];
+            return $entrytypes[$entrytype]['label'];
         }
 
         return $entrytype;

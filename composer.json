@@ -22,8 +22,8 @@
         "php": "^7.2 || ^8.0",
         "typo3/cms-core": "^11.5",
         "academicpuma/restclient-php": "dev-develop",
-        "citation-style-language/locales":"@dev",
-        "citation-style-language/styles":"@dev",
+        "citation-style-language/locales": "@dev",
+        "citation-style-language/styles": "@dev",
         "seboettg/citeproc-php": "^2.4",
         "ext-dom": "*",
         "ext-json": "*",
@@ -73,8 +73,13 @@
         "typo3-ter/bibsonomy-csl": "self.version"
     },
     "config": {
+        "allow-plugins": {
+            "typo3/class-alias-loader": true,
+            "typo3/cms-composer-installers": true
+        },
         "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
+        "bin-dir": ".Build/bin",
+        "sort-packages": true
     },
     "scripts": {
         "post-autoload-dump": [

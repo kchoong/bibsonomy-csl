@@ -49,7 +49,7 @@ class AnchorViewHelper extends AbstractViewHelper
     private static function getEntrytypeLabel(string $entrytype, array $entrytypes): string
     {
         if (array_key_exists($entrytype, $entrytypes)) {
-            return $entrytypes[$entrytype]['short'];
+            return $entrytypes[$entrytype]['label'];
         }
 
         return $entrytype;
