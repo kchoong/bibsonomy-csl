@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication',
+        'title' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication',
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -20,57 +20,47 @@ return [
         'iconfile' => 'EXT:bibsonomy_csl/Resources/Public/Icons/tx_bibsonomycsl_domain_model_authentication.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'hostAddress, userName, apiKey, accessToken, enabledOAuth, createdDate'],
+        '0' => ['showitem' => 'uid, cruser_id, host_address, user_name, api_key, access_token, o_auth_enabled'],
     ],
     'columns' => [
-        'hostAddress' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.hostAddress',
+        'host_address' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.hostAddress',
             'config' => [
                 'type' => 'input',
                 'size' => 60,
                 'eval' => 'trim'
             ],
         ],
-        'userName' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.userName',
+        'user_name' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.userName',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],
         ],
-        'apiKey' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.apiKey',
+        'api_key' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.apiKey',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
             ],
         ],
-        'accessToken' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.accessToken',
+        'access_token' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.accessToken',
             'config' => [
                 'type' => 'input',
                 'size' => 60,
                 'eval' => 'trim'
             ],
         ],
-        'enabledOAuth' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.enabledOAuth',
+        'o_auth_enabled' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.oAuthEnabled',
             'config' => [
                 'type' => 'check',
                 'default' => 0
             ]
-        ],
-        'createdDate' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_authentication.createdDate',
-            'config' => [
-                'type' => 'input',
-                'size' => 10,
-                'eval' => 'datetime',
-                'checkbox' => 1,
-                'default' => time()
-            ],
         ],
     ],
 ];

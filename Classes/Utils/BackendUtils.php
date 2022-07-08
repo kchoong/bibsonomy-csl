@@ -123,17 +123,14 @@ class BackendUtils
             ->getQueryBuilderForTable($dbName);
         try {
             $result = $queryBuilder
+                ->select('uid', 'name')
                 ->from($dbName)
-                ->select('uuid', 'title')
-                ->where(
-                    $queryBuilder->expr()->eq('cruser_id', $userId),
-                    $queryBuilder->expr()->eq('deleted', 0)
-                )
                 ->executeQuery();
             while ($row = $result->fetchAssociative()) {
-
+                $config['items'][] = array($row['name'], $row['uid']);
             }
         } catch (DBALException|Exception $e) {
+            $e->getMessage();
         }
 
         return $config;

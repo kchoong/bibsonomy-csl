@@ -4,16 +4,16 @@
           date="2022-04-20T13:40:17Z" product-name="bibsonomy_csl">
         <header/>
         <body>
-            <trans-unit id="tx_bibsonomy_csl_publicationlist.name">
+            <trans-unit id="bibsonomycsl.publicationlist.name">
                 <source>Publication List</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomy_csl_publicationlist.description">
+            <trans-unit id="bibsonomycsl.publicationlist.description">
                 <source>Display a list of publications.</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomy_csl_tagcloud.name">
+            <trans-unit id="bibsonomycsl.tagcloud.name">
                 <source>Tag Cloud</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomy_csl_tagcloud.description">
+            <trans-unit id="bibsonomycsl.tagcloud.description">
                 <source>Display a tag cloud, that is generated from a publication list.</source>
             </trans-unit>
 

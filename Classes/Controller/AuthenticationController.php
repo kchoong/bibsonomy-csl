@@ -8,6 +8,8 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 use AcademicPuma\BibsonomyCsl\Domain\Model\Authentication;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Backend\View\BackendTemplateView;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -25,6 +27,14 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 class AuthenticationController extends ActionController
 {
+
+    protected $moduleTemplateFactory = null;
+    protected $moduleTemplate = null;
+
+    public function __construct(ModuleTemplateFactory $moduleTemplateFactory)
+    {
+        $this->moduleTemplateFactory = $moduleTemplateFactory;
+    }
 
     /**
      * authenticationRepository

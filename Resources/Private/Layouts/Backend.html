@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<div class="tx-bibsonomy-csl">
+		<div>
+			<f:be.menus.actionMenu>
+				<f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.menu.overview')}"
+										   controller="Backend"
+										   action="index"/>
+
+				<f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.menu.stylesheets')}"
+										   controller="CitationStylesheet"
+										   action="list"/>
+
+				<f:be.menus.actionMenuItem label="{f:translate(key: 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.menu.authentication')}"
+										   controller="Authentication"
+										   action="list"/>
+			</f:be.menus.actionMenu>
+		</div>
+
+		<f:render section="content" />
+	</div>
+</html>

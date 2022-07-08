@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace AcademicPuma\BibsonomyCsl\Controller;
 
+use AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository;
 use AcademicPuma\BibsonomyCsl\Utils\ApiUtils;
 use AcademicPuma\BibsonomyCsl\Utils\PostUtils;
 use AcademicPuma\RestClient\Config\Grouping;
@@ -59,6 +60,21 @@ class PublicationController extends ApiActionController
     const SEARCHTYPE = 'searchindex';
 
     /**
+     * citationStylesheetRepository
+     *
+     * @var CitationStylesheetRepository
+     */
+    protected $citationStylesheetRepository = null;
+
+    /**
+     * @param CitationStylesheetRepository $citationStylesheetRepository
+     */
+    public function injectCitationStylesheetRepository(CitationStylesheetRepository $citationStylesheetRepository)
+    {
+        $this->citationStylesheetRepository = $citationStylesheetRepository;
+    }
+
+    /**
      * action list
      *
      * @return ResponseInterface
@@ -69,12 +85,16 @@ class PublicationController extends ApiActionController
         $this->makeAccessor();
 
         // assign settings to view
-        $this->view->assign('settings', $this->settings);
-        $this->view->assign('grouping', $this->settings['grouping']);
-        $this->view->assign('sorting', $this->settings['sorting']);
-        $this->view->assign('filtering', $this->settings['filtering']);
-        $this->view->assign('layout', $this->settings['layout']);
-        $this->view->assign('custom', $this->settings['custom']);
+        $this->view->assignMultiple(
+            [
+                'settings' => $this->settings,
+                'grouping' => $this->settings['grouping'],
+                'sorting' => $this->settings['sorting'],
+                'filtering' => $this->settings['filtering'],
+                'layout' => $this->settings['layout'],
+                'custom' => $this->settings['custom'],
+            ]
+        );
 
         // assign citation stylesheet
         switch ($this->settings['layout']['stylesheet']) {
@@ -85,7 +105,8 @@ class PublicationController extends ApiActionController
                     $fileContent = file_get_contents(GeneralUtility::getFileAbsFileName("EXT:bibsonomy_csl/Resources/Private/CSL/$databaseId"));
                     $this->view->assign('stylesheet', $fileContent);
                 } else {
-
+                    $stylesheet = $this->citationStylesheetRepository->findByUid($databaseId);
+                    $this->view->assign('stylesheet', $stylesheet->getXmlSource());
                 }
                 break;
             case 'xml':

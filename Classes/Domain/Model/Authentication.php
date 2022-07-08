@@ -26,22 +26,22 @@ class Authentication extends AbstractEntity
     protected $userName = '';
     protected $apiKey = '';
     protected $accessToken = '';
-    protected $enabledOAuth = false;
+    protected $oAuthEnabled = false;
 
     /**
      * @param string $hostAddress
      * @param string $userName
      * @param string $apiKey
      * @param string $accessToken
-     * @param bool $enabledOAuth
+     * @param bool $oAuthEnabled
      */
-    public function __construct(string $hostAddress = '', string $userName = '', string $apiKey = '', string $accessToken = '', bool $enabledOAuth = false)
+    public function __construct(string $hostAddress = '', string $userName = '', string $apiKey = '', string $accessToken = '', bool $oAuthEnabled = false)
     {
         $this->hostAddress = $hostAddress;
         $this->userName = $userName;
         $this->apiKey = $apiKey;
         $this->accessToken = $accessToken;
-        $this->enabledOAuth = $enabledOAuth;
+        $this->oAuthEnabled = $oAuthEnabled;
     }
 
     /**
@@ -111,17 +111,17 @@ class Authentication extends AbstractEntity
     /**
      * @return bool
      */
-    public function isEnabledOAuth(): bool
+    public function isOAuthEnabled(): bool
     {
-        return $this->enabledOAuth;
+        return $this->oAuthEnabled;
     }
 
     /**
-     * @param bool $enabledOAuth
+     * @param bool $oAuthEnabled
      */
-    public function setEnabledOAuth(bool $enabledOAuth): void
+    public function setOAuthEnabled(bool $oAuthEnabled): void
     {
-        $this->enabledOAuth = $enabledOAuth;
+        $this->oAuthEnabled = $oAuthEnabled;
     }
 
 }

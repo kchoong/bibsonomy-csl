@@ -1,7 +1,7 @@
 <?php
 return [
     'ctrl' => [
-        'title' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_citationstylesheet',
+        'title' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet',
         'label' => 'uid',
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
@@ -20,19 +20,19 @@ return [
         'iconfile' => 'EXT:bibsonomy_csl/Resources/Public/Icons/tx_bibsonomycsl_domain_model_citationstylesheet.gif'
     ],
     'types' => [
-        '1' => ['showitem' => 'name, xmlSource'],
+        '0' => ['showitem' => 'uid, cruser_id, name, xml_source'],
     ],
     'columns' => [
         'name' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_citationstylesheet.name',
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.name',
             'config' => [
                 'type' => 'input',
                 'size' => 60,
                 'eval' => 'trim'
             ],
         ],
-        'xmlSource' => [
-            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:tx_bibsonomycsl_domain_model_citationstylesheet.xmlSource',
+        'xml_source' => [
+            'label' => 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.xmlSource',
             'config' => [
                 'type' => 'text',
                 'eval' => 'trim',

@@ -1,21 +1,9 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-
-This template displays a NEW form for the current domain object.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        CitationStylesheet:
-          New.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:layout name="Backend" />
 
 <f:section name="content">
     <h1>
-        <f:translate key="tx_bibsonomycsl_domain_model_citationstylesheet.new"/>
+        <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.new"/>
     </h1>
 
     <f:flashMessages />
@@ -23,8 +11,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
     <f:render partial="FormErrors" />
 
     <f:form action="create" name="newCitationStylesheet" object="{newCitationStylesheet}">
-    <f:render partial="CitationStylesheet/FormFields" />
-    <f:form.submit value="Create new" />
+        <f:render partial="CitationStylesheet/FormFields" />
+        <f:form.submit value="{f:translate(key: 'LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.button.save')}" />
     </f:form>
 </f:section>
 </html>

@@ -8,6 +8,9 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 use AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Backend\Template\Components\ButtonBar;
+use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
@@ -24,6 +27,14 @@ use Psr\Http\Message\ResponseInterface;
  */
 class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 {
+
+    protected $moduleTemplateFactory = null;
+    protected $moduleTemplate = null;
+
+    public function __construct(ModuleTemplateFactory $moduleTemplateFactory)
+    {
+        $this->moduleTemplateFactory = $moduleTemplateFactory;
+    }
 
     /**
      * citationStylesheetRepository
@@ -49,7 +60,12 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     {
         $citationStylesheets = $this->citationStylesheetRepository->findAll();
         $this->view->assign('citationStylesheets', $citationStylesheets);
-        return $this->htmlResponse();
+
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+
+        // Adding title, menus, buttons, etc. using $moduleTemplate ...
+        $this->moduleTemplate->setContent($this->view->render());
+        return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
 
     /**
@@ -59,7 +75,11 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      */
     public function newAction(): ResponseInterface
     {
-        return $this->htmlResponse();
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+
+        // Adding title, menus, buttons, etc. using $moduleTemplate ...
+        $this->moduleTemplate->setContent($this->view->render());
+        return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
 
     /**
@@ -69,7 +89,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      */
     public function createAction(CitationStylesheet $newCitationStylesheet)
     {
-        $this->addFlashMessage('The object was created. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.new.success",
+            'BibsonomyCsl');
+        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->citationStylesheetRepository->add($newCitationStylesheet);
         $this->redirect('list');
     }
@@ -84,7 +106,12 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     public function editAction(CitationStylesheet $citationStylesheet): ResponseInterface
     {
         $this->view->assign('citationStylesheet', $citationStylesheet);
-        return $this->htmlResponse();
+
+        $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
+
+        // Adding title, menus, buttons, etc. using $moduleTemplate ...
+        $this->moduleTemplate->setContent($this->view->render());
+        return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
 
     /**
@@ -94,7 +121,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      */
     public function updateAction(CitationStylesheet $citationStylesheet)
     {
-        $this->addFlashMessage('The object was updated. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.edit.success",
+            'BibsonomyCsl');
+        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
         $this->citationStylesheetRepository->update($citationStylesheet);
         $this->redirect('list');
     }
@@ -106,7 +135,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      */
     public function deleteAction(CitationStylesheet $citationStylesheet)
     {
-        $this->addFlashMessage('The object was deleted. Please be aware that this action is publicly accessible unless you implement an access check. See https://docs.typo3.org/p/friendsoftypo3/extension-builder/master/en-us/User/Index.html', '', \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.delete.success",
+            'BibsonomyCsl');
+        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
         $this->citationStylesheetRepository->remove($citationStylesheet);
         $this->redirect('list');
     }

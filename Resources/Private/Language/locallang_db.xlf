@@ -14,46 +14,91 @@
                 </source>
             </trans-unit>
 
+            <!-- Backend module -->
+
+            <trans-unit id="module.menu.overview">
+                <source>Overview</source>
+            </trans-unit>
+            <trans-unit id="module.menu.stylesheets">
+                <source>Manage your CSL Stylesheets</source>
+            </trans-unit>
+            <trans-unit id="module.menu.authentication">
+                <source>Manage your API Authentication</source>
+            </trans-unit>
+
+            <trans-unit id="module.button.create">
+                <source>Create</source>
+            </trans-unit>
+            <trans-unit id="module.button.save">
+                <source>Save</source>
+            </trans-unit>
+            <trans-unit id="module.button.edit">
+                <source>Edit</source>
+            </trans-unit>
+            <trans-unit id="module.button.delete">
+                <source>Delete</source>
+            </trans-unit>
+
+            <trans-unit id="module.actions">
+                <source>Actions</source>
+            </trans-unit>
+
+            <trans-unit id="module.form.required">
+                <source>(required)</source>
+            </trans-unit>
+
             <!-- Citation stylesheet -->
 
-            <trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet">
+            <trans-unit id="module.citationstylesheet">
                 <source>Citation Stylesheet</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet.list">
+            <trans-unit id="module.citationstylesheet.list">
                 <source>List of Citation Stylesheets</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet.add">
+            <trans-unit id="module.citationstylesheet.new">
                 <source>New Citation Stylesheet</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet.name">
-                <source>Name</source>
+            <trans-unit id="module.citationstylesheet.new.success">
+                <source>The citation stylesheet has been successfully added.</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_citationstylesheet.xmlSource">
+            <trans-unit id="module.citationstylesheet.edit">
+                <source>Edit Citation Stylesheet</source>
+            </trans-unit>
+            <trans-unit id="module.citationstylesheet.edit.success">
+                <source>The citation stylesheet has been successfully edited.</source>
+            </trans-unit>
+            <trans-unit id="module.citationstylesheet.delete.success">
+                <source>The citation stylesheet has been successfully deleted.</source>
+            </trans-unit>
+            <trans-unit id="module.citationstylesheet.name">
+                <source>Citation Stylesheet Name</source>
+            </trans-unit>
+            <trans-unit id="module.citationstylesheet.xmlSource">
                 <source>XML Source</source>
+            </trans-unit>
+            <trans-unit id="module.citationstylesheet.table.name">
+                <source>Citation Stylesheet Name</source>
             </trans-unit>
 
             <!-- Authentication -->
 
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication">
+            <trans-unit id="module.authentication">
                 <source>Authentication</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.hostAddress">
+            <trans-unit id="module.authentication.hostAddress">
                 <source>Host Address</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.userName">
+            <trans-unit id="module.authentication.userName">
                 <source>Username</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.apiKey">
+            <trans-unit id="module.authentication.apiKey">
                 <source>API Key</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.accessToken">
+            <trans-unit id="module.authentication.accessToken">
                 <source>Access Token</source>
             </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.enabledOAuth">
+            <trans-unit id="module.authentication.oAuthEnabled">
                 <source>OAuth enabled</source>
-            </trans-unit>
-            <trans-unit id="tx_bibsonomycsl_domain_model_authentication.createdDate">
-                <source>Created date</source>
             </trans-unit>
         </body>
     </file>
