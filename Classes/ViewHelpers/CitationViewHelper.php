@@ -21,8 +21,8 @@ class CitationViewHelper extends AbstractViewHelper
     public function initializeArguments()
     {
         $this->registerArgument('post', '\AcademicPuma\RestClient\Model\Post', 'The post to render as citation', true);
-        $this->registerArgument('stylesheet', 'string', 'The CSL stylesheet as XML', true);
         $this->registerArgument('language', 'string', 'The language', true);
+        $this->registerArgument('stylesheet', 'string', 'The CSL stylesheet as XML', true);
     }
 
     public static function renderStatic(
@@ -31,8 +31,9 @@ class CitationViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ): string
     {
-        $language = $arguments['language'] ?? 'en-US';
-        $stylesheet = $arguments['stylesheet'] ?? 'apa';
+        $post = $arguments['post'];
+        $language = $arguments['language'];
+        $stylesheet = $arguments['stylesheet'];
 
         $additionalMarkup = [
             "bibliography" => [
@@ -57,12 +58,11 @@ class CitationViewHelper extends AbstractViewHelper
             ]
         ];
 
-        // keep in case of errors rendering the entire posts list at once
         $output = '';
         try {
             $cslRenderer = new CSLModelRenderer();
-            $citeProc = new CiteProc(StyleSheet::loadStyleSheet($stylesheet), $language, $additionalMarkup);
-            $csl = $cslRenderer->render($arguments['post']);
+            $citeProc = new CiteProc($stylesheet, $language, $additionalMarkup);
+            $csl = $cslRenderer->render($post);
             $output .= $citeProc->render(array((object) $csl));
         } catch (Exception | CiteProcException $e) {
             return $e->getMessage();

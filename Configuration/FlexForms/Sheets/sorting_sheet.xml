@@ -52,7 +52,8 @@
 
             <settings.grouping.anchors>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.anchors
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.grouping.anchors
                     </label>
                     <displayCond>FIELD:settings.grouping.key:!=:none</displayCond>
                     <config>
@@ -63,7 +64,8 @@
 
             <settings.sorting.sortKey>
                 <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.sorting.sortKey
                     </label>
                     <displayCond>FIELD:settings.grouping.key:!=:dblp</displayCond>
                     <config>

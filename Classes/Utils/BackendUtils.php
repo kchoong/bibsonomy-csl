@@ -2,8 +2,11 @@
 
 namespace AcademicPuma\BibsonomyCsl\Utils;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Driver\Exception;
 use ReflectionClass;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Http\RequestFactory as RequestFactoryAlias;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -43,6 +46,9 @@ class BackendUtils
 
     public static function getHosts(array &$config): array
     {
+        // Add default hosts
+        $config['items'][] = array('BibSonomy', 'https://www.bibsonomy.org/');
+
         $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('bibsonomy_csl');
         $serverListUrl = $extensionConfiguration['instanceListUrl'];
 
@@ -62,8 +68,6 @@ class BackendUtils
         }
         $serverList = json_decode($content);
 
-        $config['items'][] = array('Local', 'http://bibsonomy.azg/');
-        $config['items'][] = array('BibSonomy', 'https://www.bibsonomy.org/');
         if ($serverList) {
             foreach ($serverList->server as $server) {
                 $config['items'][] = array($server->instanceName, $server->instanceUrl);
@@ -73,7 +77,7 @@ class BackendUtils
         return $config;
     }
 
-    public function getLocales($config)
+    public function getLocales(array &$config)
     {
         // Add default languages
         $config['items'][] = array('English', 'en-US');
@@ -95,6 +99,41 @@ class BackendUtils
             if ($code != 'en-US' and $code != 'de-DE') {
                 $config['items'][] = array($labels[1], $code);
             }
+        }
+
+        return $config;
+    }
+
+    public function getStylesheets(array &$config)
+    {
+        // Add default stylesheets
+        $config['items'][] = array('BibSonomy CSL Style', 'everyAware.csl');
+        $config['items'][] = array('APA', 'apa.csl');
+        $config['items'][] = array('Springer LNCS', 'springer-lecture-notes-in-computer-science.csl');
+        $config['items'][] = array('DIN 1505-2', 'din-1505-2.csl');
+        $config['items'][] = array('IEEE', 'ieee.csl');
+        $config['items'][] = array('Chicago Manual of Style', 'chicago-author-date.csl');
+
+        // Load stylesheets from database
+        global $GLOBALS;
+        $userId = $GLOBALS["BE_USER"]->user["uid"];
+
+        $dbName = "tx_bibsonomycsl_domain_model_citationstylesheet";
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable($dbName);
+        try {
+            $result = $queryBuilder
+                ->from($dbName)
+                ->select('uuid', 'title')
+                ->where(
+                    $queryBuilder->expr()->eq('cruser_id', $userId),
+                    $queryBuilder->expr()->eq('deleted', 0)
+                )
+                ->executeQuery();
+            while ($row = $result->fetchAssociative()) {
+
+            }
+        } catch (DBALException|Exception $e) {
         }
 
         return $config;

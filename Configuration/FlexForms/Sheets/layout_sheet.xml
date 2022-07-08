@@ -28,27 +28,73 @@
                     <label>
                         LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style
                     </label>
+                    <onChange>reload</onChange>
                     <config>
                         <type>select</type>
                         <renderType>selectSingle</renderType>
-                        <maxitems>1</maxitems>
-                        <size>1</size>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style.default</numIndex>
+                                <numIndex index="1">default</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style.name</numIndex>
+                                <numIndex index="1">name</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style.xml</numIndex>
+                                <numIndex index="1">xml</numIndex>
+                            </numIndex>
+                        </items>
+                        <default>default</default>
                     </config>
                 </TCEforms>
             </settings.layout.stylesheet>
 
-            <settings.layout.customStylesheet>
+            <settings.layout.stylesheetDefault>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.custom
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.default
                     </label>
+                    <displayCond>FIELD:settings.layout.stylesheet:=:default</displayCond>
+                    <config>
+                        <type>select</type>
+                        <itemsProcFunc>AcademicPuma\BibsonomyCsl\Utils\BackendUtils->getStylesheets</itemsProcFunc>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <!-- empty by default -->
+                        </items>
+                    </config>
+                </TCEforms>
+            </settings.layout.stylesheetDefault>
+
+            <settings.layout.stylesheetName>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.name
+                    </label>
+                    <displayCond>FIELD:settings.layout.stylesheet:=:name</displayCond>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.layout.stylesheetName>
+
+            <settings.layout.stylesheetXML>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.xml
+                    </label>
+                    <displayCond>FIELD:settings.layout.stylesheet:=:xml</displayCond>
                     <config>
                         <type>text</type>
                         <cols>45</cols>
                         <rows>10</rows>
                     </config>
                 </TCEforms>
-            </settings.layout.customStylesheet>
+            </settings.layout.stylesheetXML>
 
             <settings.layout.thumbnail>
                 <TCEforms>

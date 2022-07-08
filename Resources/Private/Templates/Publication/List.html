@@ -51,7 +51,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         </f:if>
 
                         <div class="bibsonomy-citation {f:if(condition: '{layout.thumbnail} != 0', then: 'bibsonomy-citation-thumbnail')}">
-                            <bibsonomy:Citation post="{post}" stylesheet="{layout.stylesheet}" language="{layout.language}"/>
+                            <bibsonomy:Citation post="{post}" language="{layout.language}" stylesheet="{stylesheet}"/>
 
                             <div class="bibsonomy-extra">
                                 <f:if condition="{layout.notes}">

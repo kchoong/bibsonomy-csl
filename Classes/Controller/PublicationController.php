@@ -15,6 +15,8 @@ use AcademicPuma\RestClient\RESTClient;
 use Exception;
 use GuzzleHttp\Exception\BadResponseException;
 use Psr\Http\Message\ResponseInterface;
+use Seboettg\CiteProc\Exception\CiteProcException;
+use Seboettg\CiteProc\StyleSheet;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
@@ -73,6 +75,31 @@ class PublicationController extends ApiActionController
         $this->view->assign('filtering', $this->settings['filtering']);
         $this->view->assign('layout', $this->settings['layout']);
         $this->view->assign('custom', $this->settings['custom']);
+
+        // assign citation stylesheet
+        switch ($this->settings['layout']['stylesheet']) {
+            case 'default':
+                $databaseId = $this->settings['layout']['stylesheetDefault'];
+                if (!is_numeric($databaseId)) {
+                    // ID is not numeric, it means it's a default CSL of the plugin we have to load
+                    $fileContent = file_get_contents(GeneralUtility::getFileAbsFileName("EXT:bibsonomy_csl/Resources/Private/CSL/$databaseId"));
+                    $this->view->assign('stylesheet', $fileContent);
+                } else {
+
+                }
+                break;
+            case 'xml':
+                $this->view->assign('stylesheet', $this->settings['layout']['stylesheetXML']);
+                break;
+            case 'name':
+            default:
+                try {
+                    $this->view->assign('stylesheet', StyleSheet::loadStyleSheet($this->settings['layout']['stylesheetName']));
+                } catch (CiteProcException $e) {
+                    $this->view->assign('stylesheet', StyleSheet::loadStyleSheet('apa'));
+                }
+                break;
+        }
 
         // get posts
         $posts = $this->getPosts($this->settings);

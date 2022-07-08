@@ -69,10 +69,7 @@
                     <config>
                         <type>text</type>
                         <cols>45</cols>
-                        <rows>15</rows>
-                        <default>
-
-                        </default>
+                        <rows>10</rows>
                     </config>
                 </TCEforms>
             </settings.custom.css>

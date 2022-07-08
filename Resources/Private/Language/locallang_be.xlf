@@ -151,7 +151,7 @@
                 <source>Enable inline filtering</source>
             </trans-unit>
             <trans-unit id="flexform.filtering.duplicates">
-                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information.)
+                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information)
                 </source>
             </trans-unit>
             <trans-unit id="flexform.filtering.duplicates.none">
@@ -169,14 +169,29 @@
             <trans-unit id="flexform.layout.tab">
                 <source>Layout</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.csl.style">
-                <source>Choose your preferred Bibliography Style for this Publication List</source>
-            </trans-unit>
             <trans-unit id="flexform.layout.csl.lang">
                 <source>Choose your preferred language for this Publication List</source>
             </trans-unit>
-            <trans-unit id="flexform.layout.csl.custom">
-                <source>Alternatively, insert a custom CSL Stylesheet</source>
+            <trans-unit id="flexform.layout.csl.style">
+                <source>Choose the citation stylesheet mode</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.style.default">
+                <source>Default</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.style.name">
+                <source>Stylesheet Name</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.style.xml">
+                <source>Custom Stylesheet (XML)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.default">
+                <source>Choose your preferred bibliography style for this publication list</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.name">
+                <source>Insert the name of a CSL stylesheet (See https://csl.mendeley.com for a list of stylesheets)</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.csl.xml">
+                <source>Insert a custom CSL Stylesheet (XML)</source>
             </trans-unit>
             <trans-unit id="flexform.layout.link.abstract">
                 <source>Check this to enable toggle link for the publication abstract</source>
@@ -271,7 +286,8 @@
                 <source>Define layout modification using CSS</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.list">
-                <source>Define personal websites and e-mails of authors (AT-sign can be entered in any chosen form). \n E.g.
+                <source>Define personal websites and e-mails of authors (AT-sign can be entered in any chosen form). \n
+                    E.g.
                     Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
                     for not available). \n It is also possible to enter a URL to a text-file with a list in the
                     described format.
