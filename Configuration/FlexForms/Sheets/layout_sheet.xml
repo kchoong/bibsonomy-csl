@@ -7,20 +7,6 @@
         </TCEforms>
         <type>array</type>
         <el>
-            <settings.layout.stylesheet>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style
-                    </label>
-                    <config>
-                        <type>select</type>
-                        <renderType>selectSingle</renderType>
-                        <maxitems>1</maxitems>
-                        <size>1</size>
-                    </config>
-                </TCEforms>
-            </settings.layout.stylesheet>
-
             <settings.layout.language>
                 <TCEforms>
                     <label>
@@ -36,6 +22,20 @@
                     </config>
                 </TCEforms>
             </settings.layout.language>
+
+            <settings.layout.stylesheet>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.csl.style
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <maxitems>1</maxitems>
+                        <size>1</size>
+                    </config>
+                </TCEforms>
+            </settings.layout.stylesheet>
 
             <settings.layout.customStylesheet>
                 <TCEforms>

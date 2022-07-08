@@ -88,7 +88,7 @@ class PublicationController extends ApiActionController
 
         // prepare entrytype list with labels
         if ($this->settings['grouping']['key'] == 'entrytype') {
-            $entrytypeLabels = $this->getEntrytypeLabels(array_keys($posts->toArray()));
+            $entrytypeLabels = $this->getEntrytypeLabels(array_keys($posts->toArray()), $this->settings['layout']['language']);
             $this->view->assign('entrytypes', $entrytypeLabels);
         }
 
@@ -308,7 +308,7 @@ class PublicationController extends ApiActionController
         }
     }
 
-    private function getEntrytypeLabels(array $entrytypes, string $lang='de'): array
+    private function getEntrytypeLabels(array $entrytypes, string $lang='en-US'): array
     {
         $result = [];
         $customEntrytypesCsv = GeneralUtility::makeInstance(ExtensionConfiguration::class)
@@ -320,7 +320,7 @@ class PublicationController extends ApiActionController
                 foreach ($customEntrytypesArr as $entrytype) {
                     $entryArr = explode(',', $entrytype);
                     if (count($entryArr) == 4) {
-                        $label = $lang == 'de' ? $entryArr[2] : $entrytype[1];
+                        $label = $lang == 'de-DE' ? $entryArr[2] : $entryArr[1];
                         $result[$entryArr[0]] = [
                             'label' => $label,
                             'description' => $label,

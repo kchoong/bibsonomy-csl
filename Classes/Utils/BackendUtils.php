@@ -2,6 +2,7 @@
 
 namespace AcademicPuma\BibsonomyCsl\Utils;
 
+use ReflectionClass;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Http\RequestFactory as RequestFactoryAlias;
 use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
@@ -74,21 +75,28 @@ class BackendUtils
 
     public function getLocales($config)
     {
-        return [];
-        $path = ExtensionManagementUtility::extPath('bibsonomy_csl') . 'vendor/academicpuma/citation-locales';
-        $handle = opendir($path);
-        if ($handle) {
-            $i = 0;
-            while (false !== ($file = readdir($handle))) {
-                if (false !== strpos($file, 'xml')) {
-                    $lang = substr($file, 8, 5);
-                    $config['items'][$i++] = array($lang, $lang);
-                }
-            }
-            closedir($handle);
+        // Add default languages
+        $config['items'][] = array('English', 'en-US');
+        $config['items'][] = array('German', 'de-DE');
+
+        $reflector = new ReflectionClass(\AcademicPuma\RestClient\RESTClient::class);
+        $fileName = $reflector->getFileName();
+        $filePath = substr($fileName, 0, strripos($fileName, "/"));
+
+        include_once realpath($filePath . '/../') . '/vendorPath.php';
+        $path = vendorPath() . '/citation-style-language/locales/locales.json';
+        $fileContent = file_get_contents($path);
+        if ($fileContent === false) {
+            return $config;
         }
 
-        asort($config['items']);
+        $languages = json_decode($fileContent, true)['language-names'];
+        foreach ($languages as $code => $labels) {
+            if ($code != 'en-US' and $code != 'de-DE') {
+                $config['items'][] = array($labels[1], $code);
+            }
+        }
+
         return $config;
     }
 }
