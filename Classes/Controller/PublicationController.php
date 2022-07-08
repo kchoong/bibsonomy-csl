@@ -15,6 +15,8 @@ use AcademicPuma\RestClient\RESTClient;
 use Exception;
 use GuzzleHttp\Exception\BadResponseException;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
@@ -306,18 +308,39 @@ class PublicationController extends ApiActionController
         }
     }
 
-    private function getEntrytypeLabels(array $entrytypes): array
+    private function getEntrytypeLabels(array $entrytypes, string $lang='de'): array
     {
         $result = [];
+        $customEntrytypesCsv = GeneralUtility::makeInstance(ExtensionConfiguration::class)
+            ->get('bibsonomy_csl')['customEntrytypes'];
+
+        if ($customEntrytypesCsv) {
+            $customEntrytypesArr = explode(PHP_EOL, $customEntrytypesCsv);
+            if ($customEntrytypesArr) {
+                foreach ($customEntrytypesArr as $entrytype) {
+                    $entryArr = explode(',', $entrytype);
+                    if (count($entryArr) == 4) {
+                        $label = $lang == 'de' ? $entryArr[2] : $entrytype[1];
+                        $result[$entryArr[0]] = [
+                            'label' => $label,
+                            'description' => $label,
+                        ];
+                    }
+                }
+            }
+        }
+
         foreach ($entrytypes as $entrytype) {
-            $label = LocalizationUtility::translate("entrytype.$entrytype", 'BibsonomyCsl');
-            $label = $label ?: $entrytype;
-            $description = LocalizationUtility::translate("entrytype.$entrytype.desc", 'BibsonomyCsl');
-            $description = $description ?: '';
-            $result[$entrytype] = [
-                'label' => $label,
-                'description' => $description,
-            ];
+            if (!array_key_exists($entrytype, $result)) {
+                $label = LocalizationUtility::translate("entrytype.$entrytype", 'BibsonomyCsl');
+                $label = $label ?: $entrytype;
+                $description = LocalizationUtility::translate("entrytype.$entrytype.desc", 'BibsonomyCsl');
+                $description = $description ?: '';
+                $result[$entrytype] = [
+                    'label' => $label,
+                    'description' => $description,
+                ];
+            }
         }
 
         return $result;

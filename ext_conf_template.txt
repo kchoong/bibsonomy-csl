@@ -11,5 +11,8 @@ oauthConsumerToken =
 # cat=OAuth; type=string; label=OAuth Consumer Secret
 oauthConsumerSecret =
 
+# cat=Custom; type=user[AcademicPuma\BibsonomyCsl\Backend\TextAreaViewHelper->render]; label=Customize entrytpes
+customEntrytypes =
+
 # cat=Debug; type=boolean; label=Enable Debug Log
 enableDebugLog = 0
