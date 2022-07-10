@@ -9,10 +9,10 @@
         <type>array</type>
         <el>
 
-            <settings.custom.personLinkMode>
+            <settings.custom.authorsMode>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.mode
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.mode
                     </label>
                     <config>
                         <type>select</type>
@@ -20,37 +20,37 @@
                         <items>
                             <numIndex index="0" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.mode.none
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.mode.none
                                 </numIndex>
                                 <numIndex index="1">none</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.mode.modal
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.mode.link
                                 </numIndex>
-                                <numIndex index="1">modal</numIndex>
+                                <numIndex index="1">link</numIndex>
                             </numIndex>
                             <numIndex index="2" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.mode.publication
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.mode.publication
                                 </numIndex>
                                 <numIndex index="1">publication</numIndex>
                             </numIndex>
                             <numIndex index="3" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.mode.both
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.mode.both
                                 </numIndex>
                                 <numIndex index="1">both</numIndex>
                             </numIndex>
                         </items>
                     </config>
                 </TCEforms>
-            </settings.custom.personLinkMode>
+            </settings.custom.authorsMode>
 
-            <settings.custom.personLinkList>
+            <settings.custom.authorsList>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.personLink.list
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.custom.authors.list
                     </label>
                     <config>
                         <type>text</type>
@@ -58,7 +58,7 @@
                         <rows>10</rows>
                     </config>
                 </TCEforms>
-            </settings.custom.personLinkList>
+            </settings.custom.authorsList>
 
             <settings.custom.css>
                 <TCEforms>

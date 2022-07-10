@@ -25,12 +25,15 @@
         </f:if>
 
         <f:if condition="{layout.inlineFilter}">
-
+            <div class="bibsonomy-inline-filter">
+                <input type="text" placeholder="Title"/>
+            </div>
         </f:if>
 
         <f:for each="{posts}" as="groups" key="group">
             <f:if condition="{grouping.key} != 'none'">
-                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" entrytypes="{entrytypes}"/>
+                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}"
+                                  entrytypes="{entrytypes}"/>
             </f:if>
 
             <ul class="bibsonomy-posts">
@@ -72,6 +75,10 @@
                                     <bibsonomy:Snippet post="{post}" type="endnote" mode="link"/>
                                 </f:if>
 
+                                <f:if condition="{custom.authorsMode} == 'link'">
+                                    <bibsonomy:Authors post="{post}" authorLinks="{authorLinks}" mode="link"/>
+                                </f:if>
+
                                 <f:if condition="{layout.linkUrl} == '1'">
                                     <bibsonomy:Link post="{post}" type="url"/>
                                 </f:if>
@@ -80,16 +87,16 @@
                                     <bibsonomy:Link post="{post}" type="doi"/>
                                 </f:if>
 
-                                <f:if condition="{layout.linkHost} == '1'">
-                                    <bibsonomy:Link post="{post}" type="host"/>
-                                </f:if>
-
                                 <f:if condition="{intval(layout.thumbnail)} > 1">
                                     <bibsonomy:Link post="{post}" type="download"/>
                                 </f:if>
 
                                 <f:if condition="{layout.linkMisc}">
                                     <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
+                                </f:if>
+
+                                <f:if condition="{layout.linkHost} == '1'">
+                                    <bibsonomy:Link post="{post}" type="host"/>
                                 </f:if>
                             </ul>
                         </div>
@@ -111,6 +118,10 @@
 
                             <f:if condition="{layout.linkEndnote} == '1'">
                                 <bibsonomy:Snippet post="{post}" type="endnote" mode="snippet"/>
+                            </f:if>
+
+                            <f:if condition="{custom.authorsMode} == 'link'">
+                                <bibsonomy:Authors post="{post}" authorLinks="{authorLinks}" mode="snippet"/>
                             </f:if>
                         </div>
                     </li>

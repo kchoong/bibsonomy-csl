@@ -85,16 +85,14 @@ class PublicationController extends ApiActionController
         $this->makeAccessor();
 
         // assign settings to view
-        $this->view->assignMultiple(
-            [
-                'settings' => $this->settings,
-                'grouping' => $this->settings['grouping'],
-                'sorting' => $this->settings['sorting'],
-                'filtering' => $this->settings['filtering'],
-                'layout' => $this->settings['layout'],
-                'custom' => $this->settings['custom'],
-            ]
-        );
+        $this->view->assignMultiple([
+            'settings' => $this->settings,
+            'grouping' => $this->settings['grouping'],
+            'sorting' => $this->settings['sorting'],
+            'filtering' => $this->settings['filtering'],
+            'layout' => $this->settings['layout'],
+            'custom' => $this->settings['custom'],
+        ]);
 
         // assign citation stylesheet
         switch ($this->settings['layout']['stylesheet']) {
@@ -124,11 +122,11 @@ class PublicationController extends ApiActionController
 
         // get posts
         $posts = $this->getPosts($this->settings);
-        $titles = '';
+        $titles = [];
         foreach ($posts as $post) {
-            $titles .= $post->getResource()->getTitle();
+            $titles[] = $post->getResource()->getTitle();
         }
-        $this->view->assign('listHash', md5($titles));
+        $this->view->assign('listHash', md5(implode('', $titles)));
 
         // filtering, grouping & sorting of posts
         $this->filterPosts($posts, $this->settings['filtering']);
@@ -142,6 +140,25 @@ class PublicationController extends ApiActionController
 
         // assign posts
         $this->view->assign('posts', $posts);
+
+        // create author links
+        $authorsMode = $this->settings['custom']['authorsMode'];
+        $authorsList = $this->settings['custom']['authorsList'];
+        if ($authorsMode != 'none' && $authorsList) {
+            $entries = explode(PHP_EOL, $authorsList);
+            $authorLinks = [];
+            foreach ($entries as $entry) {
+                $authorLink = explode(';', $entry);
+                if (count($authorLink) == 3) {
+                    $authorLinks[$authorLink[0]] = [
+                        'name' => $authorLink[0],
+                        'url' => $authorLink[1] != 'none' ? $authorLink[1] : '',
+                        'email' => $authorLink[2] != 'none' ? $authorLink[2] : '',
+                    ];
+                }
+            }
+            $this->view->assign('authorLinks', $authorLinks);
+        }
 
         return $this->htmlResponse();
     }
@@ -356,7 +373,7 @@ class PublicationController extends ApiActionController
         }
     }
 
-    private function getEntrytypeLabels(array $entrytypes, string $lang='en-US'): array
+    private function getEntrytypeLabels(array $entrytypes, string $lang = 'en-US'): array
     {
         $result = [];
         $customEntrytypesCsv = GeneralUtility::makeInstance(ExtensionConfiguration::class)

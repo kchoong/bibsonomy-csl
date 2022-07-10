@@ -44,13 +44,10 @@ class SnippetViewHelper extends AbstractViewHelper
                 break;
             case 'bibtex':
                 return self::renderBibtex($post, $type, $mode);
-                break;
             case 'csl':
                 return self::renderCSL($post, $type, $mode);
-                break;
             case 'endnote':
                 return self::renderEndnote($post, $type, $mode);
-                break;
             default:
                 break;
         }

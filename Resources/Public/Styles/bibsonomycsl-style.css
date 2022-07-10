@@ -44,6 +44,11 @@
     margin-left: 1.5em;
 }
 
+.bibsonomy-link-anchor {
+    margin-left: 0 !important;
+    margin-right: 1.0em;
+}
+
 .bibsonomy-snippets {
     margin-top: 10px;
 }
@@ -58,6 +63,10 @@
 .bibsonomy-snippet > textarea {
     width: 100%;
     resize: none;
+}
+
+.bibsonomy-snippet-authors > table {
+    width: 100%;
 }
 
 .bibsonomy-thumbnail {
@@ -84,6 +93,14 @@
 .bibsonomy-group-jumper {
     font-size: 1.0em;
     float:right;
+}
+
+.bibsonomy-inline-filter {
+    padding: 20px;
+}
+
+.bibsonomy-inline-filter input{
+    width: 100%;
 }
 
 .clearfix::after {

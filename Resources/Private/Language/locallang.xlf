@@ -181,6 +181,9 @@
 			<trans-unit id="post.snippet.endnote">
 				<source>EndNote</source>
 			</trans-unit>
+			<trans-unit id="post.snippet.authors">
+				<source>Authors</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>

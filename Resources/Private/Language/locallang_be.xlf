@@ -284,25 +284,25 @@
             <trans-unit id="flexform.custom.css">
                 <source>Define layout modification using CSS</source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.list">
+            <trans-unit id="flexform.custom.authors.list">
                 <source>
                     Define personal websites and e-mails of authors. \n
                     E.g. Lastname, Firstname;https://www.example.com;example(at)example.com (separated by lines, use 'none' for not available).
                 </source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.mode">
-                <source>Mode for personal author links)</source>
+            <trans-unit id="flexform.custom.authors.mode">
+                <source>Mode for personal author links</source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.mode.none">
+            <trans-unit id="flexform.custom.authors.mode.none">
                 <source>None</source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.mode.modal">
-                <source>Link &amp; Modal</source>
+            <trans-unit id="flexform.custom.authors.mode.link">
+                <source>Link</source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.mode.publication">
+            <trans-unit id="flexform.custom.authors.mode.publication">
                 <source>Inline Publication (Experimental)</source>
             </trans-unit>
-            <trans-unit id="flexform.custom.personLink.mode.both">
+            <trans-unit id="flexform.custom.authors.mode.both">
                 <source>Both</source>
             </trans-unit>
             <trans-unit id="flexform.custom.entrytype">
