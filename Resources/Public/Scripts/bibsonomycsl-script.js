@@ -1,3 +1,7 @@
+window.addEventListener("DOMContentLoaded", function () {
+
+});
+
 function toggleSnippet(snippetBtn) {
     let btn = $(snippetBtn);
     let postId = '#' + btn.data('post');

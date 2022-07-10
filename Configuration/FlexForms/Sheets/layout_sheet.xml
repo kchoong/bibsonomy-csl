@@ -258,25 +258,26 @@
                         <items>
                             <numIndex index="0" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.remove
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.keep
                                 </numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.keep
-                                </numIndex>
-                                <numIndex index="1">2</numIndex>
-                            </numIndex>
-                            <numIndex index="2" type="array">
-                                <numIndex index="0">
                                     LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.keepmath
                                 </numIndex>
                                 <numIndex index="1">1</numIndex>
                             </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.curlybraces.remove
+                                </numIndex>
+                                <numIndex index="1">2</numIndex>
+                            </numIndex>
                         </items>
                         <maxitems>1</maxitems>
                         <size>1</size>
+                        <default>0</default>
                     </config>
                 </TCEforms>
             </settings.layout.curlyBraces>
@@ -292,13 +293,13 @@
                         <items>
                             <numIndex index="0" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keepmath
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keep
                                 </numIndex>
                                 <numIndex index="1">0</numIndex>
                             </numIndex>
                             <numIndex index="1" type="array">
                                 <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keep
+                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.backslashes.keepmath
                                 </numIndex>
                                 <numIndex index="1">1</numIndex>
                             </numIndex>
@@ -311,6 +312,7 @@
                         </items>
                         <maxitems>1</maxitems>
                         <size>1</size>
+                        <default>0</default>
                     </config>
                 </TCEforms>
             </settings.layout.treatBackslashes>
@@ -325,31 +327,6 @@
                     </config>
                 </TCEforms>
             </settings.layout.bibtexCleaning>
-
-            <settings.layout.bibtexEscaping>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.bibtex.escape
-                    </label>
-                    <!-- Escape special characters in the BibTeX -->
-                    <config>
-                        <type>check</type>
-                        <default>1</default>
-                    </config>
-                </TCEforms>
-            </settings.layout.bibtexEscaping>
-
-            <settings.layout.bibtexEncode>
-                <TCEforms>
-                    <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.bibtex.htmlencode
-                    </label>
-                    <config>
-                        <type>check</type>
-                        <default>1</default>
-                    </config>
-                </TCEforms>
-            </settings.layout.bibtexEncode>
 
         </el>
     </ROOT>
