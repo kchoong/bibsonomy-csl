@@ -26,7 +26,8 @@
 
         <f:if condition="{layout.inlineFilter}">
             <div class="bibsonomy-inline-filter">
-                <input type="text" placeholder="Title"/>
+                <input id="bibsonomyInlineFilter" type="text" placeholder="{f:translate(key:'post.filter.placeholder')}" oninput="filterPosts()"/>
+                <a href="#" onclick="resetFilterPosts()"><f:translate key="post.filter.reset"/></a>
             </div>
         </f:if>
 
