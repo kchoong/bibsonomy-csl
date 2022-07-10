@@ -56,7 +56,6 @@
                         <type>text</type>
                         <cols>45</cols>
                         <rows>10</rows>
-                        <default>Lastname, Firstname; https://www.example.com; example(at)example.com</default>
                     </config>
                 </TCEforms>
             </settings.custom.personLinkList>

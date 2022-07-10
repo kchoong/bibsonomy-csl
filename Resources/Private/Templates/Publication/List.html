@@ -9,9 +9,9 @@
 
     <f:flashMessages/>
 
-    <div class="bibsonomy-info">
-
-    </div>
+    <f:if condition="{settings.debug">
+        <div class="bibsonomy-debug"><!-- TODO --></div>
+    </f:if>
 
     <div class="bibsonomy-container" id="bibsonomy-container-{listHash}">
         <f:if condition="{grouping.key} != 'none'">
@@ -22,6 +22,10 @@
                     </f:for>
                 </ul>
             </f:if>
+        </f:if>
+
+        <f:if condition="{layout.inlineFilter}">
+
         </f:if>
 
         <f:for each="{posts}" as="groups" key="group">

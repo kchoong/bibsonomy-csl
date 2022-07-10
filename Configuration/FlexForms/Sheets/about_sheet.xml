@@ -8,6 +8,20 @@
                 LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.about.tab.description
             </sheetDescription>
         </TCEforms>
-        <type>default</type>
+        <type>array</type>
+        <el>
+
+            <settings.debug>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.debug
+                    </label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.debug>
+
+        </el>
     </ROOT>
 </T3DataStructure>

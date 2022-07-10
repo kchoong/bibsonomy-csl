@@ -170,17 +170,6 @@
                 </TCEforms>
             </settings.filtering.year>
 
-            <settings.filtering.inline>
-                <TCEforms>
-                    <label>LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.filtering.inline
-                    </label>
-                    <config>
-                        <type>check</type>
-                        <default>0</default>
-                    </config>
-                </TCEforms>
-            </settings.filtering.inline>
-
             <settings.filtering.duplicates>
                 <TCEforms>
                     <label>

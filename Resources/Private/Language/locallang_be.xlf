@@ -147,11 +147,9 @@
             <trans-unit id="flexform.filtering.numericyear">
                 <source>Allow non-numeric year specifications</source>
             </trans-unit>
-            <trans-unit id="flexform.filtering.inline">
-                <source>Enable inline filtering</source>
-            </trans-unit>
             <trans-unit id="flexform.filtering.duplicates">
-                <source>Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information)
+                <source>
+                    Filter Duplicates (See https://www.bibsonomy.org/help_en/InterIntraHash for more information)
                 </source>
             </trans-unit>
             <trans-unit id="flexform.filtering.duplicates.none">
@@ -219,6 +217,10 @@
                     a comma-separated list of keys)
                 </source>
             </trans-unit>
+
+            <trans-unit id="flexform.layout.inlineFilter">
+                <source>Check this to enable inline filtering</source>
+            </trans-unit>
             <trans-unit id="flexform.layout.thumbnail">
                 <source>Show thumbnails/links of private documents of your publications</source>
             </trans-unit>
@@ -283,24 +285,22 @@
                 <source>Define layout modification using CSS</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.list">
-                <source>Define personal websites and e-mails of authors (AT-sign can be entered in any chosen form). \n
-                    E.g.
-                    Lastname, Firstname; https://www.example.com; example(at)example.com (separated by lines, use 'none'
-                    for not available). \n It is also possible to enter a URL to a text-file with a list in the
-                    described format.
+                <source>
+                    Define personal websites and e-mails of authors. \n
+                    E.g. Lastname, Firstname;https://www.example.com;example(at)example.com (separated by lines, use 'none' for not available).
                 </source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.mode">
-                <source>Mode for personal author website (Warning: Experimental for publication)</source>
+                <source>Mode for personal author links)</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.mode.none">
                 <source>None</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.mode.modal">
-                <source>Modal</source>
+                <source>Link &amp; Modal</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.mode.publication">
-                <source>Publication</source>
+                <source>Inline Publication (Experimental)</source>
             </trans-unit>
             <trans-unit id="flexform.custom.personLink.mode.both">
                 <source>Both</source>
@@ -369,6 +369,12 @@
             </trans-unit>
             <trans-unit id="flexform.authentication.ssl.path">
                 <source>Custom path for SSL certificates</source>
+            </trans-unit>
+
+            <!-- About -->
+
+            <trans-unit id="flexform.debug">
+                <source>Check this to enable the debug mode</source>
             </trans-unit>
 
             <!-- Tags -->

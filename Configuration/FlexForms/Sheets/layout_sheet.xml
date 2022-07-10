@@ -236,6 +236,17 @@
                 </TCEforms>
             </settings.layout.linkMisc>
 
+            <settings.layout.inlineFilter>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.inlineFilter
+                    </label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.layout.inlineFilter>
+
             <settings.layout.curlyBraces>
                 <TCEforms>
                     <label>
