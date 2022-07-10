@@ -37,6 +37,7 @@ class AnchorViewHelper extends AbstractViewHelper
         $link = new TagBuilder('a');
         $link->addAttribute('href', "#posts_$group");
         $link->addAttribute('target', '_blank');
+        $link->addAttribute('onclick', 'resetFilterPosts()');
         $link->setContent($label);
 
         $button = new TagBuilder('li');
