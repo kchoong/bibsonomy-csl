@@ -33,16 +33,15 @@
 
         <f:for each="{posts}" as="groups" key="group">
             <f:if condition="{grouping.key} != 'none'">
-                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}"
-                                  entrytypes="{entrytypes}"/>
+                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" entrytypes="{entrytypes}"/>
             </f:if>
 
             <ul class="bibsonomy-posts">
                 <f:for each="{groups}" as="post">
                     <li class="bibsonomy-post" id="bibsonomy-post-{post.resource.intrahash}">
-                        <f:if condition="{layout.thumbnail} != '0'">
-                            <div class="bibsonomy-thumbnail">
-                                <bibsonomy:Thumbnail post="{post}" type="{layout.thumbnail}"/>
+                        <f:if condition="{layout.thumbnail} == '1'">
+                            <div class="bibsonomy-thumbnail {f:if(condition: '{post.documents -> f:count()} > 0', then: 'bibsonomy-zoom')}">
+                                <bibsonomy:Thumbnail post="{post}" enableLink="{layout.linkDocument}"/>
                             </div>
                         </f:if>
 
@@ -88,7 +87,7 @@
                                     <bibsonomy:Link post="{post}" type="doi"/>
                                 </f:if>
 
-                                <f:if condition="{intval(layout.thumbnail)} > 1">
+                                <f:if condition="{layout.linkDocument} == '1'">
                                     <bibsonomy:Link post="{post}" type="download"/>
                                 </f:if>
 

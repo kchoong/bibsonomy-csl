@@ -102,49 +102,22 @@
                         LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail
                     </label>
                     <config>
-                        <type>select</type>
-                        <renderType>selectSingle</renderType>
-                        <items>
-                            <numIndex index="0" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.none
-                                </numIndex>
-                                <numIndex index="1">0</numIndex>
-                            </numIndex>
-                            <numIndex index="1" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.thumbnails
-                                </numIndex>
-                                <numIndex index="1">1</numIndex>
-                            </numIndex>
-                            <numIndex index="2" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.links
-                                </numIndex>
-                                <numIndex index="1">2</numIndex>
-                            </numIndex>
-                            <numIndex index="3" type="array">
-                                <numIndex index="0">
-                                    LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.thumbnail.both
-                                </numIndex>
-                                <numIndex index="1">3</numIndex>
-                            </numIndex>
-                        </items>
-                        <default>0</default>
+                        <type>check</type>
+                        <default>1</default>
                     </config>
                 </TCEforms>
             </settings.layout.thumbnail>
 
-            <settings.layout.notes>
+            <settings.layout.linkDocument>
                 <TCEforms>
                     <label>
-                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.notes
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.linkDocument
                     </label>
                     <config>
                         <type>check</type>
                     </config>
                 </TCEforms>
-            </settings.layout.notes>
+            </settings.layout.linkDocument>
 
             <settings.layout.linkAbstract>
                 <TCEforms>
@@ -235,6 +208,17 @@
                     </config>
                 </TCEforms>
             </settings.layout.linkMisc>
+
+            <settings.layout.notes>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.notes
+                    </label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.layout.notes>
 
             <settings.layout.inlineFilter>
                 <TCEforms>

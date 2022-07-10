@@ -23,7 +23,7 @@ class ThumbnailViewHelper extends AbstractViewHelper
     public function initializeArguments()
     {
         $this->registerArgument('post', '\AcademicPuma\RestClient\Model\Post', 'The post to render as citation', true);
-        $this->registerArgument('type', 'string', 'The thumbnail type', true);
+        $this->registerArgument('enableLink', 'string', 'Enable link to download on click', true);
     }
 
     public static function renderStatic(
@@ -32,11 +32,33 @@ class ThumbnailViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ): string
     {
+        $enableLink = $arguments['enableLink'] == '1';
         $post = $arguments['post'];
         $documents = $post->getDocuments();
 
         if ($documents !== null and $documents->count() > 0) {
-            return self::buildImage($post, $documents[0], $renderingContext);
+            $fileName = $documents[0]->getFileName();
+            $userName = $post->getUser()->getName();
+            $intraHash = $post->getResource()->getIntraHash();
+            $arguments = ["intraHash" => $intraHash, "fileName" => $fileName, "userName" => $userName];
+            $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
+
+            $uriBuilder->reset();
+            $imgUrl = $uriBuilder->uriFor('show', $arguments, 'Document', 'bibsonomycsl', 'publicationlist');
+            $img = self::buildImage($post, $imgUrl, $renderingContext);
+
+            if ($enableLink) {
+                $uriBuilder->reset();
+                $downloadUrl = $uriBuilder->uriFor('download', $arguments, 'Document', 'bibsonomycsl', 'publicationlist');
+                $link = new TagBuilder('a');
+                $link->addAttribute('href', $downloadUrl);
+                $link->addAttribute('target', '_blank');
+                $link->setContent($img);
+
+                return $link->render();
+            }
+
+            return $img;
         } else {
             // no documents, showing dummy thumbnail for entrytype
             $entrytype = $post->getResource()->getEntrytype();
@@ -51,25 +73,17 @@ class ThumbnailViewHelper extends AbstractViewHelper
         }
     }
 
-    protected static function buildImage(Post $post, Document $document, RenderingContextInterface $renderingContext): string
+    protected static function buildImage(Post $post, string $url, RenderingContextInterface $renderingContext): string
     {
-        $fileName = $document->getFileName();
-        $userName = $post->getUser()->getName();
-        $intraHash = $post->getResource()->getIntraHash();
-        $arguments = ["intraHash" => $intraHash, "fileName" => $fileName, "userName" => $userName];
-        $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
-        $uriBuilder->reset();
-        $src = $uriBuilder->uriFor('show', $arguments, 'Document', 'bibsonomycsl', 'publicationlist');
-
         // no way to guarantee line wrap for img alt-text
         // https://stackoverflow.com/questions/2731484/can-i-wrap-img-alt-text
         $title = $post->getResource()->getTitle();
         $alt = strlen($title) > 25 ? substr($title, 0, 25) . "..." : $title;
 
         $img = new TagBuilder('img');
-        $img->addAttribute('src', $src);
+        $img->addAttribute('src', $url);
         $img->addAttribute('title', $post->getResource()->getTitle());
-        $img->addAttribute('alt', $alt . " - Download");
+        $img->addAttribute('alt', $alt);
         $img->forceClosingTag(true);
 
         return $img->render();

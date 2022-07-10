@@ -45,7 +45,7 @@ class DocumentController extends ApiActionController
         $client = ApiUtils::getRestClient($this->accessor, $this->settings);
 
         header('Content-Disposition: attachment; filename="' . basename($fileName) . '.jpg');
-        print $client->getDocumentFile($userName, $intraHash, $fileName, DocumentType::SMALL_PREVIEW)->file();
+        print $client->getDocumentFile($userName, $intraHash, $fileName, DocumentType::LARGE_PREVIEW)->file();
 
         exit();
     }

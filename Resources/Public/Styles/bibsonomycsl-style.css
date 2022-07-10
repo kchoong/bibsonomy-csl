@@ -81,6 +81,19 @@
     float: left;
 }
 
+.bibsonomy-thumbnail img {
+    max-width: 58px;
+}
+
+.bibsonomy-zoom {
+    transition: transform .2s;
+}
+
+.bibsonomy-zoom:hover {
+    border: none;
+    transform: scale(5.0);
+}
+
 .bibsonomy-group-header {
     margin-bottom: 10px;
     border-bottom: 1px solid #2d2c2c;

@@ -191,6 +191,14 @@
             <trans-unit id="flexform.layout.csl.xml">
                 <source>Insert a custom CSL Stylesheet (XML)</source>
             </trans-unit>
+
+            <trans-unit id="flexform.layout.thumbnail">
+                <source>Check this to show a thumbnail of the post. If private documents are available, it shows a preview instead of a placeholder</source>
+            </trans-unit>
+            <trans-unit id="flexform.layout.linkDocument">
+                <source>Check this to show a link of the private documents of your posts to download</source>
+            </trans-unit>
+
             <trans-unit id="flexform.layout.link.abstract">
                 <source>Check this to enable toggle link for the publication abstract</source>
             </trans-unit>
@@ -218,27 +226,13 @@
                 </source>
             </trans-unit>
 
-            <trans-unit id="flexform.layout.inlineFilter">
-                <source>Check this to enable inline filtering</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.thumbnail">
-                <source>Show thumbnails/links of private documents of your publications</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.thumbnail.none">
-                <source>No thumbnails/no links to documents</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.thumbnail.thumbnails">
-                <source>Show thumbnails but do not set links to documents</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.thumbnail.links">
-                <source>Just show links to documents</source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.thumbnail.both">
-                <source>Show thumbnails and set links to documents</source>
-            </trans-unit>
             <trans-unit id="flexform.layout.notes">
                 <source>Check this to show notes of the publication</source>
             </trans-unit>
+            <trans-unit id="flexform.layout.inlineFilter">
+                <source>Check this to enable inline filtering</source>
+            </trans-unit>
+
             <trans-unit id="flexform.layout.curlybraces">
                 <source>Handle curly braces</source>
             </trans-unit>
@@ -267,13 +261,6 @@
                 <source>BibTex cleaning (e.g. conversion from {\"a} to ä, Texs math mode will stay untouched either
                     way)
                 </source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.bibtex.escape">
-                <source>Escape special characters in the BibTeX code of the publications (e.g. %, &amp;, ~, #, _)
-                </source>
-            </trans-unit>
-            <trans-unit id="flexform.layout.bibtex.htmlencode">
-                <source>HTML-Encode special characters in the BibTeX code of the publications (e.g. ~, --, ---)</source>
             </trans-unit>
 
             <!-- Custom Tab -->
