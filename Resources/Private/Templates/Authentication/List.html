@@ -1,36 +1,54 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<f:layout name="Default" />
-
-This template is responsible for creating a table of domain objects.
-
-If you modify this template, do not forget to change the overwrite settings
-in /Configuration/ExtensionBuilder/settings.yaml:
-  Resources:
-    Private:
-      Templates:
-        Authentication:
-          List.html: keep
-
-Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+<f:layout name="Backend" />
 
 <f:section name="content">
-    <h1>Listing for Authentication</h1>
+    <h1>
+        <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.list"/>
+    </h1>
 
     <f:flashMessages />
 
-    <table class="tx_bibsonomycsl">
+    <f:link.action action="new">
+        <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.new"/>
+    </f:link.action>
+
+    <table class="bibsonomycsl_be_table">
         <tr>
-            <th></th>
+            <th>
+                <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.userName"/>
+            </th>
+            <th>
+                <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.hostAddress"/>
+            </th>
+            <th>
+                <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.oAuthEnabled"/>
+            </th>
+            <th>
+                <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.actions"/>
+            </th>
             <th></th>
         </tr>
         <f:for each="{authentications}" as="authentication">
             <tr>
-                <td><f:link.action action="edit" arguments="{authentication : authentication}">Edit</f:link.action></td>
-                <td><f:link.action action="delete" arguments="{authentication : authentication}">Delete</f:link.action></td>
+                <td>
+                    {authentication.userName}
+                </td>
+                <td>
+                    {authentication.hostAddress}
+                </td>
+                <td>
+                    {authentication.oAuthEnabled}
+                </td>
+                <td>
+                    <f:link.action action="edit" arguments="{authentication : authentication}">
+                        <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.button.edit"/></f:link.action>
+                </td>
+                <td>
+                    <f:link.action action="delete" arguments="{authentication : authentication}">
+                        <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.button.delete"/></f:link.action>
+                </td>
             </tr>
         </f:for>
     </table>
-
-    <f:link.action action="new">New Authentication</f:link.action>
 </f:section>
 </html>

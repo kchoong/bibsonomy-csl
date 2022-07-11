@@ -37,17 +37,17 @@ class ApiActionController extends ActionController
             $auth = $this->authenticationRepository->findByUid($this->settings['auth']['beauthUser']);
 
             if (empty($auth)) {
-                throw new Exception("Could not find valid API credentials. Please check the plugin settings!");
+                throw new Exception("Could not find valid API credentials. Please check the extension settings.");
             }
 
             $host = $auth->getHostAddress();
-            if (!$auth->isEnableOAuth()) {
-                $apiUser = $auth->getHostUserName();
-                $apiKey = $auth->getHostApiKey();
+            if (!$auth->isOAuthEnabled()) {
+                $apiUser = $auth->getUserName();
+                $apiKey = $auth->getApiKey();
                 $this->accessor = new BasicAuthAccessor($host, $apiUser, $apiKey);
             } else {
                 $extensionConfiguration = GeneralUtility::makeInstance(ExtensionConfiguration::class)->get('bibsonomy_csl');
-                $this->accessor = new OAuthAccessor($host, unserialize($auth->getSerializedAccessToken()),
+                $this->accessor = new OAuthAccessor($host, unserialize($auth->getAccessToken()),
                     $extensionConfiguration['oauthConsumerToken'], $extensionConfiguration['oauthConsumerSecret']);
             }
         } else {

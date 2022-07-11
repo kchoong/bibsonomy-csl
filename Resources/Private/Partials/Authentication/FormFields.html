@@ -1,3 +1,31 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="hostAddress">
+    <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.hostAddress"/>
+    <span class="required">(required)</span>
+</label>
+<br/>
+<f:form.select property="hostAddress" options="{hosts}" optionValueField="key" optionLabelField="value"/><br/>
+
+<label for="userName">
+    <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.userName"/>
+    <span class="required">(required)</span>
+</label>
+<br/>
+<f:form.textfield property="userName"/>
+
+<br/>
+
+<label for="apiKey">
+    <f:translate key="LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.authentication.apiKey"/>
+    <span class="required">(required)</span>
+</label>
+<br/>
+<f:form.textfield property="apiKey"/>
+
+<br/>
+
+<f:form.hidden property="oAuthEnabled" value="0"/>
+
+<br/>
 
 </html>

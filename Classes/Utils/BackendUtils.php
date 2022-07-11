@@ -77,7 +77,7 @@ class BackendUtils
         return $config;
     }
 
-    public function getLocales(array &$config)
+    public static function getLocales(array &$config): array
     {
         // Add default languages
         $config['items'][] = array('English', 'en-US');
@@ -104,7 +104,7 @@ class BackendUtils
         return $config;
     }
 
-    public function getStylesheets(array &$config)
+    public static function getStylesheets(array &$config): array
     {
         // Add default stylesheets
         $config['items'][] = array('BibSonomy CSL Style', 'everyAware.csl');
@@ -128,6 +128,33 @@ class BackendUtils
                 ->executeQuery();
             while ($row = $result->fetchAssociative()) {
                 $config['items'][] = array($row['name'], $row['uid']);
+            }
+        } catch (DBALException|Exception $e) {
+            $e->getMessage();
+        }
+
+        return $config;
+    }
+
+    public static function getAuthentications(array &$config): array
+    {
+        global $GLOBALS;
+        $userId = $GLOBALS["BE_USER"]->user["uid"];
+
+        $dbName = "tx_bibsonomycsl_domain_model_authentication";
+        $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
+            ->getQueryBuilderForTable($dbName);
+        try {
+            $result = $queryBuilder
+                ->select('uid', 'host_address', 'user_name', 'api_key', 'o_auth_enabled')
+                ->from($dbName)
+                ->executeQuery();
+            while ($row = $result->fetchAssociative()) {
+                if ($row["o_auth_enabled"] == 0) {
+                    $config['items'][] = array("{$row['host_address']}:{$row['user_name']} (API Key)", $row["uid"]);
+                } else {
+                    $config['items'][] = array("{$row['host_address']}:{$row['user_name']} (OAuth)", $row["uid"]);
+                }
             }
         } catch (DBALException|Exception $e) {
             $e->getMessage();

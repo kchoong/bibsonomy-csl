@@ -46,9 +46,11 @@
                     <displayCond>FIELD:settings.auth.beauth:=:true</displayCond>
                     <config>
                         <type>select</type>
+                        <itemsProcFunc>AcademicPuma\BibsonomyCsl\Utils\BackendUtils->getAuthentications</itemsProcFunc>
                         <renderType>selectSingle</renderType>
-                        <maxitems>1</maxitems>
-                        <size>1</size>
+                        <items>
+                            <!-- empty by default -->
+                        </items>
                     </config>
                 </TCEforms>
             </settings.auth.beauthUser>

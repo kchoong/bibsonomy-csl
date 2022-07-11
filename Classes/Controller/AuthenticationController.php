@@ -7,6 +7,7 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 
 use AcademicPuma\BibsonomyCsl\Domain\Model\Authentication;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository;
+use AcademicPuma\BibsonomyCsl\Utils\BackendUtils;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
 use TYPO3\CMS\Backend\View\BackendTemplateView;
@@ -70,6 +71,15 @@ class AuthenticationController extends ActionController
      */
     public function newAction(): ResponseInterface
     {
+        $hosts = [];
+        $config = [];
+        foreach (BackendUtils::getHosts($config)['items'] as $host) {
+            $hosts[] = [
+                "key" => $host[1],
+                "value" => $host[0],
+            ];
+        }
+        $this->view->assign('hosts', $hosts);
         return $this->htmlResponse();
     }
 

@@ -76,14 +76,29 @@
             <trans-unit id="module.citationstylesheet.xmlSource">
                 <source>XML Source</source>
             </trans-unit>
-            <trans-unit id="module.citationstylesheet.table.name">
-                <source>Citation Stylesheet Name</source>
-            </trans-unit>
 
             <!-- Authentication -->
 
             <trans-unit id="module.authentication">
                 <source>Authentication</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.list">
+                <source>List of Authentications</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.new">
+                <source>New Authentications</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.new.success">
+                <source>The authentication has been successfully added.</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.edit">
+                <source>Edit Authentication</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.edit.success">
+                <source>The authentication has been successfully edited.</source>
+            </trans-unit>
+            <trans-unit id="module.authentication.delete.success">
+                <source>The authentication has been successfully deleted.</source>
             </trans-unit>
             <trans-unit id="module.authentication.hostAddress">
                 <source>Host Address</source>
