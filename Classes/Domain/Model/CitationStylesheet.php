@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Domain\Model;
 
 
+use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+
 /**
  *  PUMA/BibSonomy CSL (bibsonomy_csl) is a TYPO3 extension which
  *  enables users to render publication lists from PUMA or BibSonomy in
@@ -36,7 +38,7 @@ namespace AcademicPuma\BibsonomyCsl\Domain\Model;
 /**
  * Represents the XML source of a citation stylesheet (CSL).
  */
-class CitationStylesheet extends \TYPO3\CMS\Extbase\DomainObject\AbstractEntity
+class CitationStylesheet extends AbstractEntity
 {
     protected $name = '';
     protected $xmlSource = '';

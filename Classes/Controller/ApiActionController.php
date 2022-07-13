@@ -5,10 +5,11 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\AuthenticationRepository;
 use AcademicPuma\RestClient\Authentication\BasicAuthAccessor;
 use AcademicPuma\RestClient\Authentication\OAuthAccessor;
-use Exception;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
  *  PUMA/BibSonomy CSL (bibsonomy_csl) is a TYPO3 extension which
@@ -68,7 +69,10 @@ class ApiActionController extends ActionController
             $auth = $this->authenticationRepository->findByUid($this->settings['auth']['beauthUser']);
 
             if (empty($auth)) {
-                throw new Exception("Could not find valid API credentials. Please check the extension settings.");
+                $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.api.authentication.error",
+                    'BibsonomyCsl');
+                $this->addFlashMessage($message, "", AbstractMessage::ERROR);
+                return;
             }
 
             $host = $auth->getHostAddress();

@@ -115,6 +115,11 @@
             <trans-unit id="module.authentication.oAuthEnabled">
                 <source>OAuth enabled</source>
             </trans-unit>
+
+            <!-- API -->
+            <trans-unit id="module.api.authentication.error">
+                <source>Could not find valid API credentials. Please check the extension settings.</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

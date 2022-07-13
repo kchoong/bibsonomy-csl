@@ -9,6 +9,7 @@ use AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Core\Messaging\AbstractMessage;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
 use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
@@ -110,7 +111,7 @@ class CitationStylesheetController extends ActionController
     {
         $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.new.success",
             'BibsonomyCsl');
-        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage($message, "", AbstractMessage::OK);
         $this->citationStylesheetRepository->add($newCitationStylesheet);
         $this->redirect('list');
     }
@@ -143,7 +144,7 @@ class CitationStylesheetController extends ActionController
     {
         $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.edit.success",
             'BibsonomyCsl');
-        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::OK);
+        $this->addFlashMessage($message, "", AbstractMessage::OK);
         $this->citationStylesheetRepository->update($citationStylesheet);
         $this->redirect('list');
     }
@@ -159,7 +160,7 @@ class CitationStylesheetController extends ActionController
     {
         $message = LocalizationUtility::translate("LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_db.xlf:module.citationstylesheet.delete.success",
             'BibsonomyCsl');
-        $this->addFlashMessage($message, "", \TYPO3\CMS\Core\Messaging\AbstractMessage::WARNING);
+        $this->addFlashMessage($message, "", AbstractMessage::WARNING);
         $this->citationStylesheetRepository->remove($citationStylesheet);
         $this->redirect('list');
     }
