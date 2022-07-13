@@ -155,9 +155,12 @@
 			<trans-unit id="post.filter.reset">
 				<source>Reset</source>
 			</trans-unit>
+			<trans-unit id="post.links.details">
+				<source>Details</source>
+			</trans-unit>
 			<trans-unit id="post.links.doi">
-                <source>DOI</source>
-            </trans-unit>
+				<source>DOI</source>
+			</trans-unit>
 			<trans-unit id="post.links.download">
 				<source>Download</source>
 			</trans-unit>

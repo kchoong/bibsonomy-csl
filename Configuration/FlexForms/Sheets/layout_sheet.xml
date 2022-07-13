@@ -209,6 +209,17 @@
                 </TCEforms>
             </settings.layout.linkMisc>
 
+            <settings.layout.linkDetails>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.layout.link.details
+                    </label>
+                    <config>
+                        <type>check</type>
+                    </config>
+                </TCEforms>
+            </settings.layout.linkDetails>
+
             <settings.layout.notes>
                 <TCEforms>
                     <label>

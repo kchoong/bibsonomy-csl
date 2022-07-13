@@ -214,6 +214,9 @@
             <trans-unit id="flexform.layout.link.url">
                 <source>Check this to show a link of the publication URL field</source>
             </trans-unit>
+            <trans-unit id="flexform.layout.link.details">
+                <source>Check this to show a link for the details page of the publication</source>
+            </trans-unit>
             <trans-unit id="flexform.layout.link.doi">
                 <source>Check this to show a DOI link of the publication</source>
             </trans-unit>

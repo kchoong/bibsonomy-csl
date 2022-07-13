@@ -66,6 +66,8 @@ class LinkViewHelper extends AbstractViewHelper
         $type = $arguments['type'];
 
         switch ($arguments['type']) {
+            case 'details':
+                return self::renderDetails($post, $type, $renderingContext);
             case 'doi':
                 $doi = $resource->getMiscField('doi');
                 if ($doi) {
@@ -95,6 +97,20 @@ class LinkViewHelper extends AbstractViewHelper
         }
 
         return '';
+    }
+
+    static private function renderDetails(Post $post, string $type, RenderingContextInterface $renderingContext): string
+    {
+        $userName = $post->getUser()->getName();
+        $intraHash = $post->getResource()->getIntraHash();
+        $arguments = ["intraHash" => $intraHash, "userName" => $userName];
+
+        $uriBuilder = $renderingContext->getControllerContext()->getUriBuilder();
+        $uriBuilder->reset();
+        $url = $uriBuilder->uriFor('show', $arguments, 'Publication', 'bibsonomycsl', 'publicationlist');
+        $label = LocalizationUtility::translate('post.links.details', 'BibsonomyCsl');
+
+        return self::createLink($url, $type, $label);
     }
 
     static private function renderDOI(string $doi, string $type): string

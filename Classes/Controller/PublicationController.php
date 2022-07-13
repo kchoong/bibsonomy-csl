@@ -168,12 +168,27 @@ class PublicationController extends ApiActionController
     /**
      * action show
      *
-     * @param Post $publication
+     * @param string $intraHash
+     * @param string $userName
      * @return ResponseInterface
      */
-    public function showAction(Post $publication): ResponseInterface
+    public function showAction(string $intraHash, string $userName): ResponseInterface
     {
-        $this->view->assign('publication', $publication);
+        // create API accessor
+        $this->makeAccessor();
+
+        // create REST client
+        $client = ApiUtils::getRestClient($this->accessor, $this->settings);
+
+        try {
+            $client->getPostDetails($userName, $intraHash);
+            $post = $client->model();
+        } catch (BadResponseException|GuzzleException|Exception $e) {
+            $post = new Post();
+        }
+
+        $this->view->assign('post', $post);
+
         return $this->htmlResponse();
     }
 

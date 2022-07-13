@@ -96,6 +96,10 @@
                                     <bibsonomy:MiscLink post="{post}" misc="{layout.linkMisc}"/>
                                 </f:if>
 
+                                <f:if condition="{layout.linkDetails}">
+                                    <bibsonomy:Link post="{post}" type="details"/>
+                                </f:if>
+
                                 <f:if condition="{layout.linkHost} == '1'">
                                     <bibsonomy:Link post="{post}" type="host"/>
                                 </f:if>
