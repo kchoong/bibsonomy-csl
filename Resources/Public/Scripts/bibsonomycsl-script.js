@@ -2,36 +2,59 @@ window.addEventListener("DOMContentLoaded", function () {
 
 });
 
-function toggleSnippet(snippetBtn) {
-    let btn = $(snippetBtn);
-    let postId = '#' + btn.data('post');
-    let snippetId = '#' + btn.data('snippet');
-    $(postId + ' .bibsonomy-snippet:not(' + snippetId + ')').hide(0);
-    $(snippetId).toggle(0);
+function toggleSnippet(btn) {
+    let postId = '#' + btn.dataset.post;
+    let snippetId = '#' + btn.dataset.snippet;
+
+    // Hide other snippets of the post
+    let postSnippets = document.querySelectorAll(postId + ' .bibsonomy-snippet:not(' + snippetId + ')');
+    postSnippets.forEach(function(postSnippet) {
+        postSnippet.style.display = 'none';
+    });
+
+    // Toggle the selected snippet
+    let selectedSnippet = document.querySelector(snippetId);
+    if (!selectedSnippet.style.display || selectedSnippet.style.display === 'none') {
+        selectedSnippet.style.display = 'block';
+    } else {
+        selectedSnippet.style.display = 'none';
+    }
 }
 
 function filterPosts() {
-    let input = $('#bibsonomyInlineFilter');
-    let search = input.val();
+    let input = document.querySelector('#bibsonomyInlineFilter');
+    let search = input.value;
 
     if (search) {
-        $('.bibsonomy-group-header').hide(0);
-        $('.bibsonomy-post').each(function(index) {
-            let postTxt = $(this).text().toLowerCase();
+        // Hide all headers
+        document.querySelectorAll('.bibsonomy-group-header').forEach(function(header) {
+            header.style.display = 'none';
+        });
+
+        // Only show matching posts
+        document.querySelectorAll('.bibsonomy-post').forEach(function(post) {
+            let postTxt = post.innerText.toLowerCase();
             if (postTxt.includes(search.toLowerCase())) {
-                $(this).show(0);
+                post.style.display = 'block';
             } else {
-                $(this).hide(0);
+                post.style.display = 'none';
             }
         });
     } else {
-        $('.bibsonomy-group-header').show(0);
-        $('.bibsonomy-post').show(0);
+        resetFilterPosts();
     }
 }
 
 function resetFilterPosts() {
-    $('#bibsonomyInlineFilter').val('');
-    $('.bibsonomy-group-header').show(0);
-    $('.bibsonomy-post').show(0);
+    document.querySelector('#bibsonomyInlineFilter').value = '';
+
+    // Show all headers
+    document.querySelectorAll('.bibsonomy-group-header').forEach(function(header) {
+        header.style.display = 'block';
+    });
+
+    // Show all posts
+    document.querySelectorAll('.bibsonomy-post').forEach(function(post) {
+        post.style.display = 'block';
+    });
 }

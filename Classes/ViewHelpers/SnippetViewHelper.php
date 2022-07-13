@@ -121,7 +121,7 @@ class SnippetViewHelper extends AbstractViewHelper
     static private function createLink(string $postId, string $snippetId, string $type, string $label): string
     {
         $link = new TagBuilder('a');
-        $link->addAttribute('href', "#$postId");
+        $link->addAttribute('href', "javascript:void(0)");
         $link->addAttribute('onclick', "toggleSnippet(this)");
         $link->addAttribute('data-post', $postId);
         $link->addAttribute('data-snippet', $snippetId);

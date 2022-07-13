@@ -42,7 +42,6 @@ class HeaderViewHelper extends AbstractViewHelper
 
         $link = new TagBuilder('a');
         $link->addAttribute('href', "#bibsonomy-container-$listHash");
-        $link->addAttribute('target', '_blank');
         $link->setContent(LocalizationUtility::translate('post.links.toTop', 'BibsonomyCsl'));
 
         $button = new TagBuilder('span');
