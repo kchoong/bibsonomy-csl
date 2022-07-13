@@ -45,6 +45,7 @@ class TextAreaViewHelper
         $textarea->addAttribute('rows', '15');
         $textarea->addAttribute('cols', '60');
         $textarea->setContent($params['fieldValue']);
+        $textarea->forceClosingTag(true);
 
         return $textarea->render();
     }
