@@ -23,3 +23,11 @@ $GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$publicationL
     // Flexform configuration schema file
     'FILE:EXT:bibsonomy_csl/Configuration/FlexForms/flexform_publicationlist.xml'
 );
+
+$tagCloudPluginSignature = 'bibsonomycsl_tagcloud';
+$GLOBALS['TCA']['tt_content']['types']['list']['subtypes_addlist'][$tagCloudPluginSignature] = 'pi_flexform';
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPiFlexFormValue(
+    $tagCloudPluginSignature,
+    // Flexform configuration schema file
+    'FILE:EXT:bibsonomy_csl/Configuration/FlexForms/flexform_tagcloud.xml'
+);

@@ -15,6 +15,7 @@ use AcademicPuma\RestClient\Model\Posts;
 use AcademicPuma\RestClient\RESTClient;
 use Exception;
 use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\Exception\GuzzleException;
 use Psr\Http\Message\ResponseInterface;
 use Seboettg\CiteProc\Exception\CiteProcException;
 use Seboettg\CiteProc\StyleSheet;
@@ -220,7 +221,7 @@ class PublicationController extends ApiActionController
                 $client->getPosts($resourceType, $grouping, $groupingName, $tags, '', $search, [], [], self::SEARCHTYPE, 0, $limit)->model();
                 $result = $client->model($treatCurlyBraces, $treatBackslashes, $bibtexCleaning)->toArray();
             }
-        } catch (BadResponseException|Exception $e) {
+        } catch (BadResponseException|GuzzleException|Exception $e) {
             return new Posts();
         }
 

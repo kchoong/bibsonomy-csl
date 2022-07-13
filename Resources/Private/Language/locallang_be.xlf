@@ -366,13 +366,16 @@
 
             <!-- Tags -->
 
+            <trans-unit id="flexform.tags.tab">
+                <source>Tag Cloud</source>
+            </trans-unit>
             <trans-unit id="flexform.tags.related">
                 <source>Show related tags of (separate more than one tag by a space character)</source>
             </trans-unit>
-            <trans-unit id="flexform.tags.ignore">
+            <trans-unit id="flexform.tags.blacklist">
                 <source>Ignore the following tags</source>
             </trans-unit>
-            <trans-unit id="flexform.tags.max">
+            <trans-unit id="flexform.tags.maxcount">
                 <source>Maximum number of tags</source>
             </trans-unit>
         </body>

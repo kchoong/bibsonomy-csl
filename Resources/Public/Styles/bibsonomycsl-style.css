@@ -48,6 +48,13 @@
     margin-left: 0 !important;
     margin-right: 1.0em;
 }
+.bibsonomy-tagcloud > li {
+    line-height: 1em;
+}
+
+.bibsonomy-tagcloud-item {
+    margin: 0 0.5em !important;
+}
 
 .bibsonomy-snippets {
     margin-top: 10px;
@@ -115,6 +122,10 @@
 .bibsonomy-inline-filter input{
     font-size: 1.25em;
     width: 100%;
+}
+
+.bibsonomy-tagcloud {
+    text-align: center;
 }
 
 .clearfix::after {

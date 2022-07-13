@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <sheets>
+        <s_tags>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/tags_sheet.xml</s_tags>
+        <s_authentication>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/authentication_sheet.xml</s_authentication>
+        <s_about>FILE:EXT:bibsonomy_csl/Configuration/FlexForms/Sheets/about_sheet.xml</s_about>
+    </sheets>
+</T3DataStructure>

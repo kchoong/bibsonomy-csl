@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3DataStructure>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>
+                LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.tags.tab
+            </sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+            <settings.tags.sourceType>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key
+                    </label>
+                    <config>
+                        <type>select</type>
+                        <renderType>selectSingle</renderType>
+                        <items>
+                            <numIndex index="0" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.user</numIndex>
+                                <numIndex index="1">user</numIndex>
+                            </numIndex>
+                            <numIndex index="1" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.group</numIndex>
+                                <numIndex index="1">group</numIndex>
+                            </numIndex>
+                            <numIndex index="2" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.person</numIndex>
+                                <numIndex index="1">person</numIndex>
+                            </numIndex>
+                            <numIndex index="3" type="array">
+                                <numIndex index="0">LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.key.viewable</numIndex>
+                                <numIndex index="1">viewable</numIndex>
+                            </numIndex>
+                        </items>
+                    </config>
+                </TCEforms>
+            </settings.tags.sourceType>
+
+            <settings.tags.sourceId>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.content.source.id
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.tags.sourceId>
+
+            <settings.tags.related>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.tags.related
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.tags.related>
+
+            <settings.tags.blacklist>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.tags.blacklist
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>30</size>
+                        <max>255</max>
+                    </config>
+                </TCEforms>
+            </settings.tags.blacklist>
+
+            <settings.tags.maxcount>
+                <TCEforms>
+                    <label>
+                        LLL:EXT:bibsonomy_csl/Resources/Private/Language/locallang_be.xlf:flexform.tags.maxcount
+                    </label>
+                    <config>
+                        <type>input</type>
+                        <size>6</size>
+                        <max>4</max>
+                        <default>100</default>
+                    </config>
+                </TCEforms>
+            </settings.tags.maxcount>
+        </el>
+    </ROOT>
+</T3DataStructure>
