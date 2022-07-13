@@ -8,24 +8,45 @@ namespace AcademicPuma\BibsonomyCsl\Controller;
 use AcademicPuma\BibsonomyCsl\Domain\Model\CitationStylesheet;
 use AcademicPuma\BibsonomyCsl\Domain\Repository\CitationStylesheetRepository;
 use Psr\Http\Message\ResponseInterface;
-use TYPO3\CMS\Backend\Template\Components\ButtonBar;
 use TYPO3\CMS\Backend\Template\ModuleTemplateFactory;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Mvc\Exception\StopActionException;
+use TYPO3\CMS\Extbase\Persistence\Exception\IllegalObjectTypeException;
+use TYPO3\CMS\Extbase\Persistence\Exception\UnknownObjectException;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
 
 /**
- * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
+ *  PUMA/BibSonomy CSL (bibsonomy_csl) is a TYPO3 extension which
+ *  enables users to render publication lists from PUMA or BibSonomy in
+ *  various styles.
  *
- * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
+ *  Copyright notice
  * (c) 2022 Kevin Choong <choong.kvn@gmail.com>
  *          Sebastian Böttger <boettger@cs.uni-kassel.de>
+ *
+ *  HothoData GmbH (http://www.academic-puma.de)
+ *  Knowledge and Data Engineering Group (University of Kassel)
+ *
+ *  All rights reserved
+ *
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
  * CitationStylesheetController
  */
-class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
+class CitationStylesheetController extends ActionController
 {
 
     protected $moduleTemplateFactory = null;
@@ -62,8 +83,6 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
         $this->view->assign('citationStylesheets', $citationStylesheets);
 
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-
-        // Adding title, menus, buttons, etc. using $moduleTemplate ...
         $this->moduleTemplate->setContent($this->view->render());
         return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
@@ -76,8 +95,6 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
     public function newAction(): ResponseInterface
     {
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-
-        // Adding title, menus, buttons, etc. using $moduleTemplate ...
         $this->moduleTemplate->setContent($this->view->render());
         return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
@@ -86,6 +103,8 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      * action create
      *
      * @param CitationStylesheet $newCitationStylesheet
+     * @throws StopActionException
+     * @throws IllegalObjectTypeException
      */
     public function createAction(CitationStylesheet $newCitationStylesheet)
     {
@@ -108,8 +127,6 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
         $this->view->assign('citationStylesheet', $citationStylesheet);
 
         $this->moduleTemplate = $this->moduleTemplateFactory->create($this->request);
-
-        // Adding title, menus, buttons, etc. using $moduleTemplate ...
         $this->moduleTemplate->setContent($this->view->render());
         return $this->htmlResponse($this->moduleTemplate->renderContent());
     }
@@ -118,6 +135,9 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      * action update
      *
      * @param CitationStylesheet $citationStylesheet
+     * @throws IllegalObjectTypeException
+     * @throws StopActionException
+     * @throws UnknownObjectException
      */
     public function updateAction(CitationStylesheet $citationStylesheet)
     {
@@ -132,6 +152,8 @@ class CitationStylesheetController extends \TYPO3\CMS\Extbase\Mvc\Controller\Act
      * action delete
      *
      * @param CitationStylesheet $citationStylesheet
+     * @throws IllegalObjectTypeException
+     * @throws StopActionException
      */
     public function deleteAction(CitationStylesheet $citationStylesheet)
     {

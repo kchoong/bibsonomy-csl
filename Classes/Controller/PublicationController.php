@@ -78,6 +78,7 @@ class PublicationController extends ApiActionController
      * action list
      *
      * @return ResponseInterface
+     * @throws CiteProcException
      */
     public function listAction(): ResponseInterface
     {

@@ -1,11 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
-namespace AcademicPuma\BibsonomyCsl\Domain\Repository;
-
-
-use TYPO3\CMS\Extbase\Persistence\Repository;
+namespace AcademicPuma\BibsonomyCsl\Utils;
 
 /**
  *  PUMA/BibSonomy CSL (bibsonomy_csl) is a TYPO3 extension which
@@ -36,8 +31,31 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  */
 
 /**
- * The repository for Authentications
+ * UrlUtils
  */
-class AuthenticationRepository extends Repository
+class UrlUtils
 {
+    const URL_PATTERN = '#((https?|ftp):\/\/(\S*?\.\S*?))([\s)\[\]{},;"\':<]|\.\s|$)#i';
+
+    public static function isUrl($string): bool
+    {
+        $match = preg_match(self::URL_PATTERN, $string);
+
+        return $match > 0;
+    }
+
+    public static function getDOIUrl(string $doi): string
+    {
+        // Check, if already a DOI URL
+        if (strpos($doi, 'doi.org') !== false) {
+            return $doi;
+        } else {
+            return 'https://dx.doi.org/' . urlencode($doi);
+        }
+    }
+
+    public static function getURNUrl(string $urn): string
+    {
+        return 'https://nbn-resolving.org/' . urlencode($urn);
+    }
 }

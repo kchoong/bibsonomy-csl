@@ -148,6 +148,7 @@
 			<trans-unit id="entrytype.unpublished.desc">
 				<source></source>
 			</trans-unit>
+
 			<trans-unit id="post.filter.placeholder">
 				<source>Filter the posts</source>
 			</trans-unit>

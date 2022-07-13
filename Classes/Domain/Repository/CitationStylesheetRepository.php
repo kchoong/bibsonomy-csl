@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace AcademicPuma\BibsonomyCsl\Domain\Repository;
 
 
+use TYPO3\CMS\Extbase\Persistence\Repository;
+
 /**
  * This file is part of the "BibSonomy CSL" Extension for TYPO3 CMS.
  *
@@ -18,6 +20,6 @@ namespace AcademicPuma\BibsonomyCsl\Domain\Repository;
 /**
  * The repository for CitationStylesheets
  */
-class CitationStylesheetRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
+class CitationStylesheetRepository extends Repository
 {
 }
