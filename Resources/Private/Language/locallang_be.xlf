@@ -62,7 +62,7 @@
             </trans-unit>
             <trans-unit id="flexform.content.concepts.unselect">
                 <source>Unselect content via concepts (whitespace separated), excludes all publications which have at
-                    least one of the subtags of a concep.
+                    least one of the subtags of a concept
                 </source>
             </trans-unit>
             <trans-unit id="flexform.content.tags.select">
@@ -274,7 +274,7 @@
             <trans-unit id="flexform.custom.authors.list">
                 <source>
                     Define personal websites and e-mails of authors. \n
-                    E.g. Lastname, Firstname;https://www.example.com;example(at)example.com (separated by lines, use 'none' for not available).
+                    E.g. Lastname, Firstname;https://www.example.com;example(at)example.com (separated by lines, use 'none' for not available)
                 </source>
             </trans-unit>
             <trans-unit id="flexform.custom.authors.mode">
@@ -293,7 +293,7 @@
                 <source>Both</source>
             </trans-unit>
             <trans-unit id="flexform.custom.entrytype">
-                <source>Define custom entrytypes, e.g bibtexEntrytype, label, labelShort (separated by lines).</source>
+                <source>Define custom entrytypes, e.g bibtexEntrytype, label, labelShort (separated by lines)</source>
             </trans-unit>
 
             <!-- Details Tab -->
@@ -303,7 +303,7 @@
             </trans-unit>
             <trans-unit id="flexform.details.tab.description">
                 <source>Here you can configure a link to a details page on which the publication details should be
-                    displayed. Don't forget to to insert the Details View Plugin on the selected target page.
+                    displayed. Don't forget to to insert the Details View Plugin on the selected target page
                 </source>
             </trans-unit>
             <trans-unit id="flexform.details.enable">
@@ -327,7 +327,7 @@
             <trans-unit id="flexform.authentication.tab.description">
                 <source>Setup the PUMA/BibSonomy API credentials for this Plugin. You can select your pre-configured
                     settings from the PUMA/BibSonomy Backend Module. Alternatively configure a custom API access below
-                    (Choose Host System and insert user name and API key).
+                    (Choose Host System and insert user name and API key)
                 </source>
             </trans-unit>
             <trans-unit id="flexform.authentication.enable.beauth.label">
