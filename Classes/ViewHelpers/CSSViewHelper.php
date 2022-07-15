@@ -37,9 +37,9 @@ use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
  */
 
 /**
- * NotesViewHelper
+ * CSSViewHelper
  */
-class NotesViewHelper extends AbstractViewHelper
+class CSSViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -47,7 +47,7 @@ class NotesViewHelper extends AbstractViewHelper
 
     public function initializeArguments()
     {
-        $this->registerArgument('post', '\AcademicPuma\RestClient\Model\Post', 'The post to render as citation', true);
+        $this->registerArgument('css', 'string', 'The custom CSS definitions', true);
     }
 
     public static function renderStatic(
@@ -56,14 +56,12 @@ class NotesViewHelper extends AbstractViewHelper
         RenderingContextInterface $renderingContext
     ): string
     {
-        $post = $arguments['post']->getResource();
-        $note = $post->getNote();
+        $css = $arguments['css'];
 
-        if (!empty($note)) {
-            $span = new TagBuilder('span');
-            $span->addAttribute('class', 'bibsonomy-notes');
-            $span->setContent($note);
-            return $span->render();
+        if (!empty($css)) {
+            $style = new TagBuilder('style');
+            $style->setContent($css);
+            return $style->render();
         }
 
         return "";
