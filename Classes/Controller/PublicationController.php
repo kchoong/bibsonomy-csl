@@ -323,8 +323,10 @@ class PublicationController extends ApiActionController
                 $posts[$groupKey] = $sublist;
             }
         } else {
-            $posts->sort($sortKey, $sortOrder == 'asc' ? Sorting::ORDER_ASC : Sorting::ORDER_DESC);
-            $posts[''] = $posts;
+            $posts->sort($sortKey, $sortOrder === 'desc' ? Sorting::ORDER_DESC : Sorting::ORDER_ASC);
+            $p = clone $posts;
+            $posts->clear();
+            $posts->add('', $p);
         }
     }
 
