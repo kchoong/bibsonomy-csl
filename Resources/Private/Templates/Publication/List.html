@@ -38,8 +38,7 @@
 
         <f:for each="{posts}" as="groups" key="group">
             <f:if condition="{grouping.key} != 'none'">
-                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}"
-                                  entrytypes="{entrytypes}"/>
+                <bibsonomy:Header group="{group}" listHash="{listHash}" groupingKey="{grouping.key}" entrytypes="{entrytypes}"/>
             </f:if>
 
             <ul class="bibsonomy-posts">
